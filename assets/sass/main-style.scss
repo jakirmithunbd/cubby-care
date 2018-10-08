@@ -762,21 +762,135 @@ select, textarea {
         bottom: 100%;
     }
 }
+/**---- Gravity Form ----**/
+.gform_wrapper {
+
+    .gform_body {
+
+        .gform_fields {
+
+            .gfield {
+                margin-top: 0; 
+
+                label {
+                    display: none;
+                }
+
+                .gfield_required {
+                    display: none;
+                }
+
+                .ginput_container {
+
+                    input {
+                        border: 0;
+                        font-size: 11px;
+                        font-weight: 400;
+                        font-family: $nor;
+                        border-radius: 8px;
+                        height: 33px !important;
+                        color: #846196 !important;
+                        background: rgba(183, 223, 229, .7);
+
+                        &::placeholder {
+                            color: #846196 !important;
+                        }
+                    }
+
+                    textarea {
+                        border: 0;
+                        font-size: 11px;
+                        font-weight: 400;
+                        font-family: $nor;
+                        border-radius: 8px;
+                        color: #846196 !important;
+                        background: rgba(183, 223, 229, .7);
+
+                        &::placeholder {
+                            color: #846196 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .gform_footer {
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: right;
+
+        input[type=submit] {
+            border: 0;
+            color: #fff;
+            height: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: $mel;
+            background: $base;
+            border-radius: 8px;
+            width: 100px !important;
+            text-transform: uppercase;
+            @include letter-spacing(15, 40);
+
+            &:hover, &:focus, &:active:focus {
+                outline: 0;
+                outline-offset: 0;
+            }
+        }
+    }
+
+    .gform_wrapper {
+
+        .top_label {
+
+            .ginput_container {
+                marrgin: 0;
+            }
+        }
+    }
+}
 /**---- Game Room ----**/
 .game-room {
-    padding: 60px 0;
-    position: relative;
+    overflow: hidden;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 
-    &:after {
-        content: '';
-        height: 7%;
-        width: 100%;
-        border-radius: 50%;
-        background: linear-gradient(to right,#E5E5E4,#E5E5E4);
-        transform: translateX(-50%);
-        position: absolute;
-        left: 50%;
-        bottom: -14px;
+    .booking-form {
+        padding: 30px 0 60px;
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            background: url(../images/svg/busket.svg);
+            background-repeat: no-repeat;
+            background-size: contain !important;
+            height: 100%;
+            width: 100%;
+            top: -60px;
+            left: -100px;
+            transform: scale(1.1);
+        }
+
+        h4 {
+            position: relative;
+            z-index: 1;
+            font-weight: 700;
+            font-family: $nor;
+            color: $white;
+            font-size: 26px;
+            @include letter-spacing(26, -10);
+        }
+
+        .gform_wrapper { 
+            width: 350px;
+            margin: 0 0 10%;
+        }
+        
+        .form {
+            position: relative;
+        }
     }
 }
 /**---- Footer ----**/
@@ -864,7 +978,7 @@ select, textarea {
                         margin: 7px 0 15px;
                         align-items: center;
                         border-radius: 500px;
-                        background: $primary;
+                        background: #b4b4da;
                         justify-content: center;
                     }
                 }
@@ -978,28 +1092,18 @@ select, textarea {
     padding: 0;
     margin: 0;
 
-    li {
-
-        &+li:before {
-            content: ">";
-            color: #323e48;
-            padding: 0 2px;
-            font-size: 12px;
-        }
-
-        a {
+        a, span {
             font-size: 11px;
             line-height: 17px;
             color: #323e48;
             font-family: $nor;
             transition: all .5s ease;
 
-            &:hover, &:focus {
-                color: $primary;
-            }
+        &:hover, &:focus {
+            color: $primary;
         }
 
-        &.active {
+        &.current-page {
             font-size: 11px;
             line-height: 17px;
             color: #323e48;
@@ -1035,7 +1139,7 @@ select, textarea {
                         border-radius: 8px;
                         padding: 4px 20px;
                         padding-right: 10px;
-                        margin: 0 0 3px;
+                        margin: 0 0 10px;
                         display: inline-block;
                         transition: all .5s ease;
                         text-transform: uppercase;
@@ -1044,14 +1148,12 @@ select, textarea {
                             position: absolute;
                             transition: all .5s ease;
                             content: "";
-                            width: 11px;
-                            height: 3px;
-                            background: $primary;
-                            top: calc(50% - 5px);
+                            width: 20px;
+                            height: 20px;
                             left: 0;
-                            transform: rotate(60deg);
-                            border-bottom-left-radius: 500px;
-                            border-top-left-radius: 500px;
+                            top: 0;
+                            background-repeat: no-repeat !important;
+                            background: url(../images/svg/green.svg);
                         }
 
 
@@ -1059,14 +1161,14 @@ select, textarea {
                             position: absolute;
                             content: "";
                             transition: all .5s ease;
-                            width: 11px;
-                            height: 3px;
-                            background: $primary;
-                            top: calc(50% - -3px);
-                            left: 0;
-                            transform: rotate(-60deg);
-                            border-bottom-right-radius: 500px;
-                            border-top-right-radius: 500px;
+                            width: 20px;
+                            height: 20px;
+                            opacity: 0;
+                            left: 7px;
+                            top: calc(50% - 9px);
+                            background-repeat: no-repeat !important;
+                            background: url(../images/svg/white.svg);
+                            background-size: 45%;
                         }
 
                         &:hover, &:focus {
@@ -1076,17 +1178,11 @@ select, textarea {
                             margin-left: 10px;
 
                             &:before {
-                                top: calc(50% - 5px);
+                                opacity: 0;
                             }
 
                             &:after {
-                                top: calc(50% - -2px);
-                            }
-
-                            &:after, &:before {
-                                width: 9px;
-                                left: 6px;
-                                background: $white;
+                                opacity: 1;
                             }
                         }
                     }
@@ -1095,6 +1191,14 @@ select, textarea {
 
                         a {
                             border-color: transparent;
+                            color: $white;
+                            border-color: transparent;
+                            background: $primary;
+                            margin-left: 10px;
+
+                            &:after {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
@@ -1856,6 +1960,11 @@ select, textarea {
     }
 }
 
+// map
+#gmap {
+    height: 500px;
+    width: 500px;
+}
 // Gallery
 
 /**---- Responsive CSS ----**/

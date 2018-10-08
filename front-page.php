@@ -4,7 +4,6 @@ get_header('home');
 /*
 Template Name: Home
 */ 
-$page_id = get_queried_object_id();
 ?>    
     <section class="banner">
     	<?php $banner = get_field('banner_slider'); 
@@ -222,18 +221,8 @@ $page_id = get_queried_object_id();
             </div><!-- / slider -->
         </div>
     </section><!-- / Testimonial -->
+	
 
-    <section class="game-room" style="background: url(../assets/images/game-room.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="booking-form">
-                        <h4>Book a tour</h4>
-                        <img src="../assets/images/form.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- / game-room -->
+   <?php echo cubby_get_booking_room(); ?>
 
 <?php get_footer(); ?>

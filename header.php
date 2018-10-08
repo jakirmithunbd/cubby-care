@@ -82,3 +82,4 @@
             </div>
         </nav>
     </header><!-- / Header Area  -->
+    <div class="header_gutter"></div>
