@@ -45,17 +45,26 @@ Template Name: Our Centre
 
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="sec_1">
+                <!-- <?php 
+	            	$args = array(
+						'post_type' => 'centre',
+						'posts_per_page' => -1
+					);
+				?>
+
+            	<?php $loop = new WP_Query($args); ?>
+            	<?php if($loop->have_posts()) : while($loop->have_posts()) : $loop->the_post(); ?> -->
                     <div class="center row">
-                        <div class="col-md-3">
-                            <div class="map">
+                        <div class="col-md-3 col-sm-3">
+                            <div id="map">
                                 <img src="../assets/images/sm-map.png" class="img-responsive" alt="">
                             </div>
                         </div>
 
-                        <div class="col-md-9">
+                        <div class="col-md-9 col-sm-9">
                             <ul class="center-info">
                                 <li>
-                                    <h4>Westcourt Centre</h4>
+                                    <h4><a href="#">Westcourt Centre</a></h4>
                                     <p>40-42 Tills Street, Westcourt QLD 4870</p>
                                     <p>p <a class="phone" href="tel:(07) 4033 5170">(07) 4033 5170</a></p>
                                     <p>e <a href="mailto:westcourt@cubbycare.com.au">westcourt@cubbycare.com.au</a></p>
@@ -80,153 +89,21 @@ Template Name: Our Centre
                             </ul>
                         </div>
                     </div><!-- / list -->
-                    <div class="center row">
-                        <div class="col-md-3">
-                            <div class="map">
-                                <img src="../assets/images/sm-map.png" class="img-responsive" alt="">
-                            </div>
-                        </div>
+				<?php endwhile; endif; ?>
 
-                        <div class="col-md-9">
-                            <ul class="center-info">
-                                <li>
-                                    <h4>Westcourt Centre</h4>
-                                    <p>40-42 Tills Street, Westcourt QLD 4870</p>
-                                    <p>p <a class="phone" href="tel:(07) 4033 5170">(07) 4033 5170</a></p>
-                                    <p>e <a href="mailto:westcourt@cubbycare.com.au">westcourt@cubbycare.com.au</a></p>
-                                </li>
-
-                                <li class="opening-hour">
-                                    <div class="permalink text-right">
-                                        <a class="btn" href="#">Read More</a>
-                                        <a class="btn" href="#">Enquire Now</a>
-                                    </div>
-
-                                    <div class="opening">
-                                        <h5>Opening hours</h5>
-                                        <div class="icon">
-                                            <a href="#"><span class="fa fa-facebook"></span></a>
-                                            <a href="#"><span class="fa fa-envelope-o"></span></a>
-                                        </div>
-                                        <p>6.30am - 6.30pm<br>
-                                        Monday - Friday</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!-- / list -->
-                    <div class="center row">
-                        <div class="col-md-3">
-                            <div class="map">
-                                <img src="../assets/images/sm-map.png" class="img-responsive" alt="">
-                            </div>
-                        </div>
-
-                        <div class="col-md-9">
-                            <ul class="center-info">
-                                <li>
-                                    <h4>Westcourt Centre</h4>
-                                    <p>40-42 Tills Street, Westcourt QLD 4870</p>
-                                    <p>p <a class="phone" href="tel:(07) 4033 5170">(07) 4033 5170</a></p>
-                                    <p>e <a href="mailto:westcourt@cubbycare.com.au">westcourt@cubbycare.com.au</a></p>
-                                </li>
-
-                                <li class="opening-hour">
-                                    <div class="permalink text-right">
-                                        <a class="btn" href="#">Read More</a>
-                                        <a class="btn" href="#">Enquire Now</a>
-                                    </div>
-
-                                    <div class="opening">
-                                        <h5>Opening hours</h5>
-                                        <div class="icon">
-                                            <a href="#"><span class="fa fa-facebook"></span></a>
-                                            <a href="#"><span class="fa fa-envelope-o"></span></a>
-                                        </div>
-                                        <p>6.30am - 6.30pm<br>
-                                        Monday - Friday</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!-- / list -->
-                    <div class="center row">
-                        <div class="col-md-3">
-                            <div class="map">
-                                <img src="../assets/images/sm-map.png" class="img-responsive" alt="">
-                            </div>
-                        </div>
-
-                        <div class="col-md-9">
-                            <ul class="center-info">
-                                <li>
-                                    <h4>Westcourt Centre</h4>
-                                    <p>40-42 Tills Street, Westcourt QLD 4870</p>
-                                    <p>p <a class="phone" href="tel:(07) 4033 5170">(07) 4033 5170</a></p>
-                                    <p>e <a href="mailto:westcourt@cubbycare.com.au">westcourt@cubbycare.com.au</a></p>
-                                </li>
-
-                                <li class="opening-hour">
-                                    <div class="permalink text-right">
-                                        <a class="btn" href="#">Read More</a>
-                                        <a class="btn" href="#">Enquire Now</a>
-                                    </div>
-
-                                    <div class="opening">
-                                        <h5>Opening hours</h5>
-                                        <div class="icon">
-                                            <a href="#"><span class="fa fa-facebook"></span></a>
-                                            <a href="#"><span class="fa fa-envelope-o"></span></a>
-                                        </div>
-                                        <p>6.30am - 6.30pm<br>
-                                        Monday - Friday</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!-- / list -->
-                    <div class="center row">
-                        <div class="col-md-3">
-                            <div class="map">
-                                <img src="../assets/images/sm-map.png" class="img-responsive" alt="">
-                            </div>
-                        </div>
-
-                        <div class="col-md-9">
-                            <ul class="center-info">
-                                <li>
-                                    <h4>Westcourt Centre</h4>
-                                    <p>40-42 Tills Street, Westcourt QLD 4870</p>
-                                    <p>p <a class="phone" href="tel:(07) 4033 5170">(07) 4033 5170</a></p>
-                                    <p>e <a href="mailto:westcourt@cubbycare.com.au">westcourt@cubbycare.com.au</a></p>
-                                </li>
-
-                                <li class="opening-hour">
-                                    <div class="permalink text-right">
-                                        <a class="btn" href="#">Read More</a>
-                                        <a class="btn" href="#">Enquire Now</a>
-                                    </div>
-
-                                    <div class="opening">
-                                        <h5>Opening hours</h5>
-                                        <div class="icon">
-                                            <a href="#"><span class="fa fa-facebook"></span></a>
-                                            <a href="#"><span class="fa fa-envelope-o"></span></a>
-                                        </div>
-                                        <p>6.30am - 6.30pm<br>
-                                        Monday - Friday</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!-- / list -->
                 </div><!-- / list center -->
 
                 <div class="tab-pane fade" id="sec_2">
-                    <div id="gamp"></div>
+                    
                 </div><!-- / map -->
             </div>
 
         </div>
     </div><!-- / About Us -->
+
+    <div id="gmap">
+                    	
+    </div>
+
+    <?php echo cubby_get_booking_room(); ?>
 <?php get_footer(); ?>

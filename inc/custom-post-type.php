@@ -6,7 +6,7 @@ function cubbuy_services_custom_post() {
 		array(
 			'labels' =>
 				array(
-					'name' => __( 'TestimonialS', 'cubbuy'),	
+					'name' => __( 'Testimonial', 'cubbuy'),	
 					'singular_name' => __( 'Testimonial', 'cubbuy'),
 					'add_new_item' => __('Add New TesimTestimonialoTestimonialnial', 'cubbuy'), 
 					'add_new' => __( 'Add New Testimonial', 'cubbuy'),
@@ -41,29 +41,29 @@ function cubbuy_services_custom_post() {
 // 	);
 // }
 
-//  Portfolio Custom Post Type
-// add_action('init','leisure_portfolio_custom_post');
-// function leisure_portfolio_custom_post() {
-// 	register_post_type( 'portfolio',
-// 		array(
-// 			'labels' =>
-// 				array(
-// 					'name' => __( 'Portfolio', 'leisure'),	
-// 					'singular_name' => __( 'Portfolio', 'leisure'),
-// 					'add_new_item' => __('Add New Portfolio', 'leisure'), 
-// 					'add_new' => __( 'Add New Portfolio', 'leisure'),
-// 					'edit_item' => __( 'Edit Portfolio', 'leisure'),
-// 					'new_item' => __( 'New Portfolio', 'leisure' ),
-// 					'view_item' => __( 'View Portfolio' ),
-// 					'not_found' => __( 'Sorry, we couldn\'t find the Portfolio you are looking for.',  'leisure' ),
-// 				),
+//  Our Centre Custom Post Type
+add_action('init','cubby_centre_custom_post');
+function cubby_centre_custom_post() {
+	register_post_type( 'centre',
+		array(
+			'labels' =>
+				array(
+					'name' => __( 'Centres', 'cubbuy'),	
+					'singular_name' => __( 'Centre', 'cubbuy'),
+					'add_new_item' => __('Add New Centre', 'cubbuy'), 
+					'add_new' => __( 'Add New Centre', 'cubbuy'),
+					'edit_item' => __( 'Edit Centre', 'cubbuy'),
+					'new_item' => __( 'New Centre', 'cubbuy' ),
+					'view_item' => __( 'View Centre' ),
+					'not_found' => __( 'Sorry, we couldn\'t find the Centre you are looking for.',  'cubbuy' ),
+				),
 			
-// 			'public' => true,
-// 			'menu_icon'=>'dashicons-hammer',
-// 			'supports' => array( 'title','editor','thumbnail', 'excerpt')
-// 		)
-// 	);
-// }
+			'public' => true,
+			'menu_icon'=>'dashicons-location-alt',
+			'supports' => array( 'title','editor','thumbnail', 'excerpt')
+		)
+	);
+}
 
 // // Portfilio_post_taxonomy
 // add_action( 'init', 'leisure_portfolio_post_taxonomy');

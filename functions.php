@@ -72,13 +72,6 @@ function cubby_assets(){
 }
 add_action('wp_enqueue_scripts', 'cubby_assets');
 
-// acf options page
-if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page();
-	
-}
-
 /**
  * Dashboard google map api key support.
  */
@@ -86,6 +79,13 @@ add_filter('acf/settings/google_api_key', function () {
   	$gmap_api = get_field('google_map_api_key', 'options');
 	return $gmap_api;
 });
+
+// acf options page
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
 
 // SVG icon support
 function cubby_svg_support($mimes) {
@@ -114,3 +114,6 @@ function getPageID() {
 
   	return $postid;
 }
+
+
+
