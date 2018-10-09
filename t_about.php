@@ -25,169 +25,227 @@ Template Name: Who We Are
 </section><!-- / Banner -->
 
 <div class="about-us">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-4">
-                    <div class="side-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="side-bar">
 
-                        <?php echo beacon_breadcrumb(); ?>
+                    <?php echo beacon_breadcrumb(); ?>
 
-                        <ul class="nav nav-tabs">
-                        	<?php
-							$tabs = [
-								'cubby_care_family', 
-								'our_mission_to_kindness', 
-								'our_people',
-								'cubby_careers'
-							];
+                    <ul class="nav nav-tabs">
+                    	<?php
+						$tabs = [
+							'cubby_care_family', 
+							'our_mission_to_kindness', 
+							'our_people',
+							'cubby_careers'
+						];
 
-							foreach ($tabs as $key => $tab):
-							$active = $key === 0 ? 'active' : '';
-							$text = get_field($tab);
-								printf('<li class="%s"><a href="#item_%s" data-toggle="tab">%s</a></li>', $active, $key, $text['tab_menu']);
+						foreach ($tabs as $key => $tab):
+						$active = $key === 0 ? 'active' : '';
+						$text = get_field($tab);
+							printf('<li class="%s"><a href="#item_%s" data-toggle="tab">%s</a></li>', $active, $key, $text['tab_menu']);
 
-							endforeach; 
+						endforeach; 
 
-							?>
+						?>
+                    </ul>
+                </div><!-- / Side bar -->
+            </div><!-- / col -->
+
+            <div class="col-md-8 col-sm-8">
+                <div class="tab-content">
+                    <div class="tab-pane mission fade in family active" id="item_0">
+                        <?php $kindness = get_field('cubby_care_family'); ?>
+
+                        <?php
+                        $top = $kindness['top_text'];
+                        if ($top): ?>
+                        <div class="top-text">  
+                            <?php if ($top['title']): ?>
+                            <h2><?php echo $top['title']; ?></h2>
+                            <?php endif; ?>
+
+                            <?php if ($top['description']): ?>
+                                <?php echo $top['description']; ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
+
+                        <ul class="list-inline">
+                            <?php $items = $kindness['images']; ?>
+                            <?php if ($items): 
+                                foreach ($items as $item):
+                            ?>
+                            <li>
+                                <?php if ($item['image']): ?>
+                                <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
+                                <?php endif; ?>
+                            </li>
+                            <?php endforeach; endif ?>
+
                         </ul>
-                    </div><!-- / Side bar -->
-                </div><!-- / col -->
-
-                <div class="col-md-8 col-sm-8">
-                    <div class="tab-content">
-                        <div class="tab-pane mission fade in family active" id="item_1">
-                            <div class="top-text">  
-                                <h2>Committed to kindness</h2>
-                                <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest</p>
-                            </div>
-
-                            <ul class="list-inline">
-                                <li>
-                                    <img src="../assets/images/mission-1.jpg" class="img-responsive" alt="">
-                                </li>
-                                <li>
-                                    <img src="../assets/images/mission-1.jpg" class="img-responsive" alt="">
-                                </li>
-                            </ul>
-
-                            <h3>Committed to kindness</h3>
-                            <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest, ipienimincit rerum volorrum etur, volum volores autem re porum, ium qui occus et ut endi dem. Fuga. Igendigendi tet quam, in reped esto quatus. Agnistium iure nonsequae asperro ritassin prem. Sed etur aut experum hic te nobit, tem et perferitatus res rem. Itae. Magnatus acculpa rciminum.</p>
-
-                            <h3>Committed to kindness</h3>
-                            <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest, ipienimincit rerum volorrum etur, volum volores autem re porum, ium qui occus et ut endi dem. Fuga. Igendigendi tet quam, in reped esto quatus. Agnistium iure nonsequae asperro ritassin prem. Sed etur aut experum hic te nobit, tem et perferitatus res rem. Itae. Magnatus acculpa rciminum.</p>
-                        </div>
-                        <div class="tab-pane fade mission" id="item_2">
-                            <div class="top-text">  
-                                <h2>Committed to kindness</h2>
-                                <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest</p>
-                            </div>
-
-                            <ul class="list-inline">
-                                <li>
-                                    <img src="../assets/images/mission-1.jpg" class="img-responsive" alt="">
-                                </li>
-                                <li>
-                                    <img src="../assets/images/mission-1.jpg" class="img-responsive" alt="">
-                                </li>
-                            </ul>
-
-                            <h3>Committed to kindness</h3>
-                            <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest, ipienimincit rerum volorrum etur, volum volores autem re porum, ium qui occus et ut endi dem. Fuga. Igendigendi tet quam, in reped esto quatus. Agnistium iure nonsequae asperro ritassin prem. Sed etur aut experum hic te nobit, tem et perferitatus res rem. Itae. Magnatus acculpa rciminum.</p>
-
-                            <h3>Committed to kindness</h3>
-                            <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest, ipienimincit rerum volorrum etur, volum volores autem re porum, ium qui occus et ut endi dem. Fuga. Igendigendi tet quam, in reped esto quatus. Agnistium iure nonsequae asperro ritassin prem. Sed etur aut experum hic te nobit, tem et perferitatus res rem. Itae. Magnatus acculpa rciminum.</p>
-                        </div>
-                        <div class="tab-pane fade people" id="item_3">
-                            <div class="top-text">  
-                                <h2>The kindest kind of people make the best kind of educators </h2>
-                                <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest</p>
-                            </div>
                         
-                            <div class="team-member">
-                                <div class="media pull-left">
-                                    <img src="../assets/images/parent-1.jpg" class="img-responsive" alt="">
-                                </div>
+                        <?php $citems = $kindness['commitment']; ?>
+                        <?php if ($citems) :
+                            foreach ( $citems as $citem):
+                        ?>
 
-                                <div class="team-meta">
-                                    <div class="title">
-                                        <h4>Audrey Borrie <span>BSc Hons. MPA MAICD</span></h4>
-                                        <p>Director and Chief  Executive Office</p>
-                                    </div>
+                        <?php if ($citem['title']): ?>
+                        <h3><?php echo $citem['title']; ?></h3>
+                        <?php endif; ?>
 
-                                    <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest, ipienimincit rerum volorrum etur, volum volores autem re porum, ium qui occus et ut endi dem. Fuga. Igendigendi tet quam, in reped esto quatus. Agnistium iure nonsequae asperro ritassin prem. Sed etur aut experum hic te nobit, tem et perferitatus res rem. Itae. Magnatus acculpa rciminum.</p>
-                                </div>
-                            </div><!-- / team -->
-                        
-                            <div class="team-member">
-                                <div class="media pull-left">
-                                    <img src="../assets/images/parent-1.jpg" class="img-responsive" alt="">
-                                </div>
-
-                                <div class="team-meta">
-                                    <div class="title">
-                                        <h4>Audrey Borrie <span>BSc Hons. MPA MAICD</span></h4>
-                                        <p>Director and Chief  Executive Office</p>
-                                    </div>
-
-                                    <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest, ipienimincit rerum volorrum etur, volum volores autem re porum, ium qui occus et ut endi dem. Fuga. Igendigendi tet quam, in reped esto quatus. Agnistium iure nonsequae asperro ritassin prem. Sed etur aut experum hic te nobit, tem et perferitatus res rem. Itae. Magnatus acculpa rciminum.</p>
-                                </div>
-                            </div><!-- / team -->
-                        
-                            <div class="team-member">
-                                <div class="media pull-left">
-                                    <img src="../assets/images/parent-1.jpg" class="img-responsive" alt="">
-                                </div>
-
-                                <div class="team-meta">
-                                    <div class="title">
-                                        <h4>Audrey Borrie <span>BSc Hons. MPA MAICD</span></h4>
-                                        <p>Director and Chief  Executive Office</p>
-                                    </div>
-
-                                    <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest, ipienimincit rerum volorrum etur, volum volores autem re porum, ium qui occus et ut endi dem. Fuga. Igendigendi tet quam, in reped esto quatus. Agnistium iure nonsequae asperro ritassin prem. Sed etur aut experum hic te nobit, tem et perferitatus res rem. Itae. Magnatus acculpa rciminum.</p>
-                                </div>
-                            </div><!-- / team -->
-                        
-                            <div class="team-member">
-                                <div class="media pull-left">
-                                    <img src="../assets/images/parent-1.jpg" class="img-responsive" alt="">
-                                </div>
-
-                                <div class="team-meta">
-                                    <div class="title">
-                                        <h4>Audrey Borrie <span>BSc Hons. MPA MAICD</span></h4>
-                                        <p>Director and Chief  Executive Office</p>
-                                    </div>
-
-                                    <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest, ipienimincit rerum volorrum etur, volum volores autem re porum, ium qui occus et ut endi dem. Fuga. Igendigendi tet quam, in reped esto quatus. Agnistium iure nonsequae asperro ritassin prem. Sed etur aut experum hic te nobit, tem et perferitatus res rem. Itae. Magnatus acculpa rciminum.</p>
-                                </div>
-                            </div><!-- / team -->
-                        </div><!-- / team pane -->
-                        <div class="tab-pane fade mission" id="item_4">
-                            <div class="top-text">  
-                                <h2>Committed to kindness</h2>
-                                <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest</p>
-                            </div>
-
-                            <ul class="list-inline">
-                                <li>
-                                    <img src="../assets/images/mission-1.jpg" class="img-responsive" alt="">
-                                </li>
-                                <li>
-                                    <img src="../assets/images/mission-1.jpg" class="img-responsive" alt="">
-                                </li>
-                            </ul>
-
-                            <h3>Committed to kindness</h3>
-                            <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest, ipienimincit rerum volorrum etur, volum volores autem re porum, ium qui occus et ut endi dem. Fuga. Igendigendi tet quam, in reped esto quatus. Agnistium iure nonsequae asperro ritassin prem. Sed etur aut experum hic te nobit, tem et perferitatus res rem. Itae. Magnatus acculpa rciminum.</p>
-
-                            <h3>Committed to kindness</h3>
-                            <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest, ipienimincit rerum volorrum etur, volum volores autem re porum, ium qui occus et ut endi dem. Fuga. Igendigendi tet quam, in reped esto quatus. Agnistium iure nonsequae asperro ritassin prem. Sed etur aut experum hic te nobit, tem et perferitatus res rem. Itae. Magnatus acculpa rciminum.</p>
-                        </div>
+                        <?php if ($citem['description']): ?>
+                            <?php echo $citem['description']; ?>
+                        <?php endif; ?>
+                        <?php endforeach; endif; ?>
                     </div>
-                </div><!-- / col -->
-            </div>
-        </div>
-    </div><!-- / About Us -->
+                    <div class="tab-pane fade mission" id="item_1">
+                        <?php $mission = get_field('our_mission_to_kindness'); ?>
 
+                        <?php
+                        $top = $mission['top_text'];
+                        if ($top): ?>
+                        <div class="top-text">  
+                            <?php if ($top['title']): ?>
+                            <h2><?php echo $top['title']; ?></h2>
+                            <?php endif; ?>
+
+                            <?php if ($top['description']): ?>
+                                <?php echo $top['description']; ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
+
+                        <ul class="list-inline">
+                            <?php $items = $mission['images']; ?>
+                            <?php if ($items): 
+                                foreach ($items as $item):
+                            ?>
+                            <li>
+                                <?php if ($item['image']): ?>
+                                <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
+                                <?php endif; ?>
+                            </li>
+                            <?php endforeach; endif ?>
+
+                        </ul>
+                        
+                        <?php $citems = $mission['commitment']; ?>
+                        <?php if ($citems) :
+                            foreach ( $citems as $citem):
+                        ?>
+
+                        <?php if ($citem['title']): ?>
+                        <h3><?php echo $citem['title']; ?></h3>
+                        <?php endif; ?>
+
+                        <?php if ($citem['description']): ?>
+                            <?php echo $citem['description']; ?>
+                        <?php endif; ?>
+                        <?php endforeach; endif; ?>
+                    <div class="tab-pane fade people" id="item_2">
+
+                        <?php
+                        $people = get_field('our_people');
+                        $ptop = $people['top_text'];
+                        if ($ptop): ?>
+                        <div class="top-text">  
+                            <?php if ($ptop['title']): ?>
+                            <h2><?php echo $ptop['title']; ?></h2>
+                            <?php endif; ?>
+
+                            <?php if ($ptop['description']): ?>
+                                <?php echo $ptop['description']; ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
+                        
+                        <?php $peoples = $people['team_members']; 
+                        ?>
+                        <?php if($peoples): 
+                            foreach ($peoples as $item):
+                        ?>
+                        <div class="team-member">
+                            <?php if ($item['image']): ?>
+                            <div class="media pull-left">
+                                <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
+                            </div>
+                            <?php endif; ?>
+
+                            <div class="team-meta">
+                                <?php if ($item['name'] || $item['title'] || $item['position']): ?>
+                                <div class="title">
+                                    <?php if ($item['name'] || $item['title']): ?>
+                                    <h4><?php echo $item['name']; ?> <span><?php echo $item['name']; ?></span></h4>
+                                    <?php endif; ?>
+                                    
+                                    <?php if ($item['position']): ?>
+                                    <p><?php echo $item['position']; ?></p>
+                                    <?php endif; ?>
+
+                                </div>
+                                <?php endif; ?>
+                                
+                                <?php if ($item['description']): ?>
+                                    <?php echo $item['description']; ?>
+                                
+                                <?php endif; ?>
+                            </div>
+                        </div><!-- / team -->
+                        <?php endforeach; endif; ?>
+
+                    </div><!-- / team pane -->
+                    <div class="tab-pane mission fade family" id="item_3">
+                    <?php $cubby_careers = get_field('cubby_careers'); ?>
+
+                    <?php
+                    $top = $cubby_careers['top_text'];
+                    if ($top): ?>
+                    <div class="top-text">  
+                        <?php if ($top['title']): ?>
+                        <h2><?php echo $top['title']; ?></h2>
+                        <?php endif; ?>
+
+                        <?php if ($top['description']): ?>
+                            <?php echo $top['description']; ?>
+                        <?php endif; ?>
+                    </div>
+                    <?php endif; ?>
+
+                    <ul class="list-inline">
+                        <?php $items = $cubby_careers['images']; ?>
+                        <?php if ($items): 
+                            foreach ($items as $item):
+                        ?>
+                        <li>
+                            <?php if ($item['image']): ?>
+                            <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
+                            <?php endif; ?>
+                        </li>
+                        <?php endforeach; endif ?>
+
+                    </ul>
+                    
+                    <?php $citems = $cubby_careers['commitment']; ?>
+                    <?php if ($citems) :
+                        foreach ( $citems as $citem):
+                    ?>
+                    
+                    <?php if ($citem['title']): ?>
+                    <h3><?php echo $citem['title']; ?></h3>
+                    <?php endif; ?>
+
+                    <?php if ($citem['description']): ?>
+                        <?php echo $citem['description']; ?>
+                    <?php endif; ?>
+                    <?php endforeach; endif; ?>
+                </div>
+            </div><!-- / col -->
+        </div>
+    </div>
+</div><!-- / About Us -->
+</div>
+
+<?php echo cubby_get_booking_room(); ?>
 <?php get_footer(); ?>

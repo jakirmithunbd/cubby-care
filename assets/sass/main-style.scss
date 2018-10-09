@@ -5,6 +5,7 @@ $cen: 'Centrale Sans';
 // colors
 $primary: #63c9d7;
 $base: #7C5A90;
+$secondary: #323e48;
 $black: #000000;
 $white: #fff;
 
@@ -165,7 +166,7 @@ input[type="number"],
 input[type="email"], 
 input[type="tel"], 
 input[type="search"], 
-select, textarea {
+textarea {
   width: 100% !important;
   border: 1px solid #cdcdcd;
   padding: 14px 15px !important;
@@ -772,6 +773,10 @@ select, textarea {
             .gfield {
                 margin-top: 0; 
 
+                &.gf_left_half {
+                    padding-right: 10px;
+                }
+
                 label {
                     display: none;
                 }
@@ -790,7 +795,6 @@ select, textarea {
                         border-radius: 8px;
                         height: 33px !important;
                         color: #846196 !important;
-                        background: rgba(183, 223, 229, .7);
 
                         &::placeholder {
                             color: #846196 !important;
@@ -804,7 +808,6 @@ select, textarea {
                         font-family: $nor;
                         border-radius: 8px;
                         color: #846196 !important;
-                        background: rgba(183, 223, 229, .7);
 
                         &::placeholder {
                             color: #846196 !important;
@@ -886,6 +889,26 @@ select, textarea {
         .gform_wrapper { 
             width: 350px;
             margin: 0 0 10%;
+
+            .gform_body {
+
+                .gform_fields {
+
+                    .gfield {
+
+                        .ginput_container {
+
+                            input {
+                                background: rgba(183, 223, 229, .7);
+                            }
+
+                            textarea {
+                                background: rgba(183, 223, 229, .7);
+                            }
+                        }
+                    }
+                }
+            }
         }
         
         .form {
@@ -1473,7 +1496,7 @@ select, textarea {
                         height: 100%;
                     }
 
-                    h4 {
+                    .title {
                         color: $white;
                         margin: 0 0 8px;
                         font-size: 23px;
@@ -1967,5 +1990,207 @@ select, textarea {
 }
 // Gallery
 
+/**---- Contact Us ----**/
+select {
+    appearance: none;
+
+    &:focus {
+        box-shadow: none;
+        outline-offset: 0;
+        outline: 0;
+    }
+}
+.contact {
+    padding: 40px 0;
+
+    .quick-contact {
+
+        ul {
+
+            li {
+                margin: 0 0 20px;
+
+                &:first-child {
+
+                    .text {
+
+                        a {
+                            display: inline-block;
+                        }
+                    }
+                }
+
+                .icon {
+                    margin-right: 10px;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 500px;
+                        font-size: 16px;
+                        color: $white;
+                        background: #b4b4da;
+                    }
+                }
+                
+                .text {
+                    overflow: hidden;
+
+                    a, p {
+                        font-family: $mel;
+                        color: $secondary;
+                    }
+
+                    a {
+                        display: block;
+                    }
+                }
+
+                &.social-media {
+
+                    .text {
+
+                        a {
+                            justify-content: center;
+                            border-radius: 500px;
+                            align-items: center;
+                            display: flex;
+                            background: #b4b4da;
+                            height: 27px;
+                            width: 27px;
+                            color: $white;
+                            margin: 10px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-form {
+
+        .gform_body {
+
+            .gform_fields {
+
+                .gfield {
+                    border: 1px solid #DCDCDC;
+                    border-radius: 6px;
+                    margin-top: 10px;
+                    padding-right: 0;
+
+                    .ginput_container {
+                        margin-top: 0;
+
+                        input, select {
+                            margin: 0;
+                            padding: 9px 15px;
+                            border: 0 !important;
+                            font-size: 11px !important;
+                            font-weight: 400;
+                            font-family: $nor;
+                            width: 100%;
+                            border-radius: 8px;
+                            height: 33px !important;
+                            color: #846196 !important;
+
+                            &::placeholder {
+                                color: #846196 !important;
+                            }
+                        }
+
+                        textarea {
+                            border: 0;
+                            font-size: 11px;
+                            font-weight: 400;
+                            font-family: $nor;
+                            border-radius: 8px;
+                            color: #846196 !important;
+
+                            &::placeholder {
+                                color: #846196 !important;
+                            }
+                        }
+                    }
+
+                    .ginput_container {
+
+                        &.ginput_container_select {
+                            position: relative;
+
+                            &:after {
+                                pointer-events: none;
+                                position: absolute;
+                                content: "\f107";
+                                font-family: 'FontAwesome';
+                                top: calc(50% - 13px);
+                                right: 15px;
+                                color: #846196;
+                                font-size: 18px;
+                            }
+
+                            .gfield_radio {
+                                margin: 0;
+
+                                label {
+
+                                }
+
+                                input {
+                                    width: auto !important;
+
+                                }
+                            }
+                        }
+                    }
+
+                    &#field_2_11, &#field_2_12 {
+                        border: 0;
+                        font-size: 11px;
+                        line-height: 11px;
+                        color: $secondary;
+                        letter-spacing: .45px;
+
+                        label {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+
+        .gform_footer {
+
+            input[type=submit] {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .breadcrumb {
+        margin: 0 0 30px;
+    }
+}
+/**---- Privacy ----**/
+.privacy {
+    padding: 50px 0;
+
+    .breadcrumb {
+        margin: 0 0 30px;
+    }
+
+    h1,h2,h3,h4,h5,h5 {
+        margin: 15px 0 25px;
+        color: #505b88;
+    }
+
+    p {
+        color: #323e48;
+        margin: 0 0 15px;
+    }
+}
 /**---- Responsive CSS ----**/
 @import "responsive";

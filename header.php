@@ -22,23 +22,20 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="list-inline text-right">
-                        	<?php $phone = get_field('phone', 'options'); ?>
-                        	<?php if ($phone): ?>
                             <li>
-                                <p><?php _e( 'Call us', 'cubby'); ?> <span><?php _e( '1300 day care', 'cubby' ); ?></span></p>
-                                <a href="tel:<?php echo $phone; ?>"> ( <?php echo $phone; ?> )</a>
+                                <p>Call us <span>1300 day care</span></p>
+                                <a href="tel:1300 329 227"> ( 1300 329 227 )</a>
                             </li>
-                            <?php endif; ?>
                             <li>
                                 <a href="#">ContacT Us</a>
                             </li>
                             <?php $social = get_field('social_media' ,'options'); ?>
                             <?php if ($social): 
-                        	foreach ($social as $icon):
-                        	?>
-                            	
+                            foreach ($social as $icons):
+                            ?>
+                                
                             <li class="social-media"> 
-                                <a href="<?php echo $icon['url']; ?>"><span class="fa fa-<?php echo $icon['icon']; ?>"></span></a>
+                                <a target="_blank" href="<?php echo $icons['url']; ?>"><span class="fa fa-<?php echo $icons['icon']['value']; ?>"></span></a>
                             </li>
                             <?php endforeach; endif; ?>
                         </ul>

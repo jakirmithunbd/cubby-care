@@ -22,24 +22,7 @@ function cubbuy_services_custom_post() {
 		)
 	);
 }
-// Tesimonials solution_post_taxonomy
-// add_action( 'init', 'cubbuy_services_post_taxonomy');
-// function cubbuy_services_post_taxonomy() {
-// 	register_taxonomy(
-// 		'tesimonials_cat',  
-// 		'tesimonials',                  
-// 		array(
-// 			'hierarchical'          => true,
-// 			'label'                 => 'Tesimonials Category',  
-// 			'query_var'             => true,
-// 			'show_admin_column'     => true,
-// 			'rewrite'               => array(
-// 				'slug'                 => 'tesimonials-category', 
-// 				'with_front'    => true 
-// 				)
-// 			)
-// 	);
-// }
+
 
 //  Our Centre Custom Post Type
 add_action('init','cubby_centre_custom_post');

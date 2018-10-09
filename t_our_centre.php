@@ -3,25 +3,10 @@ get_header();
 /*
 Template Name: Our Centre
 */ 
+$page_id = get_queried_object_id();
 ?>   
-<?php $banner = get_field('centre_banner_content'); ?>
-<section class="page-banner" style="background: url(<?php echo $banner['image']; ?>);">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="page-banner-info">
-                	<?php if ($banner['title']): ?>
-                    <h2><?php echo $banner['title']; ?></h2>
-                	<?php endif; ?>
 
-                	<?php if ($banner['description']): ?>
-                    	<?php echo $banner['description']; ?>
-                	<?php endif; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- / Banner -->
+<?php echo cubby_page_banner(); ?>
 
     <div class="centers">
         <div class="container">
@@ -34,10 +19,10 @@ Template Name: Our Centre
                     <ul class="nav nav-tabs">
                         <li class="active">
                             <a href="#sec_1" data-toggle="tab"><span class="fa fa-list"></span>
-                            List View</a>
+                            <?php _e('List View', 'cubby'); ?></a>
                         </li>
                         <li>
-                            <a href="#sec_2" data-toggle="tab"><span class="fa fa-map-marker"></span>Map View</a>
+                            <a href="#sec_2" data-toggle="tab"><span class="fa fa-map-marker"></span><?php _e('Map View', 'cubby'); ?></a>
                         </li>
                     </ul>
                 </div>
@@ -45,15 +30,15 @@ Template Name: Our Centre
 
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="sec_1">
-                <!-- <?php 
+                <?php 
 	            	$args = array(
 						'post_type' => 'centre',
 						'posts_per_page' => -1
 					);
 				?>
 
-            	<?php $loop = new WP_Query($args); ?>
-            	<?php if($loop->have_posts()) : while($loop->have_posts()) : $loop->the_post(); ?> -->
+            	<?php $cloop = new WP_Query($args); ?>
+            	<?php if($cloop->have_posts()) : while($cloop->have_posts()) : $cloop->the_post(); ?>
                     <div class="center row">
                         <div class="col-md-3 col-sm-3">
                             <div id="map">
@@ -64,32 +49,51 @@ Template Name: Our Centre
                         <div class="col-md-9 col-sm-9">
                             <ul class="center-info">
                                 <li>
-                                    <h4><a href="#">Westcourt Centre</a></h4>
-                                    <p>40-42 Tills Street, Westcourt QLD 4870</p>
-                                    <p>p <a class="phone" href="tel:(07) 4033 5170">(07) 4033 5170</a></p>
-                                    <p>e <a href="mailto:westcourt@cubbycare.com.au">westcourt@cubbycare.com.au</a></p>
+                                    <a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+                                    <?php $address = get_field('centre_address'); ?>
+
+                                    <?php if ($address['address']): ?>
+                                    <p><?php echo $address['address']; ?></p>
+                                    <?php endif; ?>
+
+                                    <?php if ($address['phone']): ?>
+                                    <p>p <a class="phone" href="tel:<?php echo $address['phone']; ?>"><?php echo $address['phone']; ?></a></p>
+                                    <?php endif; ?>
+
+                                    <?php if ($address['email']): ?>
+                                    <p>e <a href="mailto:<?php echo $address['email']; ?>"><?php echo $address['email']; ?></a></p>
+                                    <?php endif; ?>
                                 </li>
 
                                 <li class="opening-hour">
                                     <div class="permalink text-right">
-                                        <a class="btn" href="#">Read More</a>
-                                        <a class="btn" href="#">Enquire Now</a>
+                                        <a class="btn" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cubby'); ?></a>
+                                        <a class="btn" href="#"><?php _e('Enquire Now', 'cubby'); ?></a>
                                     </div>
-
+                                    
+                                    <?php $open = get_field('opening_hours'); ?>
                                     <div class="opening">
-                                        <h5>Opening hours</h5>
+                                        <h5><?php _e('Opening hours', 'cubby'); ?></h5>
+
                                         <div class="icon">
-                                            <a href="#"><span class="fa fa-facebook"></span></a>
-                                            <a href="#"><span class="fa fa-envelope-o"></span></a>
+                                        <?php $items = $open['social-media']; 
+                                        if ($items):
+                                            foreach ($items as $item):
+                                        ?>
+
+                                            <a href="<?php echo $item['url']; ?>"><span class="fa fa-<?php echo $item['icon']['value']; ?>"></span></a>
+                                        <?php endforeach; endif; ?>
                                         </div>
-                                        <p>6.30am - 6.30pm<br>
-                                        Monday - Friday</p>
+                                        <?php if ($opening_hour['opening_hour']): ?>
+                                        <p><?php echo $opening_hour['opening_hour']; ?></p>
+                                        <?php endif; ?>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div><!-- / list -->
-				<?php endwhile; endif; ?>
+				<?php endwhile; endif; wp_reset_postdata(); ?>
 
                 </div><!-- / list center -->
 

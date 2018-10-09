@@ -113,7 +113,7 @@ input[type="number"],
 input[type="email"],
 input[type="tel"],
 input[type="search"],
-select, textarea {
+textarea {
   width: 100% !important;
   border: 1px solid #cdcdcd;
   padding: 14px 15px !important; }
@@ -126,8 +126,8 @@ select, textarea {
   input[type="tel"]:focus,
   input[type="search"]:hover,
   input[type="search"]:focus,
-  select:hover,
-  select:focus, textarea:hover, textarea:focus {
+  textarea:hover,
+  textarea:focus {
     outline: 0; }
 
 .container {
@@ -572,6 +572,8 @@ select, textarea {
 /**---- Gravity Form ----**/
 .gform_wrapper .gform_body .gform_fields .gfield {
   margin-top: 0; }
+  .gform_wrapper .gform_body .gform_fields .gfield.gf_left_half {
+    padding-right: 10px; }
   .gform_wrapper .gform_body .gform_fields .gfield label {
     display: none; }
   .gform_wrapper .gform_body .gform_fields .gfield .gfield_required {
@@ -583,8 +585,7 @@ select, textarea {
     font-family: "TT Norms";
     border-radius: 8px;
     height: 33px !important;
-    color: #846196 !important;
-    background: rgba(183, 223, 229, 0.7); }
+    color: #846196 !important; }
     .gform_wrapper .gform_body .gform_fields .gfield .ginput_container input::-webkit-input-placeholder {
       color: #846196 !important; }
     .gform_wrapper .gform_body .gform_fields .gfield .ginput_container input:-ms-input-placeholder {
@@ -599,8 +600,7 @@ select, textarea {
     font-weight: 400;
     font-family: "TT Norms";
     border-radius: 8px;
-    color: #846196 !important;
-    background: rgba(183, 223, 229, 0.7); }
+    color: #846196 !important; }
     .gform_wrapper .gform_body .gform_fields .gfield .ginput_container textarea::-webkit-input-placeholder {
       color: #846196 !important; }
     .gform_wrapper .gform_body .gform_fields .gfield .ginput_container textarea:-ms-input-placeholder {
@@ -665,6 +665,10 @@ select, textarea {
     .game-room .booking-form .gform_wrapper {
       width: 350px;
       margin: 0 0 10%; }
+      .game-room .booking-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container input {
+        background: rgba(183, 223, 229, 0.7); }
+      .game-room .booking-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container textarea {
+        background: rgba(183, 223, 229, 0.7); }
     .game-room .booking-form .form {
       position: relative; }
 
@@ -1082,7 +1086,7 @@ select, textarea {
           background-repeat: repeat-y;
           background-size: 3px 5px;
           height: 100%; }
-        .centers .tab-content .center .center-info li h4 {
+        .centers .tab-content .center .center-info li .title {
           color: #fff;
           margin: 0 0 8px;
           font-size: 23px;
@@ -1443,6 +1447,145 @@ select, textarea {
 #gmap {
   height: 500px;
   width: 500px; }
+
+/**---- Contact Us ----**/
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+  select:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline-offset: 0;
+    outline: 0; }
+
+.contact {
+  padding: 40px 0; }
+  .contact .quick-contact ul li {
+    margin: 0 0 20px; }
+    .contact .quick-contact ul li:first-child .text a {
+      display: inline-block; }
+    .contact .quick-contact ul li .icon {
+      margin-right: 10px; }
+      .contact .quick-contact ul li .icon span {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 500px;
+        font-size: 16px;
+        color: #fff;
+        background: #b4b4da; }
+    .contact .quick-contact ul li .text {
+      overflow: hidden; }
+      .contact .quick-contact ul li .text a, .contact .quick-contact ul li .text p {
+        font-family: "Melbourne";
+        color: #323e48; }
+      .contact .quick-contact ul li .text a {
+        display: block; }
+    .contact .quick-contact ul li.social-media .text a {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      border-radius: 500px;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      background: #b4b4da;
+      height: 27px;
+      width: 27px;
+      color: #fff;
+      margin: 10px 0 0; }
+  .contact .contact-form .gform_body .gform_fields .gfield {
+    border: 1px solid #DCDCDC;
+    border-radius: 6px;
+    margin-top: 10px;
+    padding-right: 0; }
+    .contact .contact-form .gform_body .gform_fields .gfield .ginput_container {
+      margin-top: 0; }
+      .contact .contact-form .gform_body .gform_fields .gfield .ginput_container input, .contact .contact-form .gform_body .gform_fields .gfield .ginput_container select {
+        margin: 0;
+        padding: 9px 15px;
+        border: 0 !important;
+        font-size: 11px !important;
+        font-weight: 400;
+        font-family: "TT Norms";
+        width: 100%;
+        border-radius: 8px;
+        height: 33px !important;
+        color: #846196 !important; }
+        .contact .contact-form .gform_body .gform_fields .gfield .ginput_container input::-webkit-input-placeholder, .contact .contact-form .gform_body .gform_fields .gfield .ginput_container select::-webkit-input-placeholder {
+          color: #846196 !important; }
+        .contact .contact-form .gform_body .gform_fields .gfield .ginput_container input:-ms-input-placeholder, .contact .contact-form .gform_body .gform_fields .gfield .ginput_container select:-ms-input-placeholder {
+          color: #846196 !important; }
+        .contact .contact-form .gform_body .gform_fields .gfield .ginput_container input::-ms-input-placeholder, .contact .contact-form .gform_body .gform_fields .gfield .ginput_container select::-ms-input-placeholder {
+          color: #846196 !important; }
+        .contact .contact-form .gform_body .gform_fields .gfield .ginput_container input::placeholder, .contact .contact-form .gform_body .gform_fields .gfield .ginput_container select::placeholder {
+          color: #846196 !important; }
+      .contact .contact-form .gform_body .gform_fields .gfield .ginput_container textarea {
+        border: 0;
+        font-size: 11px;
+        font-weight: 400;
+        font-family: "TT Norms";
+        border-radius: 8px;
+        color: #846196 !important; }
+        .contact .contact-form .gform_body .gform_fields .gfield .ginput_container textarea::-webkit-input-placeholder {
+          color: #846196 !important; }
+        .contact .contact-form .gform_body .gform_fields .gfield .ginput_container textarea:-ms-input-placeholder {
+          color: #846196 !important; }
+        .contact .contact-form .gform_body .gform_fields .gfield .ginput_container textarea::-ms-input-placeholder {
+          color: #846196 !important; }
+        .contact .contact-form .gform_body .gform_fields .gfield .ginput_container textarea::placeholder {
+          color: #846196 !important; }
+    .contact .contact-form .gform_body .gform_fields .gfield .ginput_container.ginput_container_select {
+      position: relative; }
+      .contact .contact-form .gform_body .gform_fields .gfield .ginput_container.ginput_container_select:after {
+        pointer-events: none;
+        position: absolute;
+        content: "\f107";
+        font-family: 'FontAwesome';
+        top: calc(50% - 13px);
+        right: 15px;
+        color: #846196;
+        font-size: 18px; }
+      .contact .contact-form .gform_body .gform_fields .gfield .ginput_container.ginput_container_select .gfield_radio {
+        margin: 0; }
+        .contact .contact-form .gform_body .gform_fields .gfield .ginput_container.ginput_container_select .gfield_radio input {
+          width: auto !important; }
+    .contact .contact-form .gform_body .gform_fields .gfield#field_2_11, .contact .contact-form .gform_body .gform_fields .gfield#field_2_12 {
+      border: 0;
+      font-size: 11px;
+      line-height: 11px;
+      color: #323e48;
+      letter-spacing: .45px; }
+      .contact .contact-form .gform_body .gform_fields .gfield#field_2_11 label, .contact .contact-form .gform_body .gform_fields .gfield#field_2_12 label {
+        display: inline-block; }
+  .contact .contact-form .gform_footer input[type=submit] {
+    width: 100% !important; }
+  .contact .breadcrumb {
+    margin: 0 0 30px; }
+
+/**---- Privacy ----**/
+.privacy {
+  padding: 50px 0; }
+  .privacy .breadcrumb {
+    margin: 0 0 30px; }
+  .privacy h1, .privacy h2, .privacy h3, .privacy h4, .privacy h5, .privacy h5 {
+    margin: 15px 0 25px;
+    color: #505b88; }
+  .privacy p {
+    color: #323e48;
+    margin: 0 0 15px; }
 
 /**---- Responsive CSS ----**/
 @media only screen and (max-width: 1199px) {
