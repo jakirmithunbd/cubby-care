@@ -222,7 +222,7 @@ textarea {
     }
 }
 
-// slick dots
+/*slick dots*/
 .slick-dots {
     bottom: 100%;
 
@@ -239,9 +239,10 @@ textarea {
             &:before {
                 opacity: 1;
                 content: "";
-                height: 10px;
                 width: 10px;
+                height: 10px;
                 border-radius: 500px;
+                transition: all .5s ease;
                 border: 2px solid #ACB5B3;
             }
         }
@@ -420,6 +421,71 @@ textarea {
     }
 }
 
+/**---- Search and Search Page ----**/
+.navbar-collapse {
+    position: relative;
+}
+.search {
+    float: right;
+    z-index: 999999;
+    position: relative;
+    transform: translateY(20px);
+
+    .search-box {
+        position: absolute;
+        width: 0;
+        right: 0;
+        top: 0;
+        transition: all .5s ease;
+
+        input {
+            padding: 0 !important;
+            border-radius: 5px;
+            border: 0;
+            height: 40px;
+        }
+
+        &.show-input {
+            width: 300px;
+            right: 60px;
+
+            input {
+                padding: 0 20px !important;
+            }
+        }
+
+        .close {
+            right: 0;
+            border-radius: 0;
+        }
+    }
+
+    .search-icon {
+        float: right;
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        background: red;
+        cursor: pointer;
+        border-radius: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            color: $white;
+        }
+
+        &.close {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
 /**---- Banner Area ----**/
 .banner, .slick-slider, .slick-list, .slick-track {
     height: 100%;
@@ -2192,5 +2258,132 @@ select {
         margin: 0 0 15px;
     }
 }
+/**---- Post Page ----**/
+.blog-page {
+    background: transparent;
+
+    .featured-post-area {
+        padding: 70px 0;
+        background: #E5E5E4 !important;
+
+        .featured-post {
+            background: $white;
+            margin-bottom: 0;
+            border-radius: 8px;
+
+            .post {
+                display: flex;
+                flex-wrap: wrap;
+                box-shadow: none;
+                align-items: center;
+                
+                &:hover, &:focus {
+                    transform: scale(1);
+                }
+
+                .post-meta {
+                    width: 40%;
+
+                    .title {       
+                        font-size: 32px;
+                        text-align: left;
+                        font-weight: 700;
+                        max-width: 370px;
+                        line-height: 30px;
+                    }
+                }
+
+                .post-img {
+                    width: 60%;
+
+                    .media {
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        border-bottom-left-radius: 8px;
+                    }
+                }
+            }
+
+            .slick-dots {
+                bottom: -15%;
+            }
+        }
+    }
+
+    .blog-list {
+         padding: 60px 0 30px;
+
+        .title {
+
+            h1 {
+                color: #7C5A90;
+                letter-spacing: -0.72px;
+                font-weight: 700;
+                margin: 0 0 40px;
+                text-transform: uppercase;
+            }
+        }
+
+        .post {
+            margin: 0 0 30px;
+        }
+    }
+
+    
+}
+
+.blog-single {
+    padding: 60px 0;
+
+    .breadcrumb {
+        margin: 0 0 30px;
+    }
+
+    .blog-info {
+
+        .post-title {
+            margin: 0 0 20px;
+            color: #323e48;
+            display: block;
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 38px;
+
+            ul {
+
+                li {
+                    color: #323e48;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 18px;
+                }
+            }
+        }
+    }
+}
+
+/**---- Related Post ----**/
+.related-post {
+    background: #E5E5E4;
+    padding: 60px 0;
+
+    .title {
+
+        h1 {
+            color: #7C5A90;
+            letter-spacing: -0.72px;
+            font-weight: 700;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+        }
+    }
+
+    .post {
+        padding: 20px 0;
+        margin: 0 15px;
+        box-shadow: none;
+    }
+}
+
 /**---- Responsive CSS ----**/
 @import "responsive";

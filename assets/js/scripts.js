@@ -62,6 +62,27 @@
             }
           ]
     });
+    window.onload = setGutterHeight;
+    window.onresize = setGutterHeight;
+
+    $('.featured-post').slick({
+        slidesToShow: 1,
+        infinite: true,
+        dots: true,
+        arrows: false,
+    });
+
+    $('#cubby-related-post').slick({
+        slidesToShow: 3,
+        infinite: true,
+        dots: false,
+        arrows: false,
+    });
+
+    // Custom class for search
+    $(".search-icon").on("click", function(){
+        $(".search-box").toggleClass('show-input');
+    });
 
     /* Portfolio masonary */
     // var m = new Masonry($('.masonry-container').get()[0], {

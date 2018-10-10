@@ -60,6 +60,19 @@
                 </div>
             
                 <div class="collapse navbar-collapse">
+                    <div class="search">
+                        <form action="" class="search-box">
+                            <input type="search" name="s" class="text form-control" value="<?php the_search_query(); ?>" placeholder="Search..." />
+
+                            <div class="search-icon">
+                                <span class="fa fa-search"></span>
+                            </div>
+                        </form>
+                        
+                        <div class="search-icon close">
+                            <span class="fa fa-close"></span>
+                        </div>
+                    </div>
                 <?php if (function_exists('wp_nav_menu')): ?>
                     <?php wp_nav_menu( 
                           array(
