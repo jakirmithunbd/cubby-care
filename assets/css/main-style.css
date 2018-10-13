@@ -1226,20 +1226,16 @@ button:hover, button:focus, button:active:focus {
       border-color: transparent; }
       .centers .nav.nav-tabs li a {
         padding: 0;
-        width: 140px;
-        height: 35px;
-        font-size: 17px;
-        font-weight: 700;
-        line-height: 20px;
+        width: 180px;
+        height: 48px;
         font-family: "Melbourne";
         text-align: center;
-        border-radius: 8px;
+        border-radius: 9px;
         border-color: #63c9d7;
         letter-spacing: 0.68px;
         -webkit-transition: all .5s ease;
         -o-transition: all .5s ease;
         transition: all .5s ease;
-        text-transform: uppercase;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
@@ -1249,7 +1245,12 @@ button:hover, button:focus, button:active:focus {
         color: #63c9d7;
         display: -webkit-box;
         display: -ms-flexbox;
-        display: flex; }
+        display: flex;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 28px;
+        text-transform: uppercase;
+        letter-spacing: 0.26px; }
         .centers .nav.nav-tabs li a span {
           margin-right: 8px; }
       .centers .nav.nav-tabs li.active a, .centers .nav.nav-tabs li:hover a, .centers .nav.nav-tabs li:focus a {

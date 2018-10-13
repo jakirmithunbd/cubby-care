@@ -1627,22 +1627,23 @@ button {
 
                 a {
                     padding: 0;
-                    width: 140px;
-                    height: 35px;
-                    font-size: 17px;
-                    font-weight: 700;
-                    line-height: 20px;
+                    width: 180px;
+                    height: 48px;
                     font-family: $mel;
                     text-align: center;
-                    border-radius: 8px;
+                    border-radius: 9px;
                     border-color: $primary;
                     @include letter-spacing(17, 40);
                     transition: all .5s ease;
-                    text-transform: uppercase;
                     justify-content: center;
                     align-items: center;
                     color: $primary;
                     display: flex;
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 28px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.26px;
 
                     span {
                         margin-right: 8px;
