@@ -14,7 +14,7 @@ Template Name: Home
         <div class="slick-slider" style="background: url(<?php echo $item['banner_image']; ?>);">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-6 col-sm-8 col-xs-12">
                         <div class="banner-info">
                         	<?php if ($item['title']): ?>
                             <h2><?php echo $item['title']; ?></h2>
@@ -51,7 +51,7 @@ Template Name: Home
 
                         <div class="service-info text-center">
                             <h4>Child Care Subsidy</h4>
-                            <p>Omnimolu ptatur? Ceserunt prem dolores assim nes veribus, comnim rerrum, cone de volupiciis et exceaquia dolupta temosam faccat delessed </p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
 
                             <a class="btn" href="#">Learn More</a>
                         </div>
@@ -65,7 +65,7 @@ Template Name: Home
 
                         <div class="service-info text-center">
                             <h4>Early Start Programs</h4>
-                            <p>Omnimolu ptatur? Ceserunt prem dolores assim nes veribus, comnim rerrum, cone de volupiciis et exceaquia dolupta temosam faccat delessed </p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
 
                             <a class="btn" href="#">Learn More</a>
                         </div>
@@ -79,7 +79,7 @@ Template Name: Home
 
                         <div class="service-info text-center">
                             <h4>Education and Care</h4>
-                            <p>Omnimolu ptatur? Ceserunt prem dolores assim nes veribus, comnim rerrum, cone de volupiciis et exceaquia dolupta temosam faccat delessed </p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
 
                             <a class="btn" href="#">Learn More</a>
                         </div>
@@ -98,7 +98,7 @@ Template Name: Home
     <section class="committed" style="background: url(<?php echo $bg; ?>);">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-7 col-sm-8">
                     <div class="content">
                     	<?php if ($title): ?>
                         <h1><?php echo $title; ?></h1>
@@ -127,7 +127,7 @@ Template Name: Home
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row latest-post-slider">
             	<?php 
             	$args = array(
 					'post_type' => 'post',
@@ -137,7 +137,6 @@ Template Name: Home
 
             	<?php $loop = new WP_Query($args); ?>
             	<?php if($loop->have_posts()) : while($loop->have_posts()) : $loop->the_post(); ?>
-                <div class="col-sm-4 col-xs-6 col">
                     <div class="post">
                         <a href="<?php the_permalink(); ?>">
                             <div class="media">
@@ -153,7 +152,6 @@ Template Name: Home
                             <a class="read-more" class="text-uppercase" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cubby') ?></a>
                         </div>
                     </div><!-- /  Post -->
-                </div><!-- /  Post col -->
                 <?php endwhile; endif; ?>
 
             </div>
@@ -192,11 +190,11 @@ Template Name: Home
             	?>
                 <div class="slick-slider-item">
                     <div class="testimonial-box" style="color: <?php echo $color; ?>;">
-                        <span class="fa fa-quote-left pull-left"></span>
+                        <span class="pull-left"><img src="<?php echo get_theme_file_uri( 'assets/images/svg/quote-left.svg' ); ?>" alt=""></span>
 
                         <?php if ($quote): ?>
                         <p><?php echo $quote; ?>
-                        <span class="fa fa-quote-right"></span></p>
+                        <span class="right-quote"><img src="<?php echo get_theme_file_uri( 'assets/images/svg/quote-right.svg' ); ?>" alt=""></span></p>
                         <?php endif; ?>
 
                     </div>
@@ -213,7 +211,7 @@ Template Name: Home
                     		<?php if ($name): ?>
                             <h5><?php echo $name; ?></h5>
                     		<?php endif; ?>
-                            <p><?php echo get_the_date(); ?></p>
+                            <p><?php echo get_the_date("F Y"); ?></p>
                         </div>
                     </div>
                 </div><!-- / slider item -->

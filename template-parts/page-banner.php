@@ -3,7 +3,7 @@
 <section class="page-banner" style="background: url(<?php echo $banner['image']; ?>);">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-7 col-sm-9 col-xs-12">
                 <div class="page-banner-info">
                 	<?php if ($banner['title']): ?>
                     <h2><?php echo $banner['title']; ?></h2>

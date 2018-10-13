@@ -42,7 +42,9 @@ $page_id = get_queried_object_id();
                     <div class="center row">
                         <div class="col-md-3 col-sm-3">
                             <div id="map">
-                                <img src="../assets/images/sm-map.png" class="img-responsive" alt="">
+                                <?php $google_map = get_field('google_map'); ?>
+
+                                <iframe src="http://maps.google.com/maps?q=<?php echo $google_map['lat']; ?>, <?php echo $google_map['lng']; ?>&z=15&output=embed" width="100%" height="123" frameborder="0" style="border:0" marginheight="0" marginwidth="0" allowfullscreen></iframe>
                             </div>
                         </div>
 

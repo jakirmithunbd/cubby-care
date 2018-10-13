@@ -5,33 +5,18 @@ Template Name: Who We Are
 */ 
 ?>   
 
-<?php $banner = get_field('about_banner_content'); ?>
-<section class="page-banner" style="background: url(<?php echo $banner['image']; ?>);">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="page-banner-info">
-                	<?php if ($banner['title']): ?>
-                    <h2><?php echo $banner['title']; ?></h2>
-                	<?php endif; ?>
-
-                	<?php if ($banner['description']): ?>
-                    	<?php echo $banner['description']; ?>
-                	<?php endif; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- / Banner -->
+<?php echo cubby_page_banner(); ?>
 
 <div class="about-us">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-4">
+            <div class="col-md-12">
+                <?php echo beacon_breadcrumb(); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
                 <div class="side-bar">
-
-                    <?php echo beacon_breadcrumb(); ?>
-
                     <ul class="nav nav-tabs">
                     	<?php
 						$tabs = [
@@ -53,7 +38,7 @@ Template Name: Who We Are
                 </div><!-- / Side bar -->
             </div><!-- / col -->
 
-            <div class="col-md-8 col-sm-8">
+            <div class="col-md-9 col-sm-9">
                 <div class="tab-content">
                     <div class="tab-pane mission fade in family active" id="item_0">
                         <?php $kindness = get_field('cubby_care_family'); ?>
@@ -144,6 +129,7 @@ Template Name: Who We Are
                             <?php echo $citem['description']; ?>
                         <?php endif; ?>
                         <?php endforeach; endif; ?>
+                    </div>
                     <div class="tab-pane fade people" id="item_2">
 
                         <?php
@@ -197,55 +183,56 @@ Template Name: Who We Are
 
                     </div><!-- / team pane -->
                     <div class="tab-pane mission fade family" id="item_3">
-                    <?php $cubby_careers = get_field('cubby_careers'); ?>
+                        <?php $cubby_careers = get_field('cubby_careers'); ?>
 
-                    <?php
-                    $top = $cubby_careers['top_text'];
-                    if ($top): ?>
-                    <div class="top-text">  
-                        <?php if ($top['title']): ?>
-                        <h2><?php echo $top['title']; ?></h2>
-                        <?php endif; ?>
-
-                        <?php if ($top['description']): ?>
-                            <?php echo $top['description']; ?>
-                        <?php endif; ?>
-                    </div>
-                    <?php endif; ?>
-
-                    <ul class="list-inline">
-                        <?php $items = $cubby_careers['images']; ?>
-                        <?php if ($items): 
-                            foreach ($items as $item):
-                        ?>
-                        <li>
-                            <?php if ($item['image']): ?>
-                            <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
+                        <?php
+                        $top = $cubby_careers['top_text'];
+                        if ($top): ?>
+                        <div class="top-text">  
+                            <?php if ($top['title']): ?>
+                            <h2><?php echo $top['title']; ?></h2>
                             <?php endif; ?>
-                        </li>
-                        <?php endforeach; endif ?>
 
-                    </ul>
-                    
-                    <?php $citems = $cubby_careers['commitment']; ?>
-                    <?php if ($citems) :
-                        foreach ( $citems as $citem):
-                    ?>
-                    
-                    <?php if ($citem['title']): ?>
-                    <h3><?php echo $citem['title']; ?></h3>
-                    <?php endif; ?>
+                            <?php if ($top['description']): ?>
+                                <?php echo $top['description']; ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
 
-                    <?php if ($citem['description']): ?>
-                        <?php echo $citem['description']; ?>
-                    <?php endif; ?>
-                    <?php endforeach; endif; ?>
-                </div>
-            </div><!-- / col -->
+                        <ul class="list-inline">
+                            <?php $items = $cubby_careers['images']; ?>
+                            <?php if ($items): 
+                                foreach ($items as $item):
+                            ?>
+                            <li>
+                                <?php if ($item['image']): ?>
+                                <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
+                                <?php endif; ?>
+                            </li>
+                            <?php endforeach; endif ?>
+
+                        </ul>
+                        
+                        <?php $citems = $cubby_careers['commitment']; ?>
+                        <?php if ($citems) :
+                            foreach ( $citems as $citem):
+                        ?>
+                        
+                        <?php if ($citem['title']): ?>
+                        <h3><?php echo $citem['title']; ?></h3>
+                        <?php endif; ?>
+
+                        <?php if ($citem['description']): ?>
+                            <?php echo $citem['description']; ?>
+                        <?php endif; ?>
+                        <?php endforeach; endif; ?>
+                    </div>
+                </div><!-- / col -->
+            </div>
         </div>
-    </div>
-</div><!-- / About Us -->
-</div>
+    </div><!-- / About Us -->
+
 
 <?php echo cubby_get_booking_room(); ?>
+
 <?php get_footer(); ?>

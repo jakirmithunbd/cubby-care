@@ -2,13 +2,12 @@
 (function($){
   "use strict";
 
- 
-
 	// Toggle menu
 	 $(".navbar-toggle").click(function() {
 	  	$(this).toggleClass('in');
 	});
 
+     // banner slider
 	 $('.banner').slick({
     	arrows: true,
     	infinite: true,
@@ -62,8 +61,29 @@
             }
           ]
     });
-    window.onload = setGutterHeight;
-    window.onresize = setGutterHeight;
+
+    $('.latest-post-slider').slick({
+        slidesToShow: 3,
+        infinite: true,
+        slidesToScroll: 1,
+        arrows: false,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                dots: true,
+                slidesToShow: 1
+              }
+            },
+            {
+              breakpoint: 575,
+              settings: {
+                dots: true,
+                slidesToShow: 1
+              }
+            }
+          ]
+    });
 
     $('.featured-post').slick({
         slidesToShow: 1,
@@ -79,10 +99,35 @@
         arrows: false,
     });
 
-    // Custom class for search
-    $(".search-icon").on("click", function(){
-        $(".search-box").toggleClass('show-input');
+    $('.header').on('click', '.search-toggle', function(e) {
+        e.preventDefault();
+        var selector = $(this).data('selector');
+        $(selector).toggleClass('show').find('.search-input').focus();
+        $(this).toggleClass('active');
     });
+
+    $('.openMenu').sidr({
+        name: 'sidr-main',
+        side: 'right',
+        source: '#sidr',
+        displace: false,
+        renaming: false,
+    });
+
+    // mobile search icon
+     $("#search-button-mobile").click(function(){
+        $("#search-box").toggle('slow');
+    });
+
+    // mobile search icon
+     $("#close").click(function(){
+        $("#search-box").toggle('slow');
+    });
+
+     // Gravity Form 
+     $(".gfield .ginput_container .gfield_radio").click(function(){
+        $(this).addClass("tik");
+     });
 
     /* Portfolio masonary */
     // var m = new Masonry($('.masonry-container').get()[0], {

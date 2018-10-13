@@ -23,8 +23,8 @@
                     <div class="col-md-12">
                         <ul class="list-inline text-right">
                             <li>
-                                <p>Call us <span>1300 day care</span></p>
-                                <a href="tel:1300 329 227"> ( 1300 329 227 )</a>
+                                <?php $phone = get_field('contacts', 'options'); ?>
+                                <p><?php _e('Call us', 'cubby'); ?> <span><?php _e( '1300 day care', 'cubby' ); ?></span> </p> (<a href="tel:<?php echo $phone['phone']; ?>"><?php echo $phone['phone']; ?></a>)
                             </li>
                             <li>
                                 <a href="#">ContacT Us</a>
@@ -46,10 +46,12 @@
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <button data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle collapsed">
-                    <span class="icon-bar"><span class="inner"></span></span>
-                    <span class="icon-bar"><span class="inner"></span></span>
-                    <span class="icon-bar"><span class="inner"></span></span></button>
+                    <a href="#sidr" class="openMenu navbar-toggle collapsed">
+                        <span class="icon-bar"><span class="inner"></span></span>
+                        <span class="icon-bar"><span class="inner"></span></span>
+                        <span class="icon-bar"><span class="inner"></span></span>
+                        <span class="icon-bar"><span class="inner"></span></span>
+                    </a>
 
                     <?php $logo = get_field('logo', 'options'); ?>
                     <?php if ($logo): ?>
@@ -58,21 +60,21 @@
                     </div>
                     <?php endif; ?>
                 </div>
-            
-                <div class="collapse navbar-collapse">
-                    <div class="search">
-                        <form action="" class="search-box">
-                            <input type="search" name="s" class="text form-control" value="<?php the_search_query(); ?>" placeholder="Search..." />
 
-                            <div class="search-icon">
-                                <span class="fa fa-search"></span>
-                            </div>
-                        </form>
-                        
-                        <div class="search-icon close">
-                            <span class="fa fa-close"></span>
-                        </div>
-                    </div>
+                <!-- search for mobile -->
+                <form id="search-box">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                        <button type="submit"><img src="../images/svg/search.svg" alt=""></button>
+                        </span>
+                        <input type="search" name="s" class="form-control" placeholder="Search" />
+                        <span class="input-group-btn">
+                        <a id="close" href="#"><img src="../images/svg/close.svg" alt=""></a>
+                        </span>
+                    </div><!-- /input-group -->
+                </form>
+            
+                <div id="sidr" class="collapse navbar-collapse">
                 <?php if (function_exists('wp_nav_menu')): ?>
                     <?php wp_nav_menu( 
                           array(
@@ -88,6 +90,16 @@
                         ); 
                     ?>
                 <?php endif; ?>
+
+                    <!-- Mobile Search -->
+                    <div class="search-button mobile-search">
+                        <a href="#" data-selector="#sidr" class="search-toggle"></a>
+                    </div>
+                    <form class="search-box">
+                        <input type="search" name="s" class="text search-input" placeholder="Search">
+
+                        <button type="submit"><span class="fa fa-search"></span></button>
+                    </form>
                 </div>
             </div>
         </nav>

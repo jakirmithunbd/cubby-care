@@ -4,7 +4,6 @@
 require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 require get_template_directory() . '/inc/custom-post-type.php';
 require get_template_directory() . '/inc/cubby-template-function.php';
-
 require get_template_directory() . '/inc/cubby-breadcrumb.php';
 require get_template_directory() . '/inc/cubby_related_post.php';
 
@@ -19,8 +18,11 @@ function cubby_setup_theme(){
 	//load text domain
 	load_theme_textdomain('cubby', get_template_directory() . '/language');
 
-	// Menu Register 
+	// add image size
+	add_image_size( $post_image, 410, 215, true);
 
+
+	// Menu Register 
 	if(function_exists('register_nav_menus')){
 		register_nav_menus(array(
 			'menu-1'	=>	__('Main Menu', 'cubby'),
@@ -37,7 +39,8 @@ function cubby_assets(){
 
 	//script ===
 	wp_enqueue_script('bootstrap', get_theme_file_uri('/assets/js/bootstrap.min.js'), array('jquery'), '0.0.1', true);
-	wp_enqueue_script('sidr', get_theme_file_uri('/assets/js/masonry.min.js'), array('jquery'), '0.0.2', true);
+	wp_enqueue_script('masonary', get_theme_file_uri('/assets/js/masonry.min.js'), array('jquery'), '0.0.2', true);
+	wp_enqueue_script('sidr', get_theme_file_uri('/assets/js/sidr.min.js'), array('jquery'), '0.0.2', true);
 	wp_enqueue_script('slick', get_theme_file_uri('/assets/js/slick.min.js'), array('jquery'), '0.0.3', true);
 
 	// $gmap_api = get_field('google_map_api_key', 'options');

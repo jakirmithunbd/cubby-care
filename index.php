@@ -17,19 +17,21 @@ get_header();
                     <?php $loop = new WP_Query($args); ?>
                     <?php if($loop->have_posts()) : while($loop->have_posts()) : $loop->the_post(); ?>
                     <div class="post">
-                        <a class="post-img" href="<?php the_permalink(); ?>">
-                            <div class="media">
-                                <?php if (has_post_thumbnail()): ?>
-                                <?php the_post_thumbnail(null, array('class' => 'img-responsive')); ?>
-                                <?php endif ?>
-                            </div>
-                        </a>
 
                         <div class="post-meta">
                             <a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             <?php the_excerpt(); ?>
                             <a class="read-more" class="text-uppercase" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cubby') ?></a>
                         </div>
+
+                        <a class="post-img" href="<?php the_permalink(); ?>">
+                            <div class="media">
+                                <?php if (has_post_thumbnail()): ?>
+                                <?php the_post_thumbnail("post_image", array('class' => 'img-responsive')); ?>
+                                <?php endif ?>
+                            </div>
+                        </a>
+                        
                     </div><!-- /  Post -->
                     <?php endwhile; endif; ?>
 
@@ -68,7 +70,7 @@ get_header();
                             <a href="<?php the_permalink(); ?>">
                                 <div class="media">
                                     <?php if (has_post_thumbnail()): ?>
-                                    <?php the_post_thumbnail(null, array('class' => 'img-responsive')); ?>
+                                    <?php the_post_thumbnail("post_image", array('class' => 'img-responsive')); ?>
                                     <?php endif ?>
                                 </div>
                             </a>
