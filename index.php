@@ -55,7 +55,7 @@ get_header();
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" id="ajaxPost">
                     <?php 
                     $args = array(
                         'post_type' => 'post',
@@ -84,6 +84,12 @@ get_header();
                     </div><!-- /  Post col -->
                     <?php endwhile; endif; ?>
 
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" id="load_more_posts">Load More</button>
+                    </div>
                 </div>
             </div>
         </div>

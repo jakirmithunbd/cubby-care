@@ -403,6 +403,41 @@
             }
         }
     }
+
+    .blog-page {
+
+        .featured-post-area {
+            padding: 45px 0 70px;
+
+            .featured-post {
+
+                .post {
+
+                    .post-meta {
+                        width: 50%;
+                        padding: 5px 20px;
+                        border-radius: 24px;
+
+                        .title {
+                            font-size: 36px;
+                            font-weight: 700;
+                            max-width: 100%;
+                            line-height: 40px;
+                            margin: 0 0 10px;
+                        }
+
+                        .read-more {
+                            margin: 10px 0 0;
+                        }
+                    }
+
+                    .post-img {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -470,6 +505,27 @@
     // Post
     .post {
         margin: 0 0 30px;
+    }
+
+    .blog-page {
+
+        .featured-post-area {
+
+            .featured-post {
+
+                .post {
+
+                    .post-meta {
+                        width: 100%;
+                        margin-right: auto;
+                    }
+
+                    .post-img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
     
     .footer {

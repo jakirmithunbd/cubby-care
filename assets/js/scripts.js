@@ -129,6 +129,39 @@
         $(this).addClass("tik");
      });
 
+    /* Ajax post load more */
+    var page = 1;
+    var data = {
+        action: 'load_posts',
+        page: page
+    }
+    function doPostLoadAjax(){
+        $.ajax({
+            url: ajax.admin_ajax,
+            type: 'POST',
+            dataType: 'html',
+            data: data,
+            beforeSend: function(resp){
+                // $('#ajaxPost').html('<img src="' + ajax.site_url + '/images/svg/preloader.gif">');
+                console.log('ajax Request');
+            },
+            success: function(resp){
+              if (resp) {
+                $('#ajaxPost').html(resp);
+              }
+              console.log('suxxesfgsjkdlf');
+            },
+            error: function( jqXHR, textStatus, errorThrown){
+                console.log( jqXHR, textStatus, errorThrown);
+            }
+        });
+    };
+
+    $('#load_more_posts').on('click', function(){
+        data.page++;
+        doPostLoadAjax(data);
+    });
+
     /* Portfolio masonary */
     // var m = new Masonry($('.masonry-container').get()[0], {
     //     itemSelector: ".item"
