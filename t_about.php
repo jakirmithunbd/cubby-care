@@ -231,7 +231,7 @@ Template Name: Who We Are
             </div>
         </div>
     </div><!-- / About Us -->
-
+</div>
 
 <?php echo cubby_get_booking_room(); ?>
 

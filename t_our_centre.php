@@ -40,15 +40,15 @@ $page_id = get_queried_object_id();
             	<?php $cloop = new WP_Query($args); ?>
             	<?php if($cloop->have_posts()) : while($cloop->have_posts()) : $cloop->the_post(); ?>
                     <div class="center row">
-                        <div class="col-md-3 col-sm-3">
+                        <div class="col-md-3 col-sm-3 no-padding">
                             <div id="map">
                                 <?php $google_map = get_field('google_map'); ?>
 
-                                <iframe src="http://maps.google.com/maps?q=<?php echo $google_map['lat']; ?>, <?php echo $google_map['lng']; ?>&z=15&output=embed" width="100%" height="123" frameborder="0" style="border:0" marginheight="0" marginwidth="0" allowfullscreen></iframe>
+                                <iframe src="http://maps.google.com/maps?q=<?php echo $google_map['lat']; ?>, <?php echo $google_map['lng']; ?>&z=15&output=embed" width="100%" height="236" frameborder="0" style="border:0" marginheight="0" marginwidth="0" allowfullscreen></iframe>
                             </div>
                         </div>
 
-                        <div class="col-md-9 col-sm-9">
+                        <div class="col-md-9 col-sm-9 no-padding-left">
                             <ul class="center-info">
                                 <li>
                                     <a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -56,7 +56,7 @@ $page_id = get_queried_object_id();
                                     <?php $address = get_field('centre_address'); ?>
 
                                     <?php if ($address['address']): ?>
-                                    <p><?php echo $address['address']; ?></p>
+                                    <address><?php echo $address['address']; ?></address>
                                     <?php endif; ?>
 
                                     <?php if ($address['phone']): ?>
@@ -69,27 +69,30 @@ $page_id = get_queried_object_id();
                                 </li>
 
                                 <li class="opening-hour">
+                                    <?php $open = get_field('opening_hours'); ?>
                                     <div class="permalink text-right">
                                         <a class="btn" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cubby'); ?></a>
-                                        <a class="btn" href="#"><?php _e('Enquire Now', 'cubby'); ?></a>
+                                        <?php $btn = $open['enquire_button']; ?>
+                                        <a class="btn" href="<?php echo $btn['url']; ?>"><?php echo $btn['text']; ?></a>
                                     </div>
                                     
-                                    <?php $open = get_field('opening_hours'); ?>
                                     <div class="opening">
                                         <h5><?php _e('Opening hours', 'cubby'); ?></h5>
 
                                         <div class="icon">
-                                        <?php $items = $open['social-media']; 
-                                        if ($items):
-                                            foreach ($items as $item):
+                                        <?php $social_media = $open['social_media']; 
+                                        if ($social_media):
+                                            foreach ($social_media as $item):
                                         ?>
-
-                                            <a href="<?php echo $item['url']; ?>"><span class="fa fa-<?php echo $item['icon']['value']; ?>"></span></a>
+                                            <a href="<?php echo $item['url']; ?>"><span class="fa fa-<?php echo $item['icon']; ?>"></span></a>
                                         <?php endforeach; endif; ?>
                                         </div>
-                                        <?php if ($opening_hour['opening_hour']): ?>
-                                        <p><?php echo $opening_hour['opening_hour']; ?></p>
+
+                                        
+                                        <?php if ($open['opening_hour']): ?>
+                                        <p><?php echo $open['opening_hour']; ?></p>
                                         <?php endif; ?>
+
                                     </div>
                                 </li>
                             </ul>

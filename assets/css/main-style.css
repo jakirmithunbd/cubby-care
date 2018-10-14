@@ -182,6 +182,15 @@ button:hover, button:focus, button:active:focus {
   outline: 0;
   outline-offset: 0; }
 
+.no-padding {
+  padding: 0; }
+
+.no-padding-right {
+  padding-right: 0; }
+
+.no-padding-left {
+  padding-left: 0; }
+
 .eq-height {
   display: -webkit-box;
   display: -moz-flexbox;
@@ -1199,7 +1208,7 @@ button:hover, button:focus, button:active:focus {
   background-size: cover !important;
   background-repeat: no-repeat !important; }
   .page-banner .page-banner-info {
-    max-width: 460px;
+    max-width: 455px;
     margin: 0 auto; }
     .page-banner .page-banner-info h2 {
       margin: 0 0 13px;
@@ -1259,7 +1268,7 @@ button:hover, button:focus, button:active:focus {
   .centers .tab-content .center {
     margin: 20px 0 0; }
     .centers .tab-content .center .center-info {
-      padding: 20px 30px;
+      padding: 53px 60px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -1276,7 +1285,7 @@ button:hover, button:focus, button:active:focus {
         .centers .tab-content .center .center-info li + li:before {
           position: absolute;
           content: "";
-          top: 0;
+          top: -15px;
           left: 0;
           width: 5px;
           background-image: -webkit-radial-gradient(circle closest-side, #fff calc(100% - 1px), transparent 100%);
@@ -1284,29 +1293,42 @@ button:hover, button:focus, button:active:focus {
           background-image: radial-gradient(circle closest-side, #fff calc(100% - 1px), transparent 100%);
           background-repeat: repeat-y;
           background-size: 3px 5px;
-          height: 100%; }
+          height: 160px; }
         .centers .tab-content .center .center-info li .title {
           color: #fff;
-          margin: 0 0 8px;
+          margin: 0 0 18px;
           font-size: 23px;
           font-weight: 700;
           line-height: 30px;
           font-family: "TT Norms";
-          letter-spacing: -0.23px; }
+          font-size: 28px;
+          line-height: 28px;
+          display: block;
+          -webkit-transition: all .5s ease;
+          -o-transition: all .5s ease;
+          transition: all .5s ease;
+          letter-spacing: 0.4px; }
+          .centers .tab-content .center .center-info li .title:hover, .centers .tab-content .center .center-info li .title:focus {
+            color: #846196; }
         .centers .tab-content .center .center-info li h5 {
           color: #fff;
-          margin: 0 0 5px;
+          margin: 0 0 3px;
           font-size: 18px;
           font-weight: 700;
-          line-height: 24px;
+          line-height: 36px;
           font-family: "TT Norms";
-          letter-spacing: -0.17px; }
+          letter-spacing: 0.26px; }
+        .centers .tab-content .center .center-info li address {
+          margin: 0 0 8px; }
         .centers .tab-content .center .center-info li a {
-          color: #fff; }
-        .centers .tab-content .center .center-info li p {
-          line-height: 17px; }
-          .centers .tab-content .center .center-info li p .phone {
-            font-weight: 700; }
+          color: #fff;
+          font-size: 16px;
+          line-height: 23px;
+          font-family: "TT Norms";
+          letter-spacing: 0.2px;
+          font-weight: 400; }
+        .centers .tab-content .center .center-info li .phone {
+          font-weight: 700 !important; }
         .centers .tab-content .center .center-info li.opening-hour {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -1323,48 +1345,56 @@ button:hover, button:focus, button:active:focus {
           .centers .tab-content .center .center-info li.opening-hour .permalink, .centers .tab-content .center .center-info li.opening-hour .open {
             width: 50%; }
           .centers .tab-content .center .center-info li.opening-hour .permalink a {
-            height: 25px;
-            font-size: 12px;
-            max-width: 100px;
+            height: 40px;
+            max-width: 146px;
             background: #fff;
             color: #63c9d7;
             font-weight: 700;
-            margin: 5px 0; }
+            margin: 12px 0;
+            margin-left: auto;
+            border-radius: 12px;
+            font-size: 18px;
+            line-height: 23px;
+            text-transform: uppercase;
+            letter-spacing: 1.03px; }
             .centers .tab-content .center .center-info li.opening-hour .permalink a:hover, .centers .tab-content .center .center-info li.opening-hour .permalink a:focus {
               background: #846196;
               color: #fff; }
-          .centers .tab-content .center .center-info li.opening-hour .opening .icon {
-            margin: 0 0 8px; }
-            .centers .tab-content .center .center-info li.opening-hour .opening .icon a {
-              width: 20px;
-              height: 20px;
-              margin-right: 10px;
-              color: #63c9d7;
-              background: #fff;
-              border-radius: 500px;
-              display: -webkit-inline-box;
-              display: -ms-inline-flexbox;
-              display: inline-flex;
-              -webkit-box-align: center;
-              -ms-flex-align: center;
-              align-items: center;
-              -webkit-transition: all .5s ease;
-              -o-transition: all .5s ease;
-              transition: all .5s ease;
-              -webkit-box-pack: center;
-              -ms-flex-pack: center;
-              justify-content: center; }
-              .centers .tab-content .center .center-info li.opening-hour .opening .icon a:hover, .centers .tab-content .center .center-info li.opening-hour .opening .icon a:focus {
-                background: #846196;
-                color: #fff; }
-              .centers .tab-content .center .center-info li.opening-hour .opening .icon a span {
-                font-size: 12px; }
+          .centers .tab-content .center .center-info li.opening-hour .opening {
+            width: 50%;
+            padding-left: 50px; }
+            .centers .tab-content .center .center-info li.opening-hour .opening .icon {
+              margin: 0 0 6px; }
+              .centers .tab-content .center .center-info li.opening-hour .opening .icon a {
+                width: 34px;
+                height: 34px;
+                margin-right: 9px;
+                color: #63c9d7;
+                background: #fff;
+                border-radius: 500px;
+                display: -webkit-inline-box;
+                display: -ms-inline-flexbox;
+                display: inline-flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-transition: all .5s ease;
+                -o-transition: all .5s ease;
+                transition: all .5s ease;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center; }
+                .centers .tab-content .center .center-info li.opening-hour .opening .icon a:hover, .centers .tab-content .center .center-info li.opening-hour .opening .icon a:focus {
+                  background: #846196;
+                  color: #fff; }
+                .centers .tab-content .center .center-info li.opening-hour .opening .icon a span {
+                  font-size: 16px; }
 
 /**---- Centre Single ----**/
 .centers-single {
-  padding: 40px 0; }
+  padding: 30px 0; }
   .centers-single .title {
-    margin: 10px 0 20px; }
+    margin: 50px 0 30px; }
     .centers-single .title ul {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1373,23 +1403,23 @@ button:hover, button:focus, button:active:focus {
       -ms-flex-align: center;
       align-items: center; }
       .centers-single .title ul li h5 {
-        font-weight: 700;
-        font-size: 26px;
-        line-height: 32px;
         color: #323e48;
-        letter-spacing: -0.26px; }
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 45px;
+        letter-spacing: 0.12px; }
       .centers-single .title ul li a {
-        font-size: 12px;
+        font-size: 16px;
         max-width: 100px;
-        background: #000000;
+        background-color: #323e48;
         color: #fff;
         font-weight: 700;
-        margin: 0 5px;
+        margin: 0 3px;
         display: -webkit-inline-box;
         display: -ms-inline-flexbox;
         display: inline-flex;
-        height: 25px;
-        width: 25px;
+        height: 34px;
+        width: 34px;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
@@ -1403,53 +1433,49 @@ button:hover, button:focus, button:active:focus {
         .centers-single .title ul li a:hover, .centers-single .title ul li a:focus {
           background: #846196;
           color: #fff; }
+      .centers-single .title ul li.social-media {
+        margin-left: 15px; }
   .centers-single .centre-wrap {
-    position: relative; }
+    position: relative;
+    margin: 0 0 85px; }
     .centers-single .centre-wrap:before {
       position: absolute;
       content: "";
       top: 0;
       left: 0;
       width: 100%;
-      background-image: -webkit-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-      background-image: -o-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-      background-image: radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-      background-repeat: repeat-x;
-      background-size: 4.5px 3px;
-      height: 5px; }
+      border: 1px dashed #323e48;
+      height: 0; }
     .centers-single .centre-wrap .centre-tabs {
       position: relative;
-      padding: 30px 15px; }
+      padding: 40px;
+      padding-bottom: 60px; }
       .centers-single .centre-wrap .centre-tabs:before {
         position: absolute;
         content: "";
         top: 5px;
-        left: -15px;
-        width: 5px;
-        background-image: -webkit-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-        background-image: -o-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-        background-image: radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-        background-repeat: repeat-y;
-        background-size: 3px 4.5px;
+        left: -8px;
+        width: 0;
+        border: 1px dashed #323e48;
         height: 100%; }
       .centers-single .centre-wrap .centre-tabs .nav.nav-tabs {
         border-color: transparent;
         margin: 0 0 35px; }
         .centers-single .centre-wrap .centre-tabs .nav.nav-tabs li a {
-          letter-spacing: 0.72px;
-          text-transform: uppercase;
           -webkit-transition: all .5s ease;
           -o-transition: all .5s ease;
           transition: all .5s ease;
           border-color: #846196;
-          border-radius: 8px;
+          border-radius: 9px;
           font-family: "Melbourne";
-          line-height: 18px;
-          margin-right: 7px;
+          margin-right: 8px;
+          padding: 9px 33px;
+          color: #846196;
+          font-size: 18px;
           font-weight: 700;
-          padding: 6px 15px;
-          font-size: 16px;
-          color: #846196; }
+          line-height: 28px;
+          text-transform: uppercase;
+          letter-spacing: 0.26px; }
         .centers-single .centre-wrap .centre-tabs .nav.nav-tabs li.active a, .centers-single .centre-wrap .centre-tabs .nav.nav-tabs li:hover a, .centers-single .centre-wrap .centre-tabs .nav.nav-tabs li:focus a {
           border-color: #846196;
           background: #846196;
@@ -1480,7 +1506,8 @@ button:hover, button:focus, button:active:focus {
           letter-spacing: 0px; }
         .centers-single .centre-wrap .centre-tabs .tab-content .overview .list-title ul {
           list-style: disc;
-          margin-left: 30px; }
+          margin-left: 30px;
+          margin-bottom: 20px; }
           .centers-single .centre-wrap .centre-tabs .tab-content .overview .list-title ul li {
             line-height: 18px;
             color: #323e48;
@@ -1508,7 +1535,7 @@ button:hover, button:focus, button:active:focus {
             .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial + .testimonial {
               margin-left: 36px; }
             .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box {
-              padding: 30px;
+              padding: 50px 30px;
               color: #fff;
               -webkit-transition: all .5s ease;
               -o-transition: all .5s ease;
@@ -1520,24 +1547,27 @@ button:hover, button:focus, button:active:focus {
                 content: "";
                 right: 20%;
                 z-index: -1;
-                width: 70px;
-                height: 70px;
-                bottom: -25px;
+                width: 158px;
+                height: 122px;
+                bottom: -70px;
                 position: absolute;
                 border-radius: 500px;
                 -webkit-transform: rotate(-115deg);
                 -ms-transform: rotate(-115deg);
-                transform: rotate(-115deg);
+                transform: rotate(-138deg);
                 -webkit-box-shadow: 0px 25px 0 0 currentColor;
-                box-shadow: 0px 25px 0 0 currentColor; }
+                box-shadow: 0px 40px 0 0 currentColor; }
               .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box span {
                 color: #fff;
-                font-size: 20px; }
+                font-size: 20px;
+                margin-right: 10px; }
               .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box p {
                 color: #fff;
-                font-size: 14px;
                 overflow: hidden;
-                line-height: 17px; }
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
+                letter-spacing: 0.2px; }
             .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info {
               margin: 35px 0 0;
               display: -webkit-box;
@@ -1545,55 +1575,88 @@ button:hover, button:focus, button:active:focus {
               display: flex;
               -webkit-box-align: center;
               -ms-flex-align: center;
-              align-items: center;
-              -webkit-box-pack: center;
-              -ms-flex-pack: center;
-              justify-content: center; }
+              align-items: center; }
               .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info h5 {
                 font-weight: 700;
                 color: #323e48;
                 font-size: 15.219pt;
                 line-height: 16.803pt; }
               .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info .parent-image {
-                width: 70px;
-                height: 70px;
+                width: 85px;
+                height: 85px;
                 overflow: hidden;
                 margin-right: 15px; }
                 .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info .parent-image img {
                   border-radius: 500px; }
+      .centers-single .centre-wrap .centre-tabs .tab-content .people .top-text {
+        margin: 0 0 30px; }
+        .centers-single .centre-wrap .centre-tabs .tab-content .people .top-text h3 {
+          color: #846196;
+          font-size: 36px;
+          font-weight: 700;
+          margin: 0 0 8px;
+          line-height: 37px;
+          letter-spacing: -0.72px; }
+        .centers-single .centre-wrap .centre-tabs .tab-content .people .top-text p {
+          color: #846196;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 27px;
+          letter-spacing: 0px; }
+      .centers-single .centre-wrap .centre-tabs .tab-content .contact-form {
+        background-color: #eef0f0;
+        border-radius: 24px;
+        padding: 45px; }
+        .centers-single .centre-wrap .centre-tabs .tab-content .contact-form h2 {
+          text-align: left;
+          margin: 0 0 20px;
+          color: #846196;
+          font-size: 40px;
+          font-weight: 700;
+          line-height: 45px;
+          letter-spacing: 0.12px; }
+        .centers-single .centre-wrap .centre-tabs .tab-content .contact-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container input, .centers-single .centre-wrap .centre-tabs .tab-content .contact-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container textarea, .centers-single .centre-wrap .centre-tabs .tab-content .contact-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container select {
+          border: 0; }
+        .centers-single .centre-wrap .centre-tabs .tab-content .contact-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container .gfield_radio li label:before {
+          border: 0; }
+        .centers-single .centre-wrap .centre-tabs .tab-content .contact-form .gform_wrapper .gform_footer input {
+          height: 55px; }
     .centers-single .centre-wrap .contre-sidebar {
-      padding: 22px 0 0; }
+      padding: 40px 0 0; }
       .centers-single .centre-wrap .contre-sidebar .address-details {
         position: relative;
-        padding: 15px 0 18px; }
+        padding: 15px 0 30px; }
         .centers-single .centre-wrap .contre-sidebar .address-details:before {
           position: absolute;
           content: "";
           bottom: 0;
           left: 0;
           width: 100%;
-          background-image: -webkit-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-          background-image: -o-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-          background-image: radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-          background-repeat: repeat-x;
-          background-size: 4.5px 3px;
-          height: 5px; }
+          border: 1px dashed #323e48;
+          height: 1px; }
         .centers-single .centre-wrap .contre-sidebar .address-details h3 {
-          font-size: 26px;
-          line-height: 48px;
-          font-weight: 700;
           color: #323e48;
-          letter-spacing: -0.26px; }
+          font-family: "TT Norms";
+          font-size: 28px;
+          font-weight: 700;
+          line-height: 34px;
+          margin: 14px 0 10px;
+          letter-spacing: 0.4px; }
         .centers-single .centre-wrap .contre-sidebar .address-details address {
           color: #323e48;
+          margin: 0;
+          font-family: "TT Norms";
+          font-size: 16px;
           font-weight: 400;
-          font-size: 14px;
-          line-height: 18px;
-          margin: 0; }
+          letter-spacing: 0.2px; }
         .centers-single .centre-wrap .contre-sidebar .address-details p {
           line-height: 18px;
           color: #323e48;
-          font-weight: 700; }
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 23px;
+          font-weight: 700;
+          letter-spacing: 0.2px; }
           .centers-single .centre-wrap .contre-sidebar .address-details p a {
             font-weight: 700;
             font-size: 14px;
@@ -1604,7 +1667,7 @@ button:hover, button:focus, button:active:focus {
             .centers-single .centre-wrap .contre-sidebar .address-details p:last-child a {
               font-weight: 400; }
       .centers-single .centre-wrap .contre-sidebar .opening-hour {
-        padding: 10px 0 20px;
+        padding: 20px 0 30px;
         position: relative; }
         .centers-single .centre-wrap .contre-sidebar .opening-hour:before {
           position: absolute;
@@ -1612,14 +1675,10 @@ button:hover, button:focus, button:active:focus {
           bottom: 0;
           left: 0;
           width: 100%;
-          background-image: -webkit-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-          background-image: -o-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-          background-image: radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-          background-repeat: repeat-x;
-          background-size: 4.5px 3px;
-          height: 5px; }
+          border: 1px dashed #323e48;
+          height: 1px; }
         .centers-single .centre-wrap .contre-sidebar .opening-hour h6 {
-          font-size: 17px;
+          font-size: 18px;
           line-height: 34px;
           color: #323e48;
           font-weight: 700;
@@ -1628,20 +1687,32 @@ button:hover, button:focus, button:active:focus {
           color: #323e48;
           line-height: 17px; }
       .centers-single .centre-wrap .contre-sidebar .btn {
-        background: #323e48;
-        font-size: 13px;
-        line-height: 15px;
-        height: 25px;
-        width: 100px;
-        margin: 12px 0 0; }
+        background: #63c9d7;
+        height: 46px;
+        width: 100%;
+        margin: 25px 0 0;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 23px;
+        letter-spacing: 1.03px; }
         .centers-single .centre-wrap .contre-sidebar .btn:hover, .centers-single .centre-wrap .contre-sidebar .btn:focus {
           background: #846196; }
 
-.latest-post.single-centre {
+.single-centre .latest-post {
   padding: 60px 0;
   background: #F27277; }
-  .latest-post.single-centre .title h2 {
-    color: #fff; }
+  .single-centre .latest-post .title {
+    margin: 0 0 15px; }
+    .single-centre .latest-post .title h2 {
+      color: #fff; }
+  .single-centre .latest-post:before {
+    top: -26px; }
+  .single-centre .latest-post .latest-post-slider .post {
+    padding-top: 30px;
+    padding-bottom: 30px; }
+    .single-centre .latest-post .latest-post-slider .post .post-meta {
+      -webkit-box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2); }
 
 #gmap {
   height: 500px;
@@ -2097,6 +2168,15 @@ select {
     margin: 0 15px;
     -webkit-box-shadow: none;
     box-shadow: none; }
+
+.single-centre .latest-post {
+  background: #f27177; }
+  .single-centre .latest-post:after {
+    background: -webkit-gradient(linear, left top, right top, from(#f27177), to(#f27177));
+    background: -webkit-linear-gradient(left, #f27177, #f27177);
+    background: -o-linear-gradient(left, #f27177, #f27177);
+    background: linear-gradient(to right, #f27177, #f27177);
+    top: -24px; }
 
 /**---- Responsive CSS ----**/
 @media only screen and (max-width: 1200px) {

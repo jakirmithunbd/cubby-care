@@ -234,6 +234,18 @@ button {
     }
 }
 
+.no-padding {
+    padding: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
 .eq-height {
     display: -webkit-box;
     display: -moz-flexbox;
@@ -1590,7 +1602,7 @@ button {
     background-repeat: no-repeat !important;
 
     .page-banner-info {
-        max-width: 460px;
+        max-width: 455px;
         margin: 0 auto;
         
         h2 {
@@ -1667,7 +1679,7 @@ button {
             margin: 20px 0 0;
 
             .center-info {
-                padding: 20px 30px;
+                padding: 53px 60px;
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
@@ -1681,7 +1693,7 @@ button {
                     &+li:before {
                         position: absolute;
                         content: "";
-                        top: 0;
+                        top:-15px;
                         left: 0;
                         width: 5px;
                         background-image: -webkit-radial-gradient(circle closest-side, #fff calc(100% - 1px), transparent 100%);
@@ -1689,45 +1701,52 @@ button {
                         background-image: radial-gradient(circle closest-side, #fff calc(100% - 1px), transparent 100%);
                         background-repeat: repeat-y;
                         background-size: 3px 5px;
-                        height: 100%;
+                        height: 160px;
                     }
 
                     .title {
                         color: $white;
-                        margin: 0 0 8px;
+                        margin: 0 0 18px;
                         font-size: 23px;
                         font-weight: 700;
                         line-height: 30px;
                         font-family: $nor;
-                        @include letter-spacing(23, -10);
-
+                        font-size: 28px;
+                        line-height: 28px;
+                        display: block;
+                        transition: all .5s ease;
+                        letter-spacing: 0.4px;
+                        
+                        &:hover, &:focus {
+                            color: $base;
+                        }
                     }
 
                     h5 {
                         color: $white;
-                        margin: 0 0 5px;
+                        margin: 0 0 3px;
                         font-size: 18px;
                         font-weight: 700;
-                        line-height: 24px;
+                        line-height: 36px;
                         font-family: $nor;
-                        @include letter-spacing(17, -10);
+                        letter-spacing: 0.26px;
+                    }
+
+                    address {
+                        margin: 0 0 8px;
                     }
 
                     a {
                         color: $white;
+                        font-size: 16px;
+                        line-height: 23px;
+                        font-family: $nor;
+                        letter-spacing: 0.2px;
+                        font-weight: 400;
                     }
 
-                    p {
-                        line-height: 17px;
-
-                        .phone {
-                            font-weight: 700;
-                        }
-
-                    }
-
-                    .permalink {
-                        
+                    .phone {
+                        font-weight: 700 !important;
                     }
 
                     &.opening-hour {
@@ -1743,13 +1762,18 @@ button {
                         .permalink {
 
                             a {
-                                height: 25px;
-                                font-size: 12px;
-                                max-width: 100px;
+                                height: 40px;
+                                max-width: 146px;
                                 background: $white;
                                 color: $primary;
                                 font-weight: 700;
-                                margin: 5px 0;
+                                margin: 12px 0;
+                                margin-left: auto;
+                                border-radius: 12px;
+                                font-size: 18px;
+                                line-height: 23px;
+                                text-transform: uppercase;
+                                letter-spacing: 1.03px;
 
                                 &:hover, &:focus {
                                     background: $base;
@@ -1759,14 +1783,16 @@ button {
                         }
 
                         .opening {
+                            width: 50%;
+                            padding-left: 50px;
 
                             .icon {
-                                margin: 0 0 8px;
+                                margin: 0 0 6px;
                                 
                                 a {
-                                    width: 20px;
-                                    height: 20px;
-                                    margin-right: 10px;
+                                    width: 34px;
+                                    height: 34px;
+                                    margin-right: 9px;
                                     color: $primary;
                                     background: $white;
                                     border-radius: 500px;
@@ -1781,7 +1807,7 @@ button {
                                     }
 
                                     span {
-                                        font-size: 12px;
+                                        font-size: 16px;
                                     }
                                 }
                             }
@@ -1795,10 +1821,10 @@ button {
 
 /**---- Centre Single ----**/
 .centers-single {
-    padding: 40px 0;
+    padding: 30px 0;
 
     .title {
-        margin: 10px 0 20px;
+        margin: 50px 0 30px;
 
         ul {
             display: flex;
@@ -1807,23 +1833,23 @@ button {
             li {
 
                 h5 {
-                    font-weight: 700;
-                    font-size: 26px;
-                    line-height: 32px;
                     color: #323e48;
-                    @include letter-spacing(26, -10);
+                    font-size: 40px;
+                    font-weight: 700;
+                    line-height: 45px;
+                    letter-spacing: 0.12px;
                 }
 
                 a {
-                    font-size: 12px;
+                    font-size: 16px;
                     max-width: 100px;
-                    background: #000000;
+                    background-color: #323e48;;
                     color: #fff;
                     font-weight: 700;
-                    margin: 0 5px;
+                    margin: 0 3px;
                     display: inline-flex;
-                    height: 25px;
-                    width: 25px;
+                    height: 34px;
+                    width: 34px;
                     align-items: center;
                     justify-content: center;
                     border-radius: 500px;
@@ -1834,12 +1860,17 @@ button {
                         color: $white;
                     }
                 }
+
+                &.social-media {
+                    margin-left: 15px;
+                }
             }
         }
     }
     
     .centre-wrap {
         position: relative;
+        margin: 0 0 85px;
 
         &:before {
             position: absolute;
@@ -1847,29 +1878,22 @@ button {
             top: 0;
             left: 0;
             width: 100%;
-            background-image: -webkit-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-            background-image: -o-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-            background-image: radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-            background-repeat: repeat-x;
-            background-size: 4.5px 3px;
-            height: 5px;
+            border: 1px dashed #323e48;
+            height: 0;
         }
 
         .centre-tabs {
             position: relative;
-            padding: 30px 15px;
+            padding: 40px;
+            padding-bottom: 60px;
 
             &:before {
                 position: absolute;
                 content: "";
                 top: 5px;
-                left: -15px;
-                width: 5px;
-                background-image: -webkit-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-                background-image: -o-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-                background-image: radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-                background-repeat: repeat-y;
-                background-size: 3px 4.5px;
+                left: -8px;
+                width: 0;
+                border: 1px dashed #323e48;
                 height: 100%;
             }
 
@@ -1882,18 +1906,18 @@ button {
                     li {
 
                         a {
-                            @include letter-spacing(18, 40);
-                            text-transform: uppercase;
                             transition: all .5s ease;
                             border-color: $base;
-                            border-radius: 8px;
+                            border-radius: 9px;
                             font-family: $mel;
-                            line-height: 18px;
-                            margin-right: 7px;
-                            font-weight: 700;
-                            padding: 6px 15px;
-                            font-size: 16px;
+                            margin-right: 8px;
+                            padding: 9px 33px;
                             color: $base;
+                            font-size: 18px;
+                            font-weight: 700;
+                            line-height: 28px;
+                            text-transform: uppercase;
+                            letter-spacing: 0.26px;
                         }
 
                         &.active, &:hover, &:focus {
@@ -1948,6 +1972,7 @@ button {
                         ul {
                             list-style: disc;
                             margin-left: 30px;
+                            margin-bottom: 20px;
 
                             li {
                                 line-height: 18px;
@@ -1993,7 +2018,7 @@ button {
                                 }
 
                                 .testimonial-box {  
-                                    padding: 30px; 
+                                    padding: 50px 30px;
                                     color: $white;
                                     transition: all .5s ease;
                                     position: relative;
@@ -2004,25 +2029,31 @@ button {
                                         content: "";
                                         right: 20%;
                                         z-index: -1;
-                                        width: 70px;
-                                        height: 70px;
-                                        bottom: -25px;
+                                        width: 158px;
+                                        height: 122px;
+                                        bottom: -70px;
                                         position: absolute;
                                         border-radius: 500px;
-                                        transform: rotate(-115deg);
-                                        box-shadow: 0px 25px 0 0 currentColor;
+                                        -webkit-transform: rotate(-115deg);
+                                        -ms-transform: rotate(-115deg);
+                                        transform: rotate(-138deg);
+                                        -webkit-box-shadow: 0px 25px 0 0 currentColor;
+                                        box-shadow: 0px 40px 0 0 currentColor;
                                     }
 
                                     span {
                                         color: $white;
                                         font-size: 20px;
+                                        margin-right: 10px;
                                     }
 
                                     p {
                                         color: $white;
-                                        font-size: 14px;
                                         overflow: hidden;
-                                        line-height: 17px;
+                                        font-size: 16px;
+                                        font-weight: 400;
+                                        line-height: 22px;
+                                        letter-spacing: 0.2px;
                                     }
                                 }
 
@@ -2030,7 +2061,6 @@ button {
                                     margin: 35px 0 0;
                                     display: flex;
                                     align-items: center;
-                                    justify-content: center;
 
                                     h5 {
                                         font-weight: 700;
@@ -2040,8 +2070,8 @@ button {
                                     }
 
                                     .parent-image {
-                                        width: 70px;
-                                        height: 70px;
+                                        width: 85px;
+                                        height: 85px;
                                         overflow: hidden;
                                         margin-right: 15px;
 
@@ -2054,15 +2084,94 @@ button {
                         }
                     }
                 }
+
+                .people {
+
+                    .top-text {
+                        margin: 0 0 30px;
+
+                        h3 {
+                            color: $base;
+                            font-size: 36px;
+                            font-weight: 700;
+                            margin: 0 0 8px;
+                            line-height: 37px;
+                            @include letter-spacing(36, -20);
+                        }
+
+                        p {
+                            color: $base;
+                            font-size: 20px;
+                            font-weight: 400;
+                            line-height: 27px;
+                            @include letter-spacing(36, 0);
+                        }
+                    }
+                }
+
+                .contact-form {
+                    background-color: #eef0f0;
+                    border-radius: 24px;
+                    padding: 45px;
+
+                    h2 {
+                        text-align: left;
+                        margin: 0 0 20px;
+                        color: #846196;
+                        font-size: 40px;
+                        font-weight: 700;
+                        line-height: 45px;
+                        letter-spacing: 0.12px;
+                    }
+
+                    .gform_wrapper {
+
+                        .gform_body {
+
+                            .gform_fields {
+
+                                .gfield {
+
+                                    .ginput_container {
+
+                                        input, textarea, select {
+                                            border: 0;
+                                        }
+
+                                        .gfield_radio {
+
+                                            li {
+
+                                                label {
+
+                                                    &:before {
+                                                        border: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .gform_footer {
+
+                            input {
+                                height: 55px;
+                            }
+                        }
+                    }
+                }
             }
         }
 
         .contre-sidebar {
-            padding: 22px 0 0;
+            padding: 40px 0 0;
 
             .address-details {
                 position: relative;
-                padding: 15px 0 18px;
+                padding: 15px 0 30px;
 
                 &:before {
                     position: absolute;
@@ -2070,34 +2179,37 @@ button {
                     bottom: 0;
                     left: 0;
                     width: 100%;
-                    background-image: -webkit-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-                    background-image: -o-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-                    background-image: radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-                    background-repeat: repeat-x;
-                    background-size: 4.5px 3px;
-                    height: 5px;
+                    border: 1px dashed #323e48;
+                    height: 1px;
                 }
 
                 h3 {
-                    font-size: 26px;
-                    line-height: 48px;
-                    font-weight: 700;
                     color: #323e48;
-                    @include letter-spacing(26, -10);
+                    font-family: $nor;
+                    font-size: 28px;
+                    font-weight: 700;
+                    line-height: 34px;
+                    margin: 14px 0 10px;
+                    letter-spacing: 0.4px;
                 }
 
                 address {
                     color: #323e48;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 18px;
                     margin: 0;
+                    font-family: $nor;
+                    font-size: 16px;
+                    font-weight: 400;
+                    letter-spacing: 0.2px;
                 }
 
                 p {
                     line-height: 18px;
                     color: #323e48;
                     font-weight: 700;
+                    font-size: 16px;
+                    line-height: 23px;
+                    font-weight: 700;
+                    letter-spacing: 0.2px;
 
                     a {
                         font-weight: 700;
@@ -2117,7 +2229,7 @@ button {
             }
 
             .opening-hour {
-                padding: 10px 0 20px;
+                padding: 20px 0 30px;
                 position: relative;
 
                 &:before {
@@ -2126,16 +2238,12 @@ button {
                     bottom: 0;
                     left: 0;
                     width: 100%;
-                    background-image: -webkit-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-                    background-image: -o-radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-                    background-image: radial-gradient(circle closest-side, #323E49 calc(100% - 1px), transparent 100%);
-                    background-repeat: repeat-x;
-                    background-size: 4.5px 3px;
-                    height: 5px;
+                    border: 1px dashed #323e48;
+                    height: 1px;
                 }
 
                 h6 {
-                    font-size: 17px;
+                    font-size: 18px;
                     line-height: 34px;
                     color: #323e48;
                     font-weight: 700;
@@ -2149,12 +2257,14 @@ button {
             }
 
             .btn {
-                background: #323e48;
-                font-size: 13px;
-                line-height: 15px;
-                height: 25px;
-                width: 100px;
-                margin: 12px 0 0;
+                background: $primary;
+                height: 46px;
+                width: 100%;
+                margin: 25px 0 0;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 23px;
+                letter-spacing: 1.03px;
 
                 &:hover, &:focus {
                     background: $base;
@@ -2164,16 +2274,33 @@ button {
     }
 }
 
-.latest-post {
+.single-centre {
 
-    &.single-centre {
+    .latest-post{
         padding: 60px 0;
         background: #F27277;
 
         .title {
+            margin: 0 0 15px;
 
             h2 {
                 color: $white;
+            }
+        }
+
+        &:before {
+            top: -26px;
+        }
+
+        .latest-post-slider {
+
+            .post {
+                padding-top: 30px;
+                padding-bottom: 30px;
+
+                .post-meta {
+                    box-shadow: 1px 1px 10px 0px rgba(0,0,0,.2);
+                }
             }
         }
     }
@@ -2831,6 +2958,20 @@ select {
         padding: 20px 0;
         margin: 0 15px;
         box-shadow: none;
+    }
+}
+
+// Works by Template name
+
+.single-centre {
+
+    .latest-post {
+        background: #f27177;
+
+        &:after {
+            background: linear-gradient(to right, #f27177, #f27177);
+            top: -24px;
+        }
     }
 }
 
