@@ -1,11 +1,12 @@
 <?php  
-//show_admin_bar(false);
+show_admin_bar(false);
 
 require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 require get_template_directory() . '/inc/custom-post-type.php';
 require get_template_directory() . '/inc/cubby-template-function.php';
 require get_template_directory() . '/inc/cubby-breadcrumb.php';
 require get_template_directory() . '/inc/cubby_related_post.php';
+require get_template_directory() . '/inc/cubby_ajax.php';
 
 function cubby_setup_theme(){
 	add_theme_support('title-tag');

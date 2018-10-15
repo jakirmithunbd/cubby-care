@@ -16,13 +16,22 @@
 
 	/*** Sticky header */
 	$(window).scroll(function() {
-		if ($(window).scrollTop() > 30) {
-			$(".header").addClass("sticky");
-		} 
-		else {
-			$(".header").removeClass("sticky");
-		}
-	});
+
+        if ($(window).scrollTop() > 0) {
+          $(".header").addClass("sticky");
+        } 
+        else {
+          $(".header").removeClass("sticky");
+        }
+
+        if ($(window).scrollTop() > 0) {
+          $("#sidr-main").addClass("sidr-sticky");
+        } 
+        else {
+          $("#sidr-main").removeClass("sidr-sticky");
+        }
+    });
+
 
     /*** Header height = gutter height */
     function setGutterHeight(){
@@ -162,17 +171,7 @@
         doPostLoadAjax(data);
     });
 
-    // airtasker like sticky tab
-    var tab = $('#sticky_tab');
-    if(tab.length > 0){
-        var tabLocationTop = tab.offset().top - $(window).scrollTop();
-        if(tabLocationTop <= 126 ){
-          tab.find('.nav-tabs').addClass('sticky');
-        } else {
-          tab.find('.nav-tabs').removeClass('sticky');
-        }
-      };
-      console.log(tabLocationTop);
+   
 
     // sticky menu select style
     $('#sticky_tab_select').change(function() {
@@ -185,6 +184,42 @@
     $('.masonry-container').masonry({
         itemSelector: '.item',
         columnWidth: 200
+    });
+
+
+    /*** Ajax search load more */
+    var page = 1;
+    $('#search_load_more').on('click', function(e){
+      e.preventDefault();
+      var keywords = $(this).attr('data-keyword');
+      page++;
+      $.ajax({
+            url: ajax.admin_ajax,
+            dataType: 'html',
+            type: 'POST',
+            data: {
+                action: 'load_search',
+                page: page,
+                keywords: keywords,
+            },
+            beforeSend: function(){
+                $('#search_load_more').addClass('loading').text('Loading...');
+            },
+            success: function(resp){
+              if (resp) {
+                $('#search-result').append(resp);
+                $('#search_load_more').removeClass('loading').text('Load More');
+                var hasNoResult = $(resp).hasClass('notResult');
+                if(hasNoResult) {
+                    $('#search_load_more').hide();
+                }
+              }
+
+            },
+            error: function( jqXHR, textStatus, errorThrown){
+                console.log( jqXHR, textStatus, errorThrown);
+            }
+        });
     });
 
 

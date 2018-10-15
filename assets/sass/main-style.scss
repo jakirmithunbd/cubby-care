@@ -224,6 +224,12 @@ textarea {
         color: $white;
         outline-offset: 0;
     }
+
+    &.btn-load-more {
+        width: 146px;
+        height: 44px;
+        margin: 0 auto;
+    }
 }
 
 button {
@@ -367,7 +373,7 @@ button {
 
     .top-bar {
         color: $white;
-        padding: 12px 0;
+        padding: 10px 0;
         background: #323e48;
 
         ul {
@@ -539,13 +545,13 @@ button {
     height: 100%;
     z-index: 999;
     width: 100%;
-    padding: 130px 0 0;
+    padding: 110px 0 0;
     max-width: 500px;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: rgba(255,255,255,.95);
     opacity: 0.98;
-    transition: all .5s ease;
+    transition: all .5s ease !important;
 
     &.right {
         left: auto;
@@ -558,7 +564,7 @@ button {
     }
 
     &.sidr-sticky {
-        padding: 25px 0 0;
+        padding: 90px 0 0;
     }
 }
 .search-toggle {
@@ -664,10 +670,6 @@ button {
     position: relative;
 }
 .search {
-    float: right;
-    z-index: 999999;
-    position: relative;
-    transform: translateY(20px);
 
     .search-box {
         position: absolute;
@@ -724,6 +726,99 @@ button {
         }
     }
 }
+
+.search-page {
+
+    .page-title {
+
+        h1 {
+            color: #63c9d7;
+            font-size: 50px;
+            font-weight: 700;
+            margin: 0 0 24px;
+            line-height: 52px;
+            letter-spacing: 0.62px;
+        }
+
+        .search-area {
+
+            .search-input {
+                max-width: 435px;
+                height: 55px;
+                position: relative;
+                
+                input {
+                    border: 0;
+                    height: 55px;
+                    padding-left: 25px;
+                    border-radius: 9px;
+                    background-color: #ffffff;
+                    color: #846196;
+                    font-family: $nor;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 22.65px;
+                    letter-spacing: 0.18px;
+                }
+
+                button {
+                    top: 0;
+                    right: 0;
+                    border: 0;
+                    width: 58px;
+                    height: 55px;
+                    color: $white;
+                    font-size: 20px;
+                    position: absolute;
+                    background-color: #39696f;
+                    border-top-right-radius: 9px;
+                    border-bottom-right-radius: 9px;
+                }
+            }
+        }
+    }    
+}
+
+.search-results {
+    margin: 0 0 75px;
+
+    .breadcrumb {
+        margin: 25px 0 35px;
+    }
+
+    .search-number {
+        border-bottom: 2px dashed #63c9d7;
+        padding: 0 0 44px;
+
+        h1 {
+            color: #63c9d7;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 45px;
+            letter-spacing: 0.12px;
+        }
+    }
+
+    .result-item {
+        border-bottom: 2px dashed #63c9d7;
+        padding: 45px 0;
+
+        a {
+            color: #63c9d7;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 7px;
+            letter-spacing: 0.24px;
+        }
+    }
+
+    .btn {
+        margin: 60px auto 0;
+        height: 44px;
+        width: 146px;
+    }
+}
+
 
 /**---- Banner Area ----**/
 .banner, .slick-slider, .slick-list, .slick-track {
@@ -790,7 +885,7 @@ button {
     padding: 0 0 60px;
 
     .service {
-        box-shadow: 4px 3px 15px 3px rgba(0, 0, 0, 0.3);
+        box-shadow: 4px 3px 15px 3px rgba(0, 0, 0, 0.2);
         border-radius: 24px;
         overflow: hidden;
         margin-top: -80px;
@@ -876,12 +971,12 @@ button {
 /**---- Latest Post ----**/
 .latest-post {
     background: #E5E5E4;
-    padding: 70px 0;
+    padding: 70px 0 50px;
     position: relative;
 
      &:after {
         content: '';
-        height: 7%;
+        height: 6%;
         width: 100%;
         border-radius: 50%;
         background: linear-gradient(to right,#E5E5E4,#E5E5E4);
@@ -893,7 +988,7 @@ button {
 
     .title {
         text-align: center;
-        margin: 0 0 55px;
+        margin: 0 0 25px;
 
         h2 {
             font-size: 40px;
@@ -907,7 +1002,7 @@ button {
     .latest-post-slider {
 
         .post {
-            padding: 10px 15px;
+            padding: 40px 15px;
             box-shadow: none;
         }
     }
@@ -961,7 +1056,7 @@ button {
 }
 /**---- Testimonials ----**/
 .testimonials {
-    padding: 80px 0 0;
+    padding: 100px 0 0;
 
     .title {
         text-align: center;
@@ -979,7 +1074,7 @@ button {
     .testimonials-slider {
 
         .slick-slider-item {
-            margin: 0px 30px;
+            margin: 0px 35px;
             padding: 75px 0;
             transition: all .5s ease;
 
@@ -1111,9 +1206,10 @@ button {
                         .gfield {
 
                             .ginput_container {
+                                margin-top: 6px;
 
                                 input {
-                                    background: rgba(183, 223, 229, .7) !important;
+                                    background: rgba(183, 223, 229, .51) !important;
                                     height: 50px !important;
                                     border-radius: 9px;
                                     font-size: 14px !important;
@@ -1397,10 +1493,8 @@ button {
             content: "";
             top: 0;
             left: 0;
-            width: 10px;
-            background-image: radial-gradient(circle closest-side, $primary calc(100% - 1px), transparent 100%);
-            background-repeat: repeat-y;
-            background-size: 4px 6px;
+            width: 2px;
+            border: 1px dashed #63c9d7;
             height: 100%;
         }
 
@@ -2668,6 +2762,115 @@ select {
         margin: 0 0 15px;
     }
 }
+
+/**---- Info For You ----**/
+.info-page {
+
+    .tab-content {
+
+        .subsidy {
+
+            .top-text {
+                margin: 0 0 50px;
+
+                h2 {
+                    color: #846196;
+                    font-family: $nor;
+                    font-size: 40px;
+                    font-weight: 700;
+                    line-height: 45px;
+                    letter-spacing: 0.12px;
+                    margin: 0 0 23px;
+                }
+
+                p {
+                    color: #846196;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 25px;
+                    letter-spacing: 0.26px;
+                }
+            }
+
+            .subsidy-content {
+
+                h3 {
+                    color: #846196;
+                    font-size: 28px;
+                    font-weight: 700;
+                    line-height: 68px;
+                    letter-spacing: 0.4px;
+                }
+
+                ul {
+                    margin: 45px 0;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    li {
+                        width: 50%;
+                        padding-right: 12px;
+
+                        img {
+                            max-width: 100%;
+                            width: 100%;
+                            border-radius: 24px;
+                            height: auto;
+                        }
+
+                        &+li {
+                            padding-left: 12px;
+                            padding-right: 0;
+                        }
+                    }
+                }
+
+                p {
+                    margin: 0 0 22px;
+                }
+            }
+
+            &.sheets {
+
+                .top-text {
+                    padding: 0 0 50px;
+                    border-bottom: 2px dashed #323e48;
+                }
+                
+                .sheet {
+                    border-bottom: 2px dashed #323e48;
+                    padding: 0 0 50px;
+                    margin: 50px 0 0;
+
+
+                    h3 {
+                        color: #846196;
+                        margin: 0 0 10px;
+                        font-size: 24px;
+                        font-weight: 700;
+                        letter-spacing: 0.24px;
+                    }
+
+                    .btn {
+                        float: right;
+                        width: 198px;
+                        height: 46px;
+                        background: $base;
+                        margin-left: 15px;
+
+                        span {
+                            margin-right: 5px;
+                        }
+                    }
+
+                    p {
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+}
 /**---- Post Page ----**/
 .blog-page {
     background: transparent;
@@ -2975,5 +3178,13 @@ select {
     }
 }
 
+.notResult {
+
+    h4 {
+        color: $primary;
+        font-size: 32px;
+        font-weight: 700;
+    }
+}
 /**---- Responsive CSS ----**/
 @import "responsive";

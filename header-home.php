@@ -26,9 +26,14 @@
                                 <?php $phone = get_field('contacts', 'options'); ?>
                                 <p><?php _e('Call us', 'cubby'); ?> <span><?php _e( '1300 day care', 'cubby' ); ?></span> </p> (<a href="tel:<?php echo $phone['phone']; ?>"><?php echo $phone['phone']; ?></a>)
                             </li>
+
+                            <?php $contact_us = get_field('contacts', 'options'); ?>
+                            <?php if ($contact_us['contact_us']): ?>
                             <li>
-                                <a href="#">ContacT Us</a>
+                                <a href="<?php echo $contact_us['contact_us']; ?>"><?php _e('Contact Us', 'cubby'); ?></a>
                             </li>
+                            <?php endif; ?>
+
                             <?php $social = get_field('social_media' ,'options'); ?>
                             <?php if ($social): 
                             foreach ($social as $icons):
@@ -43,9 +48,24 @@
                 </div>
             </div>
         </div><!-- / topbar -->
+
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
+
+                    <ul class="social list-inline hidden">
+                        <li>
+                            <span id="search-button-mobile"><img src="<?php echo get_theme_file_uri('/assets/images/svg/search.svg'); ?>" alt=""></span>
+                        </li>
+
+                        <li>
+                            <?php $phone = get_field('contacts', 'options'); ?>
+                            <a href="tel:<?php echo $phone['phone']; ?>">
+                                <img src="<?php echo get_theme_file_uri('/assets/images/svg/call.svg'); ?>" class="img-responsive" alt="">
+                            </a>
+                        </li>
+                    </ul>
+
                     <a href="#sidr" class="openMenu navbar-toggle collapsed">
                         <span class="icon-bar"><span class="inner"></span></span>
                         <span class="icon-bar"><span class="inner"></span></span>
@@ -62,19 +82,28 @@
                 </div>
 
                 <!-- search for mobile -->
+                <!-- search for mobile -->
                 <form id="search-box">
                     <div class="input-group">
                         <span class="input-group-btn">
-                        <button type="submit"><img src="../images/svg/search.svg" alt=""></button>
+                        <button type="submit"><img src="<?php echo get_theme_file_uri('/images/svg/close.svg'); ?>" class="img-responsive" alt=""></button>
                         </span>
                         <input type="search" name="s" class="form-control" placeholder="Search" />
                         <span class="input-group-btn">
-                        <a id="close" href="#"><img src="../images/svg/close.svg" alt=""></a>
+                        <a id="close" href="#"><img src="<?php echo get_theme_file_uri('/images/svg/close.svg'); ?>" class="img-responsive" alt=""></a>
                         </span>
                     </div><!-- /input-group -->
                 </form>
             
                 <div id="sidr" class="collapse navbar-collapse">
+                <div class="top-bar hidden">
+                    <ul class="list-inline">
+                        <li>
+                            <?php $phone = get_field('contacts', 'options'); ?>
+                            <p><span><?php _e('Call us', 'cubby'); ?> </span><?php _e( '1300 day care', 'cubby' ); ?></p> (<a href="tel:<?php echo $phone['phone']; ?>"><?php echo $phone['phone']; ?></a>)
+                        </li>
+                    </ul>
+                </div>
                 <?php if (function_exists('wp_nav_menu')): ?>
                     <?php wp_nav_menu( 
                           array(

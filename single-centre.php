@@ -2,7 +2,7 @@
 
 <?php echo cubby_page_banner(); ?>
 
-<div class="centers-single" id="sticky_tab">
+<div class="centers-single">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

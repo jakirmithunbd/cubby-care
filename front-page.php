@@ -43,48 +43,36 @@ Template Name: Home
     <section class="services">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-6 col">
+                <?php $services = get_field('service'); 
+                if($services):
+                    foreach ($services as $service):
+                ?>
+                <div class="col-md-4 col-sm-6 col-xs-6 col">
                     <div class="service">
+                        <?php if ($service['image']): ?>
                         <div class="media">
-                            <img src="<?php echo get_theme_file_uri('assets/images/service-1.jpg'); ?>" class="img-responsive" alt="">
+                            <img src="<?php echo $service['image'] ?>" class="img-responsive" alt="">
                         </div>
+                        <?php endif; ?>
 
                         <div class="service-info text-center">
-                            <h4>Child Care Subsidy</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
 
-                            <a class="btn" href="#">Learn More</a>
+                            <?php if ($service['title']): ?>
+                            <h4><?php echo $service['title']; ?></h4>
+                            <?php endif; ?>
+                            
+                            <?php if ($service['description']): ?>
+                                <?php echo $service['description']; ?>
+                            <?php endif; ?>
+                            
+                            <?php $btn = $service['button']; ?>
+                            <?php if ($btn['text'] && $btn['link']): ?>
+                            <a class="btn" href="<?php echo $btn['link']; ?>"><?php echo $btn['text']; ?></a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div><!-- / Service item -->
-                <div class="col-md-4 col-sm-4 col-xs-6 col">
-                    <div class="service">
-                        <div class="media">
-                            <img src="<?php echo get_theme_file_uri('assets/images/service-2.jpg'); ?>" class="img-responsive" alt="">
-                        </div>
-
-                        <div class="service-info text-center">
-                            <h4>Early Start Programs</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-
-                            <a class="btn" href="#">Learn More</a>
-                        </div>
-                    </div>
-                </div><!-- / Service item -->
-                <div class="col-md-4 col-sm-4 col-xs-6 col">
-                    <div class="service">
-                        <div class="media">
-                            <img src="<?php echo get_theme_file_uri('assets/images/service-3.jpg'); ?>" class="img-responsive" alt="">
-                        </div>
-
-                        <div class="service-info text-center">
-                            <h4>Education and Care</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-
-                            <a class="btn" href="#">Learn More</a>
-                        </div>
-                    </div>
-                </div><!-- / Service item -->
+                <?php endforeach; endif; ?>
             </div>
         </div>
     </section><!-- / Services -->
