@@ -12,13 +12,13 @@ $page_id = get_queried_object_id();
         <div class="container">
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 hidden-xs">
                     <?php echo beacon_breadcrumb(); ?>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-12 col-xs-12">
+                <div class="col-md-12 col-xs-12 no-padding-custom">
                     <ul class="nav nav-tabs">
                         <li class="active">
                             <a href="#sec_1" data-toggle="tab"><span class="fa fa-list"></span>
@@ -43,7 +43,7 @@ $page_id = get_queried_object_id();
             	<?php $cloop = new WP_Query($args); ?>
             	<?php if($cloop->have_posts()) : while($cloop->have_posts()) : $cloop->the_post(); ?>
                     <div class="center row">
-                        <div class="col-md-3 col-sm-3 no-padding">
+                        <div class="col-md-3 col-sm-12 no-padding">
                             <div id="map">
                                 <?php $google_map = get_field('google_map'); ?>
 
@@ -51,7 +51,7 @@ $page_id = get_queried_object_id();
                             </div>
                         </div>
 
-                        <div class="col-md-9 col-sm-9 no-padding-left">
+                        <div class="col-md-9 col-sm-12 no-padding-custom no-padding-left">
                             <ul class="center-info">
                                 <li>
                                     <a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -106,16 +106,16 @@ $page_id = get_queried_object_id();
                 </div><!-- / list center -->
 
                 <div class="tab-pane fade" id="sec_2">
-                    
+                    <div id="gmap">
+                       <?php $map = get_field('google_map_view'); ?>
+                       <?php echo var_dump($map); ?>
+                    </div>
                 </div><!-- / map -->
             </div>
 
         </div>
     </div><!-- / About Us -->
 
-    <div id="gmap">
-                    	
-    </div>
-
     <?php echo cubby_get_booking_room(); ?>
+
 <?php get_footer(); ?>

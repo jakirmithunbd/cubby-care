@@ -26,6 +26,10 @@
     }
 }
 @media only screen and (max-width: 1199px) {
+    .search-button.mobile-search {
+        display: none;
+    }
+
     .header {
         background: #9bd195;
 
@@ -360,7 +364,7 @@
             }
         }
     }
-
+    
     #search-box {
         position: absolute;
         right: 0;
@@ -418,15 +422,12 @@
                 .center-info {
                     padding: 40px 25px;
 
-                    .center-info {
+                    li {
 
-                        li {
+                        &.opening-hour {
 
-                            &.opening-hour {
-
-                                .opening {
-                                    padding-left: 25px;
-                                }
+                            .opening {
+                                padding-left: 25px;
                             }
                         }
                     }
@@ -505,9 +506,20 @@
                     top: 0;
                     left: 0;
                     width: 100%;
-                    background-repeat: repeat-x;
-                    background-size: 4.5px 3px;
-                    height: 5px;
+                    height: 0;
+                }
+
+                .tab-content {
+
+                    .overview {
+
+                        .testimonials-wrapper {
+
+                            .testimonials {
+                                padding: 35px 0 0;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -638,15 +650,30 @@
             .featured-post {
 
                 .post {
+                    flex-direction: column-reverse;
 
                     .post-meta {
                         width: 100%;
+                        max-width: 100%;
                         margin-right: auto;
+                        padding: 30px 25px;
+                        padding-bottom: 0;
                     }
 
                     .post-img {
                         width: 100%;
+
+                        .media {
+                            border-top-right-radius: 24px;
+                            border-top-left-radius: 24px;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 0;
+                        }
                     }
+                }
+
+                .slick-dots {
+                    bottom: -6%;
                 }
             }
         }
@@ -695,36 +722,6 @@
 
                         a {
                             padding-left: 15px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // single centre
-    .centers-single {
-
-        .centre-wrap {
-
-            .centre-tabs {
-
-                .tab-content {
-
-                    .overview {
-
-                        .testimonials-wrapper {
-
-                            .testimonials {
-
-                                .testimonial {
-                                    width: 100%;
-
-                                    &+.testimonial {
-                                        margin: 30px 0 0;
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -800,9 +797,7 @@
             }
         }
     }
-}
 
-@media only screen and (max-width: 700px) {
     .centers {
 
         .tab-content {
@@ -813,6 +808,7 @@
 
                 .center-info {
                     display: inherit;
+                    height: inherit;
 
                     li {
                         width: 100%;
@@ -820,13 +816,15 @@
                         &+li:before {
                             background-repeat: repeat-x;
                             background-size: 3px 5px;
-                            height: 4px;
+                            height: 0px;
                             width: 100%;
+                            background: unset;
+                            border: 1px dashed #ffffff;
                         }
 
                         &.opening-hour {
-                            margin: 20px 0 0;
-                            padding: 20px 0 0;
+                            margin: 40px 0 0;
+                            padding: 5px 0 0;
 
                             .permalink, .opening {
                                 flex-grow: 1;
@@ -839,12 +837,62 @@
                                     margin-left: auto;
                                 }
                             }
+
+                            .opening {
+                                padding-left: 0;
+                            }
                         }
                     }
                 }
             }
         }
     }
+
+    .info-page {
+
+        .tab-content {
+
+            .subsidy {
+
+                .top-text {
+                    margin: 45px 0 0;
+                }
+            }
+        }
+    }
+
+    // single centre
+    .centers-single {
+
+        .centre-wrap {
+
+            .centre-tabs {
+
+                .tab-content {
+
+                    .overview {
+
+                        .testimonials-wrapper {
+
+                            .testimonials {
+
+                                .testimonial {
+                                    width: 100%;
+
+                                    &+.testimonial {
+                                        margin: 30px 0 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
 
     .centers-single {
 
@@ -982,13 +1030,72 @@
     }
 
     .centers {
+        padding-top: 0;
+
+        .nav {
+
+            &.nav-tabs {
+
+                li {
+                    padding: 0;
+                    margin: 0;
+                    width: 50%;
+
+                    a {
+                        width: 100%;
+                        margin: 0;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
 
         .tab-content {
 
             .center {
 
                 .center-info {
-                    padding: 15px 20px;
+                    padding: 30px 20px;
+
+                    li {
+
+                        &.opening-hour {
+                            align-items: flex-start;
+                            flex-direction: column-reverse;
+
+                            .permalink, .opening {
+                                width: 100%;
+                            }
+
+                            .permalink {
+                                display: inherit !important;
+
+                                a {
+                                    margin: 30px 0 0;
+                                    margin-right: 5px;
+
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .centers-single {
+
+        .title {
+            margin: 25px 0 20px;
+
+            ul {
+                flex-wrap: wrap;
+
+                li.social-media {
+                    margin: 10px 0 0;
                 }
             }
         }
@@ -1019,6 +1126,33 @@
         }
     }
 
+    .info-page {
+
+        .tab-content {
+
+            .subsidy {
+
+                .subsidy-content {
+
+                    ul {
+                        display: inherit;
+                        margin: 0 0 45px;
+
+                        li {
+                            padding: 15px 0 0 !important;
+                            width: 100%;
+
+                            img {
+                                width: 100%;
+                                border-radius: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .people {
 
         .top-text {
@@ -1041,6 +1175,13 @@
                     float: none !important;
                 }
             }
+        }
+    }
+
+    .single-centre {
+
+        .latest-post {
+            padding: 60px 0 0;
         }
     }
 }
@@ -1087,6 +1228,11 @@
 
                 .navbar-header {
 
+                    .social {
+                        right: 48px;
+                        z-index: 99999;
+                    }
+
                     .navbar-brand {
                         transform: translateY(4px);
 
@@ -1117,6 +1263,14 @@
                     }
                 }
             }
+        }
+    }
+
+    .sidr {
+        padding: 70px 0 0;
+
+        &.sidr-sticky {
+            padding: 66px 0 0;
         }
     }
 }

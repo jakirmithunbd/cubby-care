@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="centre-tabs">
-                        <ul class="nav nav-tabs">
+                        <ul class="nav nav-tabs hidden-xs">
                             <?php
 							$tabs = [
 								'centre_overview', 
@@ -92,14 +92,20 @@
 							?>
                         </ul>
 
-                        <select id="sticky_tab_select">
-                        <?php 
-                            foreach ($tabs as $key => $tab):
-                                $text = get_field($tab);
-                                printf('<option data-toggle="tab" value="#count_%s">%s</option>',$key, $text['tab_menu']);
-                            endforeach; 
-                        ?>
-                        </select>
+                        <div class="row">
+                            <div class="col-sm-12 no-padding-custom">
+                                <ul class="nav-tabs nav visible-xs">
+                                    <select id="sticky_tab_select">
+                                    <?php 
+                                        foreach ($tabs as $key => $tab):
+                                            $text = get_field($tab);
+                                            printf('<option value="count_%s" data-toggle="tab">%s</option>',$key, $text['tab_menu']);
+                                        endforeach; 
+                                    ?>
+                                    </select>
+                                </ul>
+                            </div>
+                        </div>
 
                         <div class="tab-content">
                             <div class="tab-pane fade in overview active" id="count_0">

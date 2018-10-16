@@ -1,8 +1,11 @@
 
 <?php 
 get_header();
-
-?>  
+/*
+Template Name: Community
+*/ 
+$page_id = get_queried_object_id();
+?>
     <section class="blog-page">
         <div class="featured-post-area">
             <div class="container">
@@ -63,13 +66,39 @@ get_header();
                     </div>
                 </div>
 
-                <div class="row" id="ajaxPost">
-                    
+                <div class="row">
+					<?php  ?>
+                    <div class="col-md-4 col-sm-6 col-xs-6 col">
+		                <div class="post">
+		                    <a href="<?php the_permalink(); ?>">
+		                        <div class="media">
+		                            <?php if (has_post_thumbnail()): ?>
+		                            <?php the_post_thumbnail("post_image", array('class' => 'img-responsive')); ?>
+		                            <?php endif ?>
+		                        </div>
+		                    </a>
+
+		                    <div class="post-meta">
+		                        <ul class="list-inline">
+		                            <li>
+		                                <?php the_category(); ?>
+		                            </li>
+		                            <li>
+		                                <span><?php echo get_the_date('d M Y'); ?></span>
+		                            </li>
+		                        </ul>
+		                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		                        <?php the_excerpt(); ?>
+		                        <a class="read-more" class="text-uppercase" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cubby') ?></a>
+		                    </div>
+		                </div><!-- /  Post -->
+		            </div><!-- /  Post col -->
+
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <button type="button" class="btn btn-load-more" id="post_load_more"><?php _e('Load More', 'cubby'); ?></button>
+                        <button type="button" class="btn btn-load-more"><?php _e('Read All', 'cubby'); ?></button>
                     </div>
                 </div>
             </div>

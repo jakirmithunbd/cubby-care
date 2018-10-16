@@ -340,6 +340,7 @@ button {
         text-transform: uppercase;
         letter-spacing: 0.23px;
         color: #fff;
+        border: 0;
         background-color: #767676;
     }
 
@@ -1954,7 +1955,10 @@ button {
 
 /**---- Centre Single ----**/
 .centers-single {
-    padding: 30px 0;
+
+    .breadcrumb {
+        margin: 30px 0 0;
+    }
 
     .title {
         margin: 50px 0 30px;
@@ -2034,7 +2038,7 @@ button {
 
                 &.nav-tabs{
                     border-color: transparent;
-                    margin: 0 0 35px;
+                    margin: 0 0 45px;
 
                     li {
 
@@ -2074,19 +2078,18 @@ button {
 
                         h3 {
                             color: $base;
-                            font-size: 36px;
+                            font-size: 40px;
                             font-weight: 700;
-                            margin: 0 0 8px;
-                            line-height: 37px;
-                            @include letter-spacing(36, -20);
+                            line-height: 45px;
+                            letter-spacing: 0.12px;
                         }
 
                         p {
                             color: $base;
-                            font-size: 20px;
+                            font-size: 18px;
                             font-weight: 400;
                             line-height: 27px;
-                            @include letter-spacing(36, 0);
+                            letter-spacing: 0.26px;
                         }
                     }
 
@@ -2095,11 +2098,11 @@ button {
 
                         h6 {
                             color: #323e48;
-                            font-size: 14px;
+                            margin: 0 0 13px;
+                            font-size: 16px;
                             font-weight: 700;
-                            margin: 0 0 8px;
-                            line-height: 20px;
-                            @include letter-spacing(14, 0);
+                            line-height: 22.65px;
+                            letter-spacing: 0.2px;
                         }
 
                         ul {
@@ -2108,9 +2111,12 @@ button {
                             margin-bottom: 20px;
 
                             li {
-                                line-height: 18px;
                                 color: #323e48;
-                                margin: 0 0 5px;
+                                font-family: $nor;
+                                font-size: 16px;
+                                font-weight: 400;
+                                line-height: 22.65px;
+                                letter-spacing: 0.2px;
                             }
                         }
                     }
@@ -2128,13 +2134,15 @@ button {
                         margin: 45px 0 0;
 
                         .title {
+                            margin-bottom: 12px;
 
                             h3 {
-                                color: $base;
+                                line-height: 28px;
+                                color: #846196;
                                 font-size: 28px;
                                 font-weight: 700;
-                                @include letter-spacing(28, -20);
-                                line-height: 28px;
+                                line-height: 68px;
+                                letter-spacing: 0.4px;
                             }
                         }
 
@@ -2142,6 +2150,7 @@ button {
                         .testimonials {
                             display: flex;
                             flex-wrap: wrap;
+                            padding: 0;
 
                             .testimonial {
                                 width: 47%;
@@ -2225,16 +2234,16 @@ button {
 
                         h3 {
                             color: $base;
-                            font-size: 36px;
+                            font-size: 40px;
                             font-weight: 700;
                             margin: 0 0 8px;
-                            line-height: 37px;
-                            @include letter-spacing(36, -20);
+                            line-height:45px;
+                            letter-spacing: 0.12px
                         }
 
                         p {
                             color: $base;
-                            font-size: 20px;
+                            font-size: 18px;
                             font-weight: 400;
                             line-height: 27px;
                             @include letter-spacing(36, 0);
@@ -2804,8 +2813,14 @@ select {
 
 /**---- Info For You ----**/
 .info-page {
+    padding: 0 0 15px;
 
     .tab-content {
+
+        &:before {
+            width: 2px;
+            border: 1px dashed #63c9d7;
+        }
 
         .subsidy {
 
@@ -2939,6 +2954,50 @@ select {
                     max-width: 400px;
                     margin: 0 auto;
 
+                    ul {
+
+                        li {
+
+                            .post-categories {
+                                
+                                a {
+                                    color: #767676;
+                                    font-family: $nor;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.8px;
+                                }
+                            }
+
+                            span {
+                                color: #767676;
+                                font-family: $nor;
+                                font-size: 12px;
+                                font-weight: 700;
+                                text-transform: uppercase;
+                                letter-spacing: 0.8px;
+                            }
+
+                            &+li {
+                                position: relative;
+                                line-height: 10px;
+                                padding-left: 15px;
+
+                                &:before {
+                                    position: absolute;
+                                    content: "";
+                                    height: 100%;
+                                    width: 1px;
+                                    top: 0;
+                                    left: 3px;
+                                    transform: rotate(25deg);
+                                    background: #767676;
+                                }
+                            }
+                        }
+                    }
+
                     .title {       
                         font-size: 40px;
                         text-align: left;
@@ -2978,9 +3037,20 @@ select {
                     button {
 
                         &:before {
-
+                            opacity: 1;
+                            border-color: #323e48;
                             height: 15px;
                             width: 15px;
+                        }
+                    }
+
+                    &.slick-active {
+
+                        button {
+
+                            &:before {
+                                background-color: #323e48;
+                            }
                         }
                     }
                 }
@@ -2989,16 +3059,21 @@ select {
     }
 
     .blog-list {
-         padding: 60px 0 30px;
+         padding: 43px 0 30px;
+
+         .breadcrumb {
+            margin: 0 0 51px;
+         }
 
         .title {
 
             h1 {
-                color: #7C5A90;
-                letter-spacing: -0.72px;
-                font-weight: 700;
+                color: #846196;
                 margin: 0 0 40px;
-                text-transform: uppercase;
+                font-size: 40px;
+                font-weight: 700;
+                line-height: 45px;
+                letter-spacing: 0.12px;
             }
         }
 
@@ -3009,6 +3084,50 @@ select {
             .post-meta {
                 border-top: 0;
                 border: 1px solid #d8d8df;
+
+                ul {
+
+                    li {
+
+                        .post-categories {
+                            
+                            a {
+                                color: #767676;
+                                font-family: $nor;
+                                font-size: 12px;
+                                font-weight: 700;
+                                text-transform: uppercase;
+                                letter-spacing: 0.8px;
+                            }
+                        }
+
+                        span {
+                            color: #767676;
+                            font-family: $nor;
+                            font-size: 12px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 0.8px;
+                        }
+
+                        &+li {
+                            position: relative;
+                            line-height: 10px;
+                            padding-left: 15px;
+
+                            &:before {
+                                position: absolute;
+                                content: "";
+                                height: 100%;
+                                width: 1px;
+                                top: 0;
+                                left: 3px;
+                                transform: rotate(25deg);
+                                background: #767676;
+                            }
+                        }
+                    }
+                }
                 
                 .title {
                     color: #505b88;
@@ -3212,7 +3331,7 @@ select {
 
         &:after {
             background: linear-gradient(to right, #f27177, #f27177);
-            top: -24px;
+            top: -22px;
         }
     }
 }
