@@ -171,14 +171,16 @@
         doPostLoadAjax(data);
     });
 
-   
 
     // sticky menu select style
-    $('#sticky_tab_select').change(function() {
+    $('#sticky_tab_select').change(function(e) {
         var value = $(this).val();
-        $('a[href="' + value + '"]').tab('show');
-        console.log(value);
+        $('a[href="' +'#' + value + '"]').tab('show');
     });
+
+    // $('#mySelect').on('change', function (e) {
+    //     $('#myTab li a').eq($(this).val()).tab('show'); 
+    // });
 
     /* Portfolio masonary */
     $('.masonry-container').masonry({

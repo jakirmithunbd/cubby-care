@@ -10,12 +10,15 @@ $page_id = get_queried_object_id();
 
     <div class="centers">
         <div class="container">
+
             <div class="row">
-                <div class="col-md-4 col-xs-4 col">
+                <div class="col-md-12">
                     <?php echo beacon_breadcrumb(); ?>
                 </div>
+            </div>
 
-                <div class="col-md-8 col-xs-8 col">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
                     <ul class="nav nav-tabs">
                         <li class="active">
                             <a href="#sec_1" data-toggle="tab"><span class="fa fa-list"></span>

@@ -408,6 +408,32 @@
             }
         }
     }
+
+    .centers {
+
+        .tab-content {
+
+            .center {
+
+                .center-info {
+                    padding: 40px 25px;
+
+                    .center-info {
+
+                        li {
+
+                            &.opening-hour {
+
+                                .opening {
+                                    padding-left: 25px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1023px) {
@@ -521,10 +547,24 @@
             }
         }
     }
+
+    .about-us {
+
+        .tab-content {
+            padding-left: 30px;
+
+            &:before {
+                left: -25px;
+            }
+        }
+    }
 }
 
 
 @media only screen and (max-width: 767px) {
+    .no-padding-custom {
+        padding: 0 !important;
+    }
 
     .header {
 
@@ -632,6 +672,7 @@
 
                 .gform_wrapper {
                     margin: 0 auto;
+                    padding: 0 20px;
                 }
             }
         }
@@ -711,6 +752,50 @@
                     height: 5px;
                     background-size: 8px 5px;
                     background-repeat: repeat-x;
+                }
+            }
+        }
+    }
+
+    // who we are
+    .about-us {
+        padding: 0 0 0;
+
+        .tab-content {
+            padding-left: 0;
+
+            &:before {
+                border: 0;
+                width: 0;
+            }
+
+            .top-text {
+                margin: 45px 0 0;
+
+                &.mission {
+
+                    h2 {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+
+        &.experience {
+
+            .top-text {
+
+                h2 {
+                    font-size: 36px;
+                    line-height: 40px;
+                }
+            }
+
+            .media {
+
+                img {
+                    border-radius: 0;
+                    margin-bottom: 45px;
                 }
             }
         }
@@ -904,6 +989,56 @@
 
                 .center-info {
                     padding: 15px 20px;
+                }
+            }
+        }
+    }
+
+    // who we are
+    .about-us {
+
+        .tab-content {
+
+            .mission {
+
+                ul {
+                    display: inherit;
+                    margin: 0 0 45px;
+
+                    li {
+                        padding: 0;
+                        width: 100%;
+
+                        img {
+                            width: 100%;
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .people {
+
+        .top-text {
+
+            h2 {
+                font-size: 36px;
+                line-height: 40px;
+            }
+        }
+
+        .team-member {
+                
+            .title{
+                margin: 15px 0 0;
+            }
+
+            .media {
+
+                &.pull-left {
+                    float: none !important;
                 }
             }
         }

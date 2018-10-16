@@ -324,6 +324,37 @@ button {
         }
     }
 }
+
+// nav tabs 
+.nav-tabs.visible-xs {
+    position: relative;
+
+    #sticky_tab_select {
+        height: 48px;
+        width: 100%;
+        padding: 0 20px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 28px;
+        font-family: $nor;
+        text-transform: uppercase;
+        letter-spacing: 0.23px;
+        color: #fff;
+        background-color: #767676;
+    }
+
+    &:after {
+        pointer-event: none;
+        content: "";
+        right: 20px;
+        height: 10px;
+        width: 15px;
+        position: absolute;
+        top: calc(50% - 5px);
+        background-repeat: no-repeat !important;
+        background: url(../images/svg/arrow-down-white.svg);
+    }
+}
 /* =========== Import Mixin =============*/
 
 @import "mixin";
@@ -1720,11 +1751,18 @@ button {
 }
 /**---- Center ----**/
 .centers {
-    padding: 40px 0;
+    padding: 25px 0;
+
+    .breadcrumb {
+        margin: 0 0 54px;
+    }
 
     .nav {
 
         &.nav-tabs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-color: transparent;
 
             li {
@@ -1778,6 +1816,7 @@ button {
                 flex-wrap: wrap;
                 align-items: center;
                 background: $primary;
+                height: 236px;
 
                 li {
                     width: 50%;

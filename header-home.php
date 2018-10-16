@@ -86,11 +86,11 @@
                 <form id="search-box">
                     <div class="input-group">
                         <span class="input-group-btn">
-                        <button type="submit"><img src="<?php echo get_theme_file_uri('/images/svg/close.svg'); ?>" class="img-responsive" alt=""></button>
+                        <button type="submit"><img src="<?php echo get_theme_file_uri('/images/svg/searchcolor.svg'); ?>" class="img-responsive" alt=""></button>
                         </span>
                         <input type="search" name="s" class="form-control" placeholder="Search" />
                         <span class="input-group-btn">
-                        <a id="close" href="#"><img src="<?php echo get_theme_file_uri('/images/svg/close.svg'); ?>" class="img-responsive" alt=""></a>
+                        <a id="close" href="#"><img src="<?php echo get_theme_file_uri('/images/svg/close-color.svg'); ?>" class="img-responsive" alt=""></a>
                         </span>
                     </div><!-- /input-group -->
                 </form>

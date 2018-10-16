@@ -10,14 +10,14 @@ $page_id = get_queried_object_id();
 <div class="about-us experience">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 hidden-xs">
                 <?php echo beacon_breadcrumb(); ?>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 col-sm-3">
+            <div class="col-md-3 col-sm-4 no-padding-custom">
                 <div class="side-bar">
-                    <ul class="nav nav-tabs">
+                    <ul class="nav nav-tabs hidden-xs">
                     	<?php
 						$tabs = [
 							'what_to_expect', 
@@ -35,10 +35,22 @@ $page_id = get_queried_object_id();
 
 						?>
                     </ul>
+
+                    <ul class="nav-tabs nav visible-xs">
+
+                        <select id="sticky_tab_select">
+                        <?php 
+                            foreach ($tabs as $key => $tab):
+                                $text = get_field($tab);
+                                printf('<option value="section_%s" data-toggle="tab">%s</option>',$key, $text['tab_menu']);
+                            endforeach; 
+                        ?>
+                        </select>
+                    </ul>
                 </div><!-- / Side bar -->
             </div><!-- / col -->
 
-            <div class="col-md-9 col-sm-9">
+            <div class="col-md-9 col-sm-8">
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="section_0">
                         <?php $expect = get_field('what_to_expect'); ?>
