@@ -145,8 +145,12 @@
         $('a[href="' +'#' + value + '"]').tab('show');
     });
 
-    $('.masonry-container').masonry({
-        itemSelector: '.item'
+    /*** Enable Masonry */
+    $(window).load(function(){
+        /* Portfolio masonary */
+        var m = new Masonry($('.masonry-container').get()[0], {
+        itemSelector: ".item"
+
     });
 
 
