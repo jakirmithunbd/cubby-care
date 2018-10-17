@@ -146,12 +146,13 @@
     });
 
     /*** Enable Masonry */
-    $(window).load(function(){
-        /* Portfolio masonary */
-        var m = new Masonry($('.masonry-container').get()[0], {
-        itemSelector: ".item"
+    // $(window).load(function(){
+    //     /* Portfolio masonary */
+    //     var m = new Masonry($('.masonry-container').get()[0], {
+    //     itemSelector: ".item"
+    //     }
 
-    });
+    // });
 
 
     /*** Ajax search load more */

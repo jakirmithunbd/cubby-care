@@ -229,8 +229,8 @@ button:hover, button:focus, button:active:focus {
   bottom: 100%; }
   .slick-dots li {
     margin: 0 3px;
-    width: 12px;
-    height: 12px; }
+    width: 11px;
+    height: 11px; }
     .slick-dots li button {
       padding: 0;
       width: 0;
@@ -246,6 +246,7 @@ button:hover, button:focus, button:active:focus {
         transition: all .5s ease;
         border: 1px solid #323e48; }
     .slick-dots li.slick-active button:before {
+      opacity: 1;
       background: #323e48;
       border-color: #323e48; }
 
@@ -1824,8 +1825,8 @@ button:hover, button:focus, button:active:focus {
       box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2); }
 
 #gmap {
-  height: 500px;
-  width: 500px; }
+  height: 600px;
+  width: 100%; }
 
 /**---- Contact Us ----**/
 select {

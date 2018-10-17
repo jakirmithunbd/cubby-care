@@ -52,7 +52,7 @@ function cubby_assets(){
 
 	$map_icon = get_field('map_pin', 'options');
 	$map_zoom = get_field('map_zoom', 'options');
-	$location = get_field('google_map');
+	$location = get_field('google_map_view');
 
 
 	// //localize data 

@@ -293,8 +293,8 @@ button {
 
     li {
         margin: 0 3px;
-        width: 12px;
-        height: 12px;
+        width: 11px;
+        height: 11px;
 
         button {
             padding: 0;
@@ -317,6 +317,7 @@ button {
             button {
 
                 &:before {
+                    opacity: 1;
                     background: #323e48;
                     border-color: #323e48;
                 }
@@ -2271,6 +2272,7 @@ button {
                         letter-spacing: 0.12px;
                     }
 
+
                     .gform_wrapper {
 
                         .gform_body {
@@ -2455,8 +2457,8 @@ button {
 
 // map
 #gmap {
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 100%;
 }
 // Gallery
 

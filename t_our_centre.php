@@ -107,8 +107,7 @@ $page_id = get_queried_object_id();
 
                 <div class="tab-pane fade" id="sec_2">
                     <div id="gmap">
-                       <?php $map = get_field('google_map_view'); ?>
-                       <?php echo var_dump($map); ?>
+                       
                     </div>
                 </div><!-- / map -->
             </div>
