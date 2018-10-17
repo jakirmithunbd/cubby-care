@@ -83,7 +83,7 @@
 
                 <!-- search for mobile -->
                 <!-- search for mobile -->
-                <form id="search-box">
+                <form action="" id="search-box">
                     <div class="input-group">
                         <span class="input-group-btn">
                         <button type="submit"><img src="<?php echo get_theme_file_uri('/images/svg/searchcolor.svg'); ?>" class="img-responsive" alt=""></button>

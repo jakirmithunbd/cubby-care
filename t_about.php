@@ -176,7 +176,7 @@ Template Name: Who We Are
                                 <?php if ($item['name'] || $item['title'] || $item['position']): ?>
                                 <div class="title">
                                     <?php if ($item['name'] || $item['title']): ?>
-                                    <h4><?php echo $item['name']; ?> <span><?php echo $item['name']; ?></span></h4>
+                                    <h4><?php echo $item['name']; ?> <span><?php echo $item['title']; ?></span></h4>
                                     <?php endif; ?>
                                     
                                     <?php if ($item['position']): ?>

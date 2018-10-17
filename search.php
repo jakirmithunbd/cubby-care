@@ -38,7 +38,7 @@
                 <?php 
 	                $args = [
 					's' => get_search_query(),
-					'posts_per_page' => 10,
+					'posts_per_page' => 3,
 				];
 				$loop = new WP_Query($args);
 
@@ -58,7 +58,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <button type="button" class="btn btn-load-more" id="search_load_more"><?php _e('Load More', 'cubby'); ?></button>
+                <button type="button" data-keyword="<?php the_search_query(); ?>" class="btn btn-load-more" id="search_load_more"><?php _e('Load More', 'cubby'); ?></button>
             </div>
         </div>
     </div>

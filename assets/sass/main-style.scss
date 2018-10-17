@@ -449,7 +449,7 @@ button {
                 }
 
                 &.social-media {
-                    padding-right: 8px;
+                    padding-right: 15px;
 
                     a {
                         display: inline-block;
@@ -499,7 +499,7 @@ button {
             }
 
             .navbar-nav {
-                margin-right: 35px;
+                margin-right: 50px;
 
                 >li {
                     padding-left: 7px;
@@ -691,10 +691,11 @@ button {
     letter-spacing: 0.18px;
 }
 .show .search-box {
-  height: 55px;
-  width: 435px !important;
   opacity: 1;
   right: 65px;
+  height: 55px;
+  padding-left: 10px;
+  width: 435px !important;
 }
 .show .search-toggle {
     border-radius: 0; 
@@ -2236,6 +2237,10 @@ button {
 
                 .people {
 
+                    .title {
+                        margin: 0;
+                    }
+
                     .top-text {
                         margin: 0 0 30px;
 
@@ -2596,17 +2601,13 @@ select {
          }
 
             &:before {
-                content: "";
                 top: 0;
                 left: 0px;
-                width: 10px;
-                position: absolute;
-                background-image: -webkit-radial-gradient(circle closest-side, #63c9d7 calc(100% - 1px), transparent 100%);
-                background-image: -o-radial-gradient(circle closest-side, #63c9d7 calc(100% - 1px), transparent 100%);
-                background-image: radial-gradient(circle closest-side, #63c9d7 calc(100% - 1px), transparent 100%);
-                background-repeat: repeat-y;
-                background-size: 4px 6px;
+                width: 2px;
+                content: "";
                 height: 100%;
+                position: absolute;
+                border: 1px dashed #63c9d7;
             }
        }
     }
@@ -3329,9 +3330,31 @@ select {
     }
 }
 
+.masonry-container {
+    height: 100vw;
+}
+
 // Works by Template name
 
+.page-template-t_contact {
 
+    .contact {
+
+        .contact-form {
+
+            .tour-info {
+
+                p {
+                    color: #846196;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 25px;
+                    letter-spacing: 0.26px;
+                }
+            }
+        }
+    }
+}
 
 .single-centre {
 

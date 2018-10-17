@@ -329,7 +329,7 @@ button:hover, button:focus, button:active:focus {
         .header .top-bar ul li a:hover, .header .top-bar ul li a:focus {
           color: #63c9d7; }
       .header .top-bar ul li.social-media {
-        padding-right: 8px; }
+        padding-right: 15px; }
         .header .top-bar ul li.social-media a {
           display: inline-block;
           height: 34px;
@@ -377,7 +377,7 @@ button:hover, button:focus, button:active:focus {
           transition: all .5s ease;
           max-width: 100%; }
     .header .navbar.navbar-default .navbar-nav {
-      margin-right: 35px; }
+      margin-right: 50px; }
       .header .navbar.navbar-default .navbar-nav > li {
         padding-left: 7px;
         padding-right: 7px; }
@@ -519,10 +519,11 @@ button:hover, button:focus, button:active:focus {
   letter-spacing: 0.18px; }
 
 .show .search-box {
-  height: 55px;
-  width: 435px !important;
   opacity: 1;
-  right: 65px; }
+  right: 65px;
+  height: 55px;
+  padding-left: 10px;
+  width: 435px !important; }
 
 .show .search-toggle {
   border-radius: 0;
@@ -1697,6 +1698,8 @@ button:hover, button:focus, button:active:focus {
               margin-right: 15px; }
               .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info .parent-image img {
                 border-radius: 500px; }
+    .centers-single .centre-wrap .centre-tabs .tab-content .people .title {
+      margin: 0; }
     .centers-single .centre-wrap .centre-tabs .tab-content .people .top-text {
       margin: 0 0 30px; }
       .centers-single .centre-wrap .centre-tabs .tab-content .people .top-text h3 {
@@ -1922,17 +1925,13 @@ select {
       .contact.contact-page .contact-form .tour-info {
         margin: 0; }
       .contact.contact-page .contact-form:before {
-        content: "";
         top: 0;
         left: 0px;
-        width: 10px;
+        width: 2px;
+        content: "";
+        height: 100%;
         position: absolute;
-        background-image: -webkit-radial-gradient(circle closest-side, #63c9d7 calc(100% - 1px), transparent 100%);
-        background-image: -o-radial-gradient(circle closest-side, #63c9d7 calc(100% - 1px), transparent 100%);
-        background-image: radial-gradient(circle closest-side, #63c9d7 calc(100% - 1px), transparent 100%);
-        background-repeat: repeat-y;
-        background-size: 4px 6px;
-        height: 100%; }
+        border: 1px dashed #63c9d7; }
 
 /**---- Contact Form ----**/
 .contact-form {
@@ -2414,6 +2413,16 @@ select {
     margin: 0 15px;
     -webkit-box-shadow: none;
     box-shadow: none; }
+
+.masonry-container {
+  height: 100vw; }
+
+.page-template-t_contact .contact .contact-form .tour-info p {
+  color: #846196;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0.26px; }
 
 .single-centre .latest-post {
   background: #f27177; }

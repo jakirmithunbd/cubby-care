@@ -28,7 +28,7 @@ $page_id = get_queried_object_id();
 							<?php if ($cont['phone']): ?>
 							<div class="text">
 								<label><?php _e('Phone', 'cubby'); ?></label>
-								<p><?php _e( 'CALL US', 'cubby' ); ?> <span><?php _e( '1300 DAY CARE', 'cubby' ); ?></span><a href="tel:1300 329 227">( <?php echo $cont['phone']; ?> )</a></p>
+								<p><span><?php _e( '1300 DAY CARE', 'cubby' ); ?></span><a href="tel:1300 329 227">( <?php echo $cont['phone']; ?> )</a></p>
 							</div>
 							<?php endif; ?>
 						</li>

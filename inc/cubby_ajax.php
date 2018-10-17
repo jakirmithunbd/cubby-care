@@ -90,7 +90,7 @@ function cubby_load_more_post(){
 
         <div class="entry-content notResult col-md-12 col-sm-12 col-xs-12">
             <h4 class="no-content text-center" style="padding: 0 0 50px; margin-top: 30px;">
-                <?php _e('No more posts!!!', 'leisure'); ?>
+                <?php _e('No more posts!!!', 'cuddy'); ?>
             </h4>
         </div> 
     <?php 

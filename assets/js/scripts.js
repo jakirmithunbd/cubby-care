@@ -149,46 +149,13 @@
         itemSelector: '.item'
     });
 
-    /* Ajax post load more */
-    var page = 1;
-    var data = {
-        action: 'load_posts',
-        page: page
-    }
-    function doPostLoadAjax(){
-        $.ajax({
-            url: ajax.admin_ajax,
-            type: 'POST',
-            dataType: 'html',
-            data: data,
-            beforeSend: function(resp){
-                // $('#ajaxPost').html('<img src="' + ajax.site_url + '/images/svg/preloader.gif">');
-                console.log('ajax Request');
-            },
-            success: function(resp){
-              if (resp) {
-                $('#ajaxPost').html(resp);
-              }
-              console.log('suxxesfgsjkdlf');
-            },
-            error: function( jqXHR, textStatus, errorThrown){
-                console.log( jqXHR, textStatus, errorThrown);
-            }
-        });
-    };
-
-    // on load
-    $('#load_more_posts').on('click', function(){
-        data.page++;
-        doPostLoadAjax(data);
-    });
-
 
     /*** Ajax search load more */
     var page = 1;
     $('#search_load_more').on('click', function(e){
       e.preventDefault();
       var keywords = $(this).attr('data-keyword');
+      console.log(keywords);
       page++;
       $.ajax({
             url: ajax.admin_ajax,
@@ -201,7 +168,6 @@
             },
             beforeSend: function(){
                 $('#search_load_more').addClass('loading').text('Loading...');
-                $('#search-result').html('<img src="' + ajax.site_url + '/images/svg/preloader.gif">');
             },
             success: function(resp){
               if (resp) {
@@ -231,8 +197,8 @@
                 //query: ajax.query,
                 page: page,
             },
-            beforeSend: function(){
-                $('#search-result').html('<img src="' + ajax.site_url + '/images/svg/preloader.gif">');
+            beforeSend: function(resp){
+                // $('#ajaxPost').html('<img src="' + ajax.site_url + '/assets/images/svg/preloader.gif">');
                 $('#post_load_more').addClass('loading').text('Loading...');
             },
             success: function(resp){
@@ -240,7 +206,6 @@
                 $('#ajaxPost').append(resp);
                 $('#post_load_more').removeClass('loading').text('Load More');
               }
-
 
               var hasNoResult = $(resp).hasClass('notResult');
               if(hasNoResult) {
@@ -256,14 +221,12 @@
 
     var page = 1;
     $('#post_load_more').on('click', function(e){
-      page++;
-      e.preventDefault();
-      ajaxLoadMore(page);
-      console.log(page);
+        page++;
+        e.preventDefault();
+        ajaxLoadMore(page);
     });
 
     ajaxLoadMore();
-
 
 
     /*** Google map */
