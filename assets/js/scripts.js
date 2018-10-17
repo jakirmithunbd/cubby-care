@@ -138,6 +138,17 @@
         $(this).addClass("tik");
      });
 
+
+    // sticky menu select style
+    $('#sticky_tab_select').change(function(e) {
+        var value = $(this).val();
+        $('a[href="' +'#' + value + '"]').tab('show');
+    });
+
+    $('.masonry-container').masonry({
+        itemSelector: '.item'
+    });
+
     /* Ajax post load more */
     var page = 1;
     var data = {
@@ -170,18 +181,6 @@
     $('#load_more_posts').on('click', function(){
         data.page++;
         doPostLoadAjax(data);
-    });
-
-    // sticky menu select style
-    $('#sticky_tab_select').change(function(e) {
-        var value = $(this).val();
-        $('a[href="' +'#' + value + '"]').tab('show');
-    });
-
-    /* Portfolio masonary */
-    $('.masonry-container').masonry({
-        itemSelector: '.item',
-        columnWidth: 200
     });
 
 

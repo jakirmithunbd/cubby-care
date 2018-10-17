@@ -146,6 +146,13 @@ p {
   margin: 0;
 }
 
+.masonry-container {
+
+    .item {
+        width: 444px;
+    }
+}
+
 a {
     text-decoration: none; 
     font-size: 14px;
@@ -1130,13 +1137,13 @@ button {
                     content: "";
                     right: 20%;
                     z-index: -1;
-                    width: 70px;
-                    height: 70px;
-                    bottom: -40px;
+                    width: 190px;
+                    height: 100px;
+                    bottom: -36px;
                     position: absolute;
-                    border-radius: 500px;
-                    transform: rotate(-115deg);
-                    box-shadow: 0px 25px 0 0 currentColor;
+                    border-radius: 45px;
+                    transform: rotate(-135deg);
+                    box-shadow: 0px 35px 0 0 currentColor;
                 }
 
                 span {
@@ -2645,7 +2652,7 @@ select {
                         input {
                             border: 0;
                             color: #846196;
-                            font-size: 14px;
+                            font-size: 14px !important;
                             font-weight: 400;
                             font-family: $nor;
                             border-radius: 8px;
@@ -2686,7 +2693,7 @@ select {
                             border: 0;
                             width: 100%;
                             color: #846196;
-                            font-size: 14px;
+                            font-size: 14px !important;
                             font-weight: 400;
                             font-family: $nor;
                             border-radius: 8px;
@@ -2729,7 +2736,7 @@ select {
                                         background: #fff;
                                         border-radius: 9px;
                                         position: absolute;
-                                        border: 1px solid $base;
+                                        border: 1px solid #d6d6d8;
                                     }
                                 }
                             }
@@ -3323,6 +3330,8 @@ select {
 }
 
 // Works by Template name
+
+
 
 .single-centre {
 

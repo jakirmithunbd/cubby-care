@@ -235,11 +235,11 @@
                         <div class="tab-pane fade people" id="count_3">
                             <div class="gallery container">
                                 <div class="masonry-container">
-                                	<?php $img = get_field('centre_gallery'); ?>
+                                    <?php $img = get_field('centre_gallery'); ?>
 
-                                	<?php 
-                                	$items = $img['images'];
-                                	if($items): foreach ($items as $item):?>
+                                    <?php 
+                                    $items = $img['images'];
+                                    if($items): foreach ($items as $item):?>
                                     <div class="item">
                                         <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
                                     </div><!-- / Gallery item -->

@@ -97,6 +97,9 @@ h6 {
 p {
   margin: 0; }
 
+.masonry-container .item {
+  width: 444px; }
+
 a {
   text-decoration: none;
   font-size: 14px; }
@@ -870,16 +873,16 @@ button:hover, button:focus, button:active:focus {
         content: "";
         right: 20%;
         z-index: -1;
-        width: 70px;
-        height: 70px;
-        bottom: -40px;
+        width: 190px;
+        height: 100px;
+        bottom: -36px;
         position: absolute;
-        border-radius: 500px;
-        -webkit-transform: rotate(-115deg);
-        -ms-transform: rotate(-115deg);
-        transform: rotate(-115deg);
-        -webkit-box-shadow: 0px 25px 0 0 currentColor;
-        box-shadow: 0px 25px 0 0 currentColor; }
+        border-radius: 45px;
+        -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+        -webkit-box-shadow: 0px 35px 0 0 currentColor;
+        box-shadow: 0px 35px 0 0 currentColor; }
       .testimonials .testimonials-slider .slick-slider-item .testimonial-box span {
         margin-right: 10px; }
         .testimonials .testimonials-slider .slick-slider-item .testimonial-box span.right-quote {
@@ -1952,7 +1955,7 @@ select {
       .contact-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container input {
         border: 0;
         color: #846196;
-        font-size: 14px;
+        font-size: 14px !important;
         font-weight: 400;
         font-family: "TT Norms";
         border-radius: 8px;
@@ -1989,7 +1992,7 @@ select {
         border: 0;
         width: 100%;
         color: #846196;
-        font-size: 14px;
+        font-size: 14px !important;
         font-weight: 400;
         font-family: "TT Norms";
         border-radius: 8px;
@@ -2028,7 +2031,7 @@ select {
             background: #fff;
             border-radius: 9px;
             position: absolute;
-            border: 1px solid #846196; }
+            border: 1px solid #d6d6d8; }
       .contact-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container .gfield_radio.tik li label:before {
         content: "\f00c";
         font-size: 25px;
