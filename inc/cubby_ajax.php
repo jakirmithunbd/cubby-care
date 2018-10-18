@@ -72,7 +72,7 @@ function cubby_load_more_post(){
                     </a>
 
                     <div class="post-meta">
-                        <ul class="list-inline">
+                        <ul class="list-inline visible-xs">
                             <li>
                                 <?php the_category(); ?>
                             </li>

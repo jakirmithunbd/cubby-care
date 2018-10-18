@@ -45,6 +45,7 @@
 
 
     /*** Header height = gutter height */
+
     function setGutterHeight(){
         var header = document.querySelector('.header.page-header-all'),
             gutter = document.querySelector('.header_gutter');
@@ -550,6 +551,8 @@
             });
       };
     }
+
+    
 
 
 })(jQuery);

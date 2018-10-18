@@ -17,9 +17,9 @@ Template Name: Home
                     <div class="col-md-6 col-sm-8 col-xs-12">
                         <div class="banner-info">
                         	<?php if ($item['title']): ?>
-                            <h2><?php echo $item['title']; ?></h2>
+                            <h2 class="wow fadeInDown"><?php echo $item['title']; ?></h2>
                         	<?php endif; ?>
-                            <ul class="list-inline">
+                            <ul class="list-inline wow fadeInUp">
 								<?php $btns = $item['home_banner_button']; 
 								if ($btns):
 								foreach ($btns as $btn):
@@ -47,7 +47,7 @@ Template Name: Home
                 if($services):
                     foreach ($services as $service):
                 ?>
-                <div class="col-md-4 col-sm-6 col-xs-6 col">
+                <div class="col-md-4 col-sm-6 col-xs-6 col wow fadeInUp">
                     <div class="service">
                         <?php if ($service['image']): ?>
                         <div class="media">
@@ -89,7 +89,7 @@ Template Name: Home
                 <div class="col-md-7 col-sm-8">
                     <div class="content">
                     	<?php if ($title): ?>
-                        <h1><?php echo $title; ?></h1>
+                        <h1 class="wow fadeInDown"><?php echo $title; ?></h1>
                     	<?php endif; ?>
 
                     	<?php if ($des): ?>
@@ -97,7 +97,7 @@ Template Name: Home
                     	<?php endif; ?>
 
 						<?php if ($btn): ?>
-                        <a target="_blank" class="btn" href="<?php echo $btn['rul'] ?>"><?php echo $btn['text'] ?></a>
+                        <a target="_blank" class="btn wow fadeInUp" href="<?php echo $btn['rul'] ?>"><?php echo $btn['text'] ?></a>
 						<?php endif ?>
                     </div>
                 </div>
@@ -135,6 +135,14 @@ Template Name: Home
                         </a>
 
                         <div class="post-meta">
+                            <ul class="list-inline visible-xs">
+                                <li>
+                                    <?php the_category(); ?>
+                                </li>
+                                <li>
+                                    <span><?php echo get_the_date('d M Y'); ?></span>
+                                </li>
+                            </ul>
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             <?php the_excerpt(); ?>
                             <a class="read-more" class="text-uppercase" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cubby') ?></a>

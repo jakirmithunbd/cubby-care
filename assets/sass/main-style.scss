@@ -454,7 +454,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
                 }
 
                 &.social-media {
-                    padding-right: 15px;
+                    padding-right: 0;
 
                     a {
                         display: inline-block;
@@ -618,6 +618,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
     width: 34px;
     margin-left: auto;
     top: 30px;
+    right: -15px;
     z-index: 1;
     transition: all .5s ease;
     border-radius: 500px;
@@ -981,6 +982,10 @@ ul.nav-tabs.nav.visible-xs.sticky {
             .btn {
                 background: $base;
                 margin: 0 auto;
+
+                &:hover, &:focus {
+                    background: #9BD195;
+                }
             }
         }
 
@@ -1077,6 +1082,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
             margin: 0 0 14px;
             font-size: 24px;
             font-weight: 700;
+            text-transform: capitalize;
             letter-spacing: 0.24px;
         }
 

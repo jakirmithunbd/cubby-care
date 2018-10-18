@@ -19,7 +19,7 @@ get_header();
                     <div class="post">
 
                         <div class="post-meta">
-                            <ul class="list-inline">
+                            <ul class="list-inline visible-xs">
                                 <li>
                                     <?php the_category(); ?>
                                 </li>

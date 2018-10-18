@@ -338,7 +338,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
         .header .top-bar ul li a:hover, .header .top-bar ul li a:focus {
           color: #63c9d7; }
       .header .top-bar ul li.social-media {
-        padding-right: 15px; }
+        padding-right: 0; }
         .header .top-bar ul li.social-media a {
           display: inline-block;
           height: 34px;
@@ -458,6 +458,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
   width: 34px;
   margin-left: auto;
   top: 30px;
+  right: -15px;
   z-index: 1;
   -webkit-transition: all .5s ease;
   -o-transition: all .5s ease;
@@ -753,6 +754,8 @@ ul.nav-tabs.nav.visible-xs.sticky {
       .services .service .service-info .btn {
         background: #846196;
         margin: 0 auto; }
+        .services .service .service-info .btn:hover, .services .service .service-info .btn:focus {
+          background: #9BD195; }
     .services .service:hover, .services .service:focus {
       -webkit-transform: translateY(-50px);
       -ms-transform: translateY(-50px);
@@ -832,6 +835,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
       margin: 0 0 14px;
       font-size: 24px;
       font-weight: 700;
+      text-transform: capitalize;
       letter-spacing: 0.24px; }
     .post .post-meta p {
       color: #323e48; }
