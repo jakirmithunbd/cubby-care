@@ -21,11 +21,13 @@ $page_id = get_queried_object_id();
                 <div class="col-md-12 col-xs-12 no-padding-custom">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="#sec_1" data-toggle="tab"><span class="fa fa-list"></span>
+                            <a href="#sec_1" data-toggle="tab">
+                                <span><img src="<?php echo get_theme_file_uri('/assets/images/svg/list-green.svg'); ?>" class="img-responsive" alt=""></span>
                             <?php _e('List View', 'cubby'); ?></a>
                         </li>
                         <li>
-                            <a href="#sec_2" data-toggle="tab"><span class="fa fa-map-marker"></span><?php _e('Map View', 'cubby'); ?></a>
+                            <a href="#sec_2" data-toggle="tab">
+                                <span><img src="<?php echo get_theme_file_uri('/assets/images/svg/map-green.svg'); ?>" class="img-responsive" alt=""></span><?php _e('Map View', 'cubby'); ?></a>
                         </li>
                     </ul>
                 </div>
@@ -46,8 +48,9 @@ $page_id = get_queried_object_id();
                         <div class="col-md-3 col-sm-12 no-padding">
                             <div id="map">
                                 <?php $google_map = get_field('google_map'); ?>
+                                <?php $map_zoom = get_field('center_zoom_lavel'); ?>
 
-                                <iframe src="http://maps.google.com/maps?q=<?php echo $google_map['lat']; ?>, <?php echo $google_map['lng']; ?>&z=15&output=embed" width="100%" height="236" frameborder="0" style="border:0" marginheight="0" marginwidth="0" allowfullscreen></iframe>
+                                <iframe src="http://maps.google.com/maps?q=<?php echo $google_map['lat']; ?>, <?php echo $google_map['lng']; ?>&z=<?php echo $map_zoom; ?>&output=embed" width="100%" height="236" frameborder="0" style="border:0" marginheight="0" marginwidth="0" allowfullscreen></iframe>
                             </div>
                         </div>
 
@@ -107,7 +110,49 @@ $page_id = get_queried_object_id();
 
                 <div class="tab-pane fade" id="sec_2">
                     <div id="gmap">
-                       
+                    </div>
+                       <div id="gmap_popup">
+                        <?php $info = get_field('map_popup_info', 'options'); ?>
+                        <div class="address-details">
+                            <?php if ($info['centre_name']): ?>
+                            <h4><?php echo $info['centre_name']; ?></h4>
+                            <?php endif; ?>
+                            <?php $address = get_field('contacts', 'options'); ?>
+                            <?php if ($address['address']): ?>
+                            <address><?php echo $address['address']; ?></address>
+                            <?php endif; ?>
+
+                            <?php if ($address['phone']): ?>
+                            <p>p <a class="phone" href="tel:<?php echo $address['phone']; ?>"><?php echo $address['phone']; ?></a></p>
+                            <?php endif; ?>
+
+                            <?php if ($address['email']): ?>
+                            <p>e <a href="mailto:<?php echo $address['email']; ?>"><?php echo $address['email']; ?></a></p>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="opening-hour">
+                            <h5><?php _e('Opening hours', 'cubby'); ?></h5>
+                            <?php if ($info['opening_hours']): ?>
+
+                            <?php $sbtns =  $info['social_button']; ?>
+                            <div class="social-media">
+                                <?php if($sbtns): foreach ($sbtns as $sbtn): ?>
+                                <a href="<?php echo $sbtn['link']; ?>"><span class="fa fa-<?php echo $sbtn['icon']; ?>"></a>
+                                <?php endforeach; endif; ?>
+                            </div>
+
+                            <p><?php echo $info['opening_hours']; ?></p>
+                            <?php endif; ?>
+
+                            <ul class="list-inline">
+                                <?php $btns = $info['button']; ?>
+                                <?php if($btns): foreach ($btns as $btn): ?>
+                                <li><a class="btn" href="<?php echo $btn['link']; ?>"><?php echo $btn['text']; ?></a></li>
+                                <?php endforeach; endif; ?>
+                            </ul>
+
+                        </div>
                     </div>
                 </div><!-- / map -->
             </div>

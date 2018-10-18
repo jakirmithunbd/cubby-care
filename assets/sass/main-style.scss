@@ -1393,7 +1393,7 @@ button {
 
 /**---- About page ----**/
 .header_gutter {
-    height: 126px;
+    height: 154px;
     background: #9bd195;
 }
 
@@ -1754,15 +1754,16 @@ button {
 }
 /**---- Center ----**/
 .centers {
-    padding: 25px 0;
+    padding: 25px 0 70px;
 
     .breadcrumb {
-        margin: 0 0 54px;
+        margin: 0 0 58px;
     }
 
     .nav {
 
         &.nav-tabs {
+            margin: 0 0 38px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1793,7 +1794,14 @@ button {
                     letter-spacing: 0.26px;
 
                     span {
+                        height: 25px;
+                        width: 32px;
                         margin-right: 8px;
+
+                        img {
+                            max-width: 25px;
+                            transition: all .5s ease;
+                        }
                     }
                 }
 
@@ -1804,6 +1812,55 @@ button {
                         color: $white;
                     }
                 }
+
+                &:last-child {
+
+                    a{
+
+                        span {
+
+                            img {
+                                max-width: 100%;
+                            }
+                        }
+                    }
+
+                    &.active, &:hover, &:focus {
+
+                        a {
+
+                            span {
+                                opacity: 1;
+                                background-repeat: no-repeat !important;
+                                transition: all .5s ease;
+                                background: url('../images/svg/map-white.svg');
+
+                                img {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:first-child {
+
+                    &.active, &:hover, &:focus {
+
+                        a {
+
+                            span {
+                                background-repeat: no-repeat !important;
+                                transition: all .5s ease;
+                                background: url('../images/svg/list-white.svg');
+
+                                img {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -1811,7 +1868,7 @@ button {
     .tab-content {
 
         .center {
-            margin: 20px 0 0;
+            margin: 0 0 17px;
 
             .center-info {
                 padding: 53px 60px;
@@ -2459,6 +2516,118 @@ button {
 #gmap {
     height: 600px;
     width: 100%;
+
+    .popup-bubble-content {
+        max-width: 360px;
+        border-radius: 9px;
+        position: absolute;
+        right: 54%;
+        top: -55px;
+
+        .address-details {
+            padding: 25px;
+            border-top-right-radius: 9px;
+            border-top-left-radius: 9px;
+            background: #63c9d7 !important;
+
+            h4 {
+                color: $white;
+                margin: 0 0 7px;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 28px;
+                letter-spacing: 0.26px;
+            }
+            
+            address, p, a {
+                font-family: $nor;
+                color: $white;
+                font-size: 16px;
+                margin: 0;
+                font-weight: 400;
+                line-height: 23px;
+                letter-spacing: 0.2px;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-variant-ligatures: none;
+            }
+
+            .phone {
+                font-weight: 700;
+            }
+        }
+
+        .opening-hour {
+            background: $white;
+            padding: 25px;
+            border-bottom-right-radius: 9px;
+            border-bottom-left-radius: 9px;
+
+            h5 {
+                color: $primary;
+                margin: 0 0 3px;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 20px;
+                font-family: $nor;
+                letter-spacing: 0.26px;
+            }
+
+            .social-media {
+                margin: 3px 0 8px;
+
+                a {
+                    width: 34px;
+                    height: 34px;
+                    margin-right: 9px;
+                    color: $white;
+                    background-color: #63c9d7;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 500px;
+
+                    span {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            p {
+                font-family: $nor;
+                color: $primary;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 23px;
+                display: inline;
+                letter-spacing: 0.2px;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-variant-ligatures: none;
+            }
+
+            ul {
+
+                li {
+
+                    .btn {
+                        height: 40px;
+                        max-width: 146px;
+                        font-weight: 700;
+                        margin: 12px 0;
+                        margin-left: auto;
+                        border-radius: 12px;
+                        font-size: 18px;
+                        line-height: 23px;
+                        text-transform: uppercase;
+                        letter-spacing: 1.03px;
+                    }
+                }
+            }
+        }
+    }
 }
 // Gallery
 
@@ -2524,7 +2693,6 @@ select {
                     a, p {
                         font-family: $nor;
                         color: #323e48;
-                        font-size: 18px;
                         font-size: 16px;
                         font-weight: 400;
                         line-height: 23px;
@@ -2801,7 +2969,11 @@ select {
 }
 /**---- Privacy ----**/
 .privacy {
-    padding: 50px 0;
+    padding: 28px 0 90px;
+
+    .breadcrumb {
+        margin: 0 0 52px;
+    }
 
     h1,h2,h3,h4,h5,h5 {
         margin: 15px 0 25px;

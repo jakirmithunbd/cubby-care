@@ -26,6 +26,10 @@
     }
 }
 @media only screen and (max-width: 1199px) {
+    .header_gutter {
+        height: 110px;
+    }
+
     .search-button.mobile-search {
         display: none;
     }
@@ -364,11 +368,18 @@
             }
         }
     }
+
+    .header.sticky {
+
+        #search-box {
+            top: 90px;
+        }
+    }
     
     #search-box {
         position: absolute;
         right: 0;
-        top: 75px;
+        top: 110px;
         display: none;
         width: 100%;
 
@@ -390,12 +401,18 @@
 
                 button {
                     border: 0;
+                    height: 100%;
+                    width: 30px;
+                    position: absolute;
+                    top: 0;
+                    left: 11px;
 
                     img {
                         position: absolute;
                         z-index: 99;
                         top: calc(50% - 10px);
-                        left: 16px;
+                        left: 10px;
+                        max-width: 20px;
                     }
                 }
 
@@ -404,9 +421,10 @@
 
                     img {
                         position: absolute;
+                        top: 0;
                         z-index: 999;
-                        top: calc(50% - 10px);
                         right: 30px;
+                        height: 100%;
                     }
                 }
             }
@@ -493,6 +511,22 @@
     }
     
     // Center Page
+    .centers {
+
+        .tab-content {
+
+            .center {
+
+                .no-padding-left {
+                    padding: 0;
+                }
+
+                .center-info {
+                    margin-top: -6px;
+                }
+            }
+        }
+    }
     .centers-single {
 
         .centre-wrap {

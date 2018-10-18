@@ -1,5 +1,5 @@
 <?php  
-//show_admin_bar(false);
+show_admin_bar(false);
 
 require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 require get_template_directory() . '/inc/custom-post-type.php';

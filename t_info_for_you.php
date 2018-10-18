@@ -99,8 +99,11 @@ Template Name: Info For You
                         <?php if ($item['title']): ?>
                         	<h3><?php echo $item['title']; ?></h3>
                         <?php endif; ?>
-
-                        <a class="btn" href="#"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span>Download</a>
+                        
+                        <?php $btn = $item['button']; ?>
+                        <?php if ($btn['text'] || $btn['file']): ?>
+                        <a class="btn" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
+                        <?php endif; ?>
 
                         <?php if ($item['content']): ?>
                         	<?php echo $item['content']; ?>

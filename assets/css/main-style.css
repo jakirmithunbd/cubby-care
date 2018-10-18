@@ -1058,7 +1058,7 @@ button:hover, button:focus, button:active:focus {
 
 /**---- About page ----**/
 .header_gutter {
-  height: 126px;
+  height: 154px;
   background: #9bd195; }
 
 .breadcrumb {
@@ -1315,10 +1315,11 @@ button:hover, button:focus, button:active:focus {
 
 /**---- Center ----**/
 .centers {
-  padding: 25px 0; }
+  padding: 25px 0 70px; }
   .centers .breadcrumb {
-    margin: 0 0 54px; }
+    margin: 0 0 58px; }
   .centers .nav.nav-tabs {
+    margin: 0 0 38px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1360,12 +1361,38 @@ button:hover, button:focus, button:active:focus {
         text-transform: uppercase;
         letter-spacing: 0.26px; }
         .centers .nav.nav-tabs li a span {
+          height: 25px;
+          width: 32px;
           margin-right: 8px; }
+          .centers .nav.nav-tabs li a span img {
+            max-width: 25px;
+            -webkit-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            transition: all .5s ease; }
       .centers .nav.nav-tabs li.active a, .centers .nav.nav-tabs li:hover a, .centers .nav.nav-tabs li:focus a {
         background: #63c9d7;
         color: #fff; }
+      .centers .nav.nav-tabs li:last-child a span img {
+        max-width: 100%; }
+      .centers .nav.nav-tabs li:last-child.active a span, .centers .nav.nav-tabs li:last-child:hover a span, .centers .nav.nav-tabs li:last-child:focus a span {
+        opacity: 1;
+        background-repeat: no-repeat !important;
+        -webkit-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
+        background: url("../images/svg/map-white.svg"); }
+        .centers .nav.nav-tabs li:last-child.active a span img, .centers .nav.nav-tabs li:last-child:hover a span img, .centers .nav.nav-tabs li:last-child:focus a span img {
+          opacity: 0; }
+      .centers .nav.nav-tabs li:first-child.active a span, .centers .nav.nav-tabs li:first-child:hover a span, .centers .nav.nav-tabs li:first-child:focus a span {
+        background-repeat: no-repeat !important;
+        -webkit-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
+        background: url("../images/svg/list-white.svg"); }
+        .centers .nav.nav-tabs li:first-child.active a span img, .centers .nav.nav-tabs li:first-child:hover a span img, .centers .nav.nav-tabs li:first-child:focus a span img {
+          opacity: 0; }
   .centers .tab-content .center {
-    margin: 20px 0 0; }
+    margin: 0 0 17px; }
     .centers .tab-content .center .center-info {
       padding: 53px 60px;
       display: -webkit-box;
@@ -1827,6 +1854,96 @@ button:hover, button:focus, button:active:focus {
 #gmap {
   height: 600px;
   width: 100%; }
+  #gmap .popup-bubble-content {
+    max-width: 360px;
+    border-radius: 9px;
+    position: absolute;
+    right: 54%;
+    top: -55px; }
+    #gmap .popup-bubble-content .address-details {
+      padding: 25px;
+      border-top-right-radius: 9px;
+      border-top-left-radius: 9px;
+      background: #63c9d7 !important; }
+      #gmap .popup-bubble-content .address-details h4 {
+        color: #fff;
+        margin: 0 0 7px;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: 0.26px; }
+      #gmap .popup-bubble-content .address-details address, #gmap .popup-bubble-content .address-details p, #gmap .popup-bubble-content .address-details a {
+        font-family: "TT Norms";
+        color: #fff;
+        font-size: 16px;
+        margin: 0;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0.2px;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-variant-ligatures: none;
+        font-variant-ligatures: none; }
+      #gmap .popup-bubble-content .address-details .phone {
+        font-weight: 700; }
+    #gmap .popup-bubble-content .opening-hour {
+      background: #fff;
+      padding: 25px;
+      border-bottom-right-radius: 9px;
+      border-bottom-left-radius: 9px; }
+      #gmap .popup-bubble-content .opening-hour h5 {
+        color: #63c9d7;
+        margin: 0 0 3px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 20px;
+        font-family: "TT Norms";
+        letter-spacing: 0.26px; }
+      #gmap .popup-bubble-content .opening-hour .social-media {
+        margin: 3px 0 8px; }
+        #gmap .popup-bubble-content .opening-hour .social-media a {
+          width: 34px;
+          height: 34px;
+          margin-right: 9px;
+          color: #fff;
+          background-color: #63c9d7;
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          border-radius: 500px; }
+          #gmap .popup-bubble-content .opening-hour .social-media a span {
+            font-size: 18px; }
+      #gmap .popup-bubble-content .opening-hour p {
+        font-family: "TT Norms";
+        color: #63c9d7;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        display: inline;
+        letter-spacing: 0.2px;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-variant-ligatures: none;
+        font-variant-ligatures: none; }
+      #gmap .popup-bubble-content .opening-hour ul li .btn {
+        height: 40px;
+        max-width: 146px;
+        font-weight: 700;
+        margin: 12px 0;
+        margin-left: auto;
+        border-radius: 12px;
+        font-size: 18px;
+        line-height: 23px;
+        text-transform: uppercase;
+        letter-spacing: 1.03px; }
 
 /**---- Contact Us ----**/
 select {
@@ -1876,7 +1993,6 @@ select {
       .contact .quick-contact ul li .text a, .contact .quick-contact ul li .text p {
         font-family: "TT Norms";
         color: #323e48;
-        font-size: 18px;
         font-size: 16px;
         font-weight: 400;
         line-height: 23px;
@@ -2066,7 +2182,9 @@ select {
 
 /**---- Privacy ----**/
 .privacy {
-  padding: 50px 0; }
+  padding: 28px 0 90px; }
+  .privacy .breadcrumb {
+    margin: 0 0 52px; }
   .privacy h1, .privacy h2, .privacy h3, .privacy h4, .privacy h5, .privacy h5 {
     margin: 15px 0 25px;
     color: #505b88; }
@@ -2444,6 +2562,8 @@ select {
     padding-right: 5px !important; } }
 
 @media only screen and (max-width: 1199px) {
+  .header_gutter {
+    height: 110px; }
   .search-button.mobile-search {
     display: none; }
   .header {
@@ -2673,10 +2793,12 @@ select {
           width: 0; }
       #sidr-main .sidr-inner .nav.navbar-nav > li:last-child a {
         padding-right: 3px; }
+  .header.sticky #search-box {
+    top: 90px; }
   #search-box {
     position: absolute;
     right: 0;
-    top: 75px;
+    top: 110px;
     display: none;
     width: 100%; }
     #search-box .input-group {
@@ -2692,19 +2814,26 @@ select {
         padding-left: 40px !important;
         position: relative; }
       #search-box .input-group .input-group-btn button {
-        border: 0; }
+        border: 0;
+        height: 100%;
+        width: 30px;
+        position: absolute;
+        top: 0;
+        left: 11px; }
         #search-box .input-group .input-group-btn button img {
           position: absolute;
           z-index: 99;
           top: calc(50% - 10px);
-          left: 16px; }
+          left: 10px;
+          max-width: 20px; }
       #search-box .input-group .input-group-btn #close {
         z-index: 999; }
         #search-box .input-group .input-group-btn #close img {
           position: absolute;
+          top: 0;
           z-index: 999;
-          top: calc(50% - 10px);
-          right: 30px; }
+          right: 30px;
+          height: 100%; }
   .centers .tab-content .center .center-info {
     padding: 40px 25px; }
     .centers .tab-content .center .center-info li.opening-hour .opening {
@@ -2728,6 +2857,10 @@ select {
       transform: inherit; }
   .testimonials .slick-dotted.slick-slider {
     margin-bottom: 0; }
+  .centers .tab-content .center .no-padding-left {
+    padding: 0; }
+  .centers .tab-content .center .center-info {
+    margin-top: -6px; }
   .centers-single .centre-wrap .centre-tabs {
     margin: 30px 0 0;
     padding-left: 0;

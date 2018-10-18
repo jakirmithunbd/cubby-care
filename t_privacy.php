@@ -17,9 +17,7 @@ $page_id = get_queried_object_id();
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<?php while(have_posts()) :the_post(); ?>
-					<?php the_content(); ?>
-				<?php endwhile; ?>
+				<?php echo the_field('privacy_policy'); ?>
 			</div>
 		</div>
 	</div>
