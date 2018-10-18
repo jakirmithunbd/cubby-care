@@ -1,5 +1,5 @@
 <?php  
-show_admin_bar(false);
+//show_admin_bar(false);
 
 require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 require get_template_directory() . '/inc/custom-post-type.php';
@@ -55,6 +55,28 @@ function cubby_assets(){
 	$map_zoom = get_field('map_zoom', 'options');
 	$location = get_field('google_map_view');
 
+	$centers = get_posts(
+		array(
+			'post_type' => 'centre',
+			'posts_per_page' => -1
+		)
+	);
+
+	$centers_ids = wp_list_pluck( $centers, 'ID' );
+	$data_to_localize = [];
+	foreach ($centers_ids as $id) {
+		$title = get_the_title($id);
+		$permalink = get_the_permalink($id);
+		$google_map = get_field('google_map', $id);
+		$centre_address = get_field('centre_address', $id);
+		$opening_hours = get_field('opening_hours', $id);
+		$data_to_localize[$id]["title"] = $title;
+		$data_to_localize[$id]["permalink"] = $permalink;
+		$data_to_localize[$id]["google_map"] = $google_map;
+		$data_to_localize[$id]["centre_address"] = $centre_address;
+		$data_to_localize[$id]["opening_hours"] = $opening_hours;
+	}
+
 
 	// //localize data 
 	$data = array(
@@ -63,6 +85,7 @@ function cubby_assets(){
 		'gmap_latitude' => $location['lat'],
 		'gmap_longitude' => $location['lng'],
 		'gmap_address' => $location['address'],
+		'new_data' => $data_to_localize,
 		'site_url'   => get_theme_file_uri(),
 		'admin_ajax'   => admin_url( 'admin-ajax.php' ),
 	);

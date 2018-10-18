@@ -878,6 +878,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
         display: flex;
         align-items: center;
         justify-content: center;
+        background-position: 50% -38% !important;
         
         .banner-info {
             margin-top: 50px;
@@ -1000,6 +1001,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
         margin: 0 auto;
 
         h1 {
+            max-width: 425px;
             font-size: 64px;
             line-height: 62px;
             color: $white;
@@ -1755,7 +1757,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
 
         p {
             color: #323e48;
-            font-family: "TT Norms Regular";
+            font-family: $nor;
             font-size: 18px;
             font-weight: 400;
             line-height: 25px;
@@ -2536,7 +2538,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
 
 // map
 #gmap {
-    height: 600px;
+    height: 740px;
     width: 100%;
 
     .popup-bubble-content {

@@ -23,8 +23,8 @@
           </div>
           
           <div class="row footer-bottom">
-              <div class="col-md-6 col-sm-6 col-xs-6 col footer-menu">
-                  <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6 col">
+                  <div class="row footer-menu">
 
                   <?php if (function_exists('wp_nav_menu')): ?>
                       <?php wp_nav_menu( 
@@ -59,7 +59,7 @@
                   <?php endif; ?>
                   </div>
               </div>
-              <div class="col-md-6 col-sm-6 col-xs-6 col">
+              <div class="col-md-3 col-sm-3 col-xs-3 col">
                   <div class="quick-contact">
                       <p>Connect with us</p>
                       <ul class="list-inline">
@@ -75,6 +75,11 @@
                           <?php endforeach; endif; ?>
                       </ul>
 
+                  </div>
+              </div>
+
+              <div class="col-md-3 col-sm-3 col-xs-3 col">
+                  <div class="quick-contact">
                       <?php $phone = get_field('contacts', 'options'); ?>
                       <p><?php _e('Call us', 'cubby'); ?> <span><?php _e( '1300 day care', 'cubby' ); ?></span> <br> (<a href="tel:<?php echo $phone['phone']; ?>"><?php echo $phone['phone']; ?></a>)</p>
 

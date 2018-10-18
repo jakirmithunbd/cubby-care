@@ -111,48 +111,7 @@ $page_id = get_queried_object_id();
                 <div class="tab-pane fade" id="sec_2">
                     <div id="gmap">
                     </div>
-                       <div id="gmap_popup">
-                        <?php $info = get_field('map_popup_info', 'options'); ?>
-                        <div class="address-details">
-                            <?php if ($info['centre_name']): ?>
-                            <h4><?php echo $info['centre_name']; ?></h4>
-                            <?php endif; ?>
-                            <?php $address = get_field('contacts', 'options'); ?>
-                            <?php if ($address['address']): ?>
-                            <address><?php echo $address['address']; ?></address>
-                            <?php endif; ?>
-
-                            <?php if ($address['phone']): ?>
-                            <p>p <a class="phone" href="tel:<?php echo $address['phone']; ?>"><?php echo $address['phone']; ?></a></p>
-                            <?php endif; ?>
-
-                            <?php if ($address['email']): ?>
-                            <p>e <a href="mailto:<?php echo $address['email']; ?>"><?php echo $address['email']; ?></a></p>
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="opening-hour">
-                            <h5><?php _e('Opening hours', 'cubby'); ?></h5>
-                            <?php if ($info['opening_hours']): ?>
-
-                            <?php $sbtns =  $info['social_button']; ?>
-                            <div class="social-media">
-                                <?php if($sbtns): foreach ($sbtns as $sbtn): ?>
-                                <a href="<?php echo $sbtn['link']; ?>"><span class="fa fa-<?php echo $sbtn['icon']; ?>"></a>
-                                <?php endforeach; endif; ?>
-                            </div>
-
-                            <p><?php echo $info['opening_hours']; ?></p>
-                            <?php endif; ?>
-
-                            <ul class="list-inline">
-                                <?php $btns = $info['button']; ?>
-                                <?php if($btns): foreach ($btns as $btn): ?>
-                                <li><a class="btn" href="<?php echo $btn['link']; ?>"><?php echo $btn['text']; ?></a></li>
-                                <?php endforeach; endif; ?>
-                            </ul>
-
-                        </div>
+                    <div id="gmap_popup">
                     </div>
                 </div><!-- / map -->
             </div>

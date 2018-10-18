@@ -175,18 +175,20 @@
 
     /*** Enable Masonry */
     var $container = $('.masonry-container');
+    if($container.length){
         $container.imagesLoaded( function () {
-            $container.masonry({
-                columnWidth: '.item',
-            itemSelector: '.item'
-            });
-        // ensure resize happens with max-width, #803
-        var msnry = $container.data('masonry');
-        msnry.needsResizeLayout = function() {
-          return true;
-        };
-    });
-    
+                $container.masonry({
+                    columnWidth: '.item',
+                itemSelector: '.item'
+                });
+            // ensure resize happens with max-width, #803
+            var msnry = $container.data('masonry');
+            msnry.needsResizeLayout = function() {
+              return true;
+            };
+        });
+    }
+
     //Reinitialize masonry inside each panel after the relative tab link is clicked - 
     $('a[data-toggle=tab]').each(function () {
         var $this = $(this);
@@ -399,33 +401,51 @@
         };
 
         var contentString = ajax.gmap_address;
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 200
-        });
+        // var infowindow = new google.maps.InfoWindow({
+        //     content: contentString,
+        //     maxWidth: 200
+        // });
 
         var map = new google.maps.Map(mapElement, mapOptions);
 
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng( google_map_setting.latitude, google_map_setting.longitude),
-            map: map,
-            icon: image,
-        });
 
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map, marker);
-        });
+        // load multiple markers by looping through the localized data
+        var marker, id;
+
+        for (var id in ajax.new_data) {
+            if (ajax.new_data.hasOwnProperty(id)) {
+                var item = ajax.new_data[id];
+
+                // each marker
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng( item.google_map.lat, item.google_map.lng),
+                    map: map,
+                    icon: image,
+                    title: item.google_map.address
+                });
+
+                // on click marker event
+                google.maps.event.addListener(marker, 'click', (function (marker, id) {
+                    return function () {
+
+                            // show location data
+                            popup = new Popup(
+                                new google.maps.LatLng(google_map_setting.latitude, google_map_setting.longitude),
+                                document.getElementById('gmap_popup'), id);
+                            popup.setMap(map);
+
+                    }
+                })(marker, id, map));
+            }
+        }
 
         var center = map.getCenter();
         google.maps.event.addDomListener(window, 'resize', function() {
             map.setCenter(center);
         });
 
-        popup = new Popup(
-            new google.maps.LatLng(google_map_setting.latitude, google_map_setting.longitude),
-            document.getElementById('gmap_popup'));
-        popup.setMap(map);
     }
+
 
     /** Defines the Popup class. */
     function definePopupClass() {
@@ -436,10 +456,40 @@
        * @constructor
        * @extends {google.maps.OverlayView}
        */
-      Popup = function(position, content) {
+      Popup = function(position, content, location_id) {
         this.position = position;
 
         content.classList.add('popup-bubble-content');
+
+        var location_data = ajax.new_data[location_id];
+
+        var location = `<div class="address-details">
+            <h4>${location_data.title}</h4>
+            <address>${location_data.centre_address.address}</address>
+            <p>p <a class="phone" href="tel:">${location_data.centre_address.phone}</a></p>
+            <p>e <a href="mailto:">${location_data.centre_address.email}</a></p>
+        </div>
+
+        <div class="opening-hour">
+            <h5>Opening hours</h5>
+            <div class="social-media">`;
+
+            location_data.opening_hours.social_media.forEach(function(item){
+                        location += `<a href="${item.url}"><span class="fa fa-${item.icon}"></a>`;
+            });
+
+        location += `</div>
+            <h5>Opening hours</h5>
+            <p>${location_data.opening_hours.opening_hour}</p>
+            <ul class="list-inline">`;
+
+            location +=`<li><a class="btn" href="${location_data.opening_hours.enquire_button.url}">${location_data.opening_hours.enquire_button.text}</a></li>`;
+            location +=`<li><a class="btn" href="${location_data.permalink}">Read More</a></li>`;
+            
+            location +=`</ul>
+        </div>`;
+
+        $(content).html(location);
 
         var pixelOffset = document.createElement('div');
         pixelOffset.classList.add('popup-bubble-anchor');

@@ -675,7 +675,8 @@ ul.nav-tabs.nav.visible-xs.sticky {
     align-items: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+    background-position: 50% -38% !important; }
     .banner .slick-slider .banner-info {
       margin-top: 50px;
       max-width: 570px; }
@@ -767,6 +768,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
     max-width: 480px;
     margin: 0 auto; }
     .committed .content h1 {
+      max-width: 425px;
       font-size: 64px;
       line-height: 62px;
       color: #fff;
@@ -1318,7 +1320,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
       letter-spacing: 0.62px; }
     .page-banner .page-banner-info p {
       color: #323e48;
-      font-family: "TT Norms Regular";
+      font-family: "TT Norms";
       font-size: 18px;
       font-weight: 400;
       line-height: 25px;
@@ -1869,7 +1871,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
       box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2); }
 
 #gmap {
-  height: 600px;
+  height: 740px;
   width: 100%; }
   #gmap .popup-bubble-content {
     max-width: 360px;
@@ -2947,6 +2949,7 @@ select {
   .committed .content {
     max-width: 100%; }
     .committed .content h1 {
+      max-width: 100%;
       font-size: 60px;
       line-height: 65px; }
   .latest-post {
@@ -3175,7 +3178,11 @@ select {
         width: 100%;
         border-radius: 0; }
   .related-post {
-    padding: 70px 0; } }
+    padding: 70px 0; }
+  .footer .footer-bottom .footer-menu {
+    display: grid; }
+    .footer .footer-bottom .footer-menu .nav.navbar-nav li a {
+      padding-left: 0; } }
 
 @media only screen and (max-width: 500px) {
   .contact-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container .gfield_radio li label:before {

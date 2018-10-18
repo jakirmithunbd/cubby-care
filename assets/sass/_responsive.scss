@@ -685,7 +685,8 @@
         .content {
             max-width: 100%;
 
-            h1{
+            h1 {
+                max-width: 100%;
                 font-size: 60px;
                 line-height: 65px;
             }
@@ -1281,6 +1282,29 @@
 
     .related-post {
         padding: 70px 0;
+    }
+
+    .footer {
+
+        .footer-bottom {
+
+            .footer-menu {
+                display: grid;
+
+                .nav {
+
+                    &.navbar-nav {
+
+                        li {
+
+                            a {
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
