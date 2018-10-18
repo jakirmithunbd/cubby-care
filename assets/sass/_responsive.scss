@@ -713,6 +713,21 @@
         }
     }
 
+    .blog-single {
+        padding-bottom: 10px;
+
+        .author {
+            margin: 0 0 30px;
+        }
+
+        .share {
+
+            .st-right#st-1 {
+                text-align: center !important;
+            }
+        }
+    }
+
     // Gaming room
     .game-room {
 
@@ -1218,6 +1233,31 @@
             padding: 60px 0 0;
         }
     }
+
+    .blog-single {
+
+        .environment {
+
+            ul {
+                margin: 20px 0;
+
+                li {
+                    padding: 0;
+                    margin: 10px 0;
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                        border-radius:0;
+                    }
+                }
+            }
+        }
+    }
+
+    .related-post {
+        padding: 70px 0;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -1253,6 +1293,9 @@
     }
 }
 @media only screen and (max-width: 480px) {
+    ul.nav-tabs.nav.visible-xs.sticky {
+        top: 66px;
+    }
     .header {
 
         .navbar {

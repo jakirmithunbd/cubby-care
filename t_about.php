@@ -16,7 +16,7 @@ Template Name: Who We Are
         </div>
         <div class="row">
             <div class="col-md-3 col-sm-4 no-padding-custom">
-                <div class="side-bar">
+                <div class="side-bar" id="sticky_tab">
                     <ul class="nav nav-tabs hidden-xs">
                     	<?php
 						$tabs = [

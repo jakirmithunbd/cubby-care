@@ -22,9 +22,9 @@
 		
 		<div class="blog-thumb">
 			<div class="row justify-content-center">
-	            <div class="col-md-8">
+	            <div class="col-md-8 ">
 					<div class="media">
-						<?php $img = get_the_post_thumbnail(null, 'large'); ?>
+						<?php $img = get_the_post_thumbnail(array('class' => 'img-responisve'), 'large'); ?>
 		                <?php if ($img): ?>
 		                	<?php echo $img; ?>
 		                <?php endif ?>
@@ -39,7 +39,7 @@
 		
 		<?php $client = $con['client_quote']; ?>
         <div class="quote row justify-content-center">
-        	<div class="col-sm-8">
+        	<div class="col-md-8 col-sm-12">
         		<div class="col-md-6 col-sm-6">
 	        		<div class="client-info">
 	        			<?php if ($client['quote']): ?>
@@ -64,7 +64,7 @@
 		
 		<?php $env = $con['environment']; ?>
         <div class="row justify-content-center">
-        	<div class="col-sm-8">
+        	<div class="col-md-8 col-sm-12">
         		<div class="environment">
         			<?php if ($env['title']): ?>
         				<h4><?php echo $env['title']; ?></h4>
@@ -91,8 +91,8 @@
         </div>
 
         <div class="row justify-content-center">
-        	<div class="col-sm-8">
-        		<div class="col-xs-6 col">
+        	<div class="col-md-8 col-sm-12">
+        		<div class="col-sm-8">
 	        		<div class="author">
 	        			<?php
 						    global $post;
@@ -111,7 +111,7 @@
 	        			</ul>
 	        		</div>
 	        	</div>
-	        	<div class="col-xs-6 col">
+	        	<div class="col-sm-4">
 	        		<div class="share">
 	        			<?php echo sharethis_inline_buttons(); ?>
 	        		</div>

@@ -144,7 +144,11 @@ textarea {
   margin-top: 0; }
   .media img {
     max-width: 100%;
-    width: 100%; }
+    width: 100%;
+    height: auto; }
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0; }
 
 .btn {
   height: 40px;
@@ -224,6 +228,13 @@ button:hover, button:focus, button:active:focus {
   .justify-content-center:before, .justify-content-center:after {
     content: none; }
 
+ul.nav-tabs.nav.visible-xs.sticky {
+  position: fixed;
+  top: 90px;
+  z-index: 99;
+  width: 100%;
+  left: 0; }
+
 /*slick dots*/
 .slick-dots {
   bottom: 100%; }
@@ -266,7 +277,7 @@ button:hover, button:focus, button:active:focus {
     border: 0;
     background-color: #767676; }
   .nav-tabs.visible-xs:after {
-    pointer-event: none;
+    pointer-events: none;
     content: "";
     right: 20px;
     height: 10px;
@@ -303,7 +314,7 @@ button:hover, button:focus, button:active:focus {
     padding: 10px 0;
     background: #323e48; }
     .header .top-bar ul li {
-      padding: 0 20px; }
+      padding: 0 10px; }
       .header .top-bar ul li p {
         display: inline-block;
         font-family: "Melbourne";
@@ -1858,8 +1869,8 @@ button:hover, button:focus, button:active:focus {
     max-width: 360px;
     border-radius: 9px;
     position: absolute;
-    right: 54%;
-    top: -55px; }
+    right: 53%;
+    top: -90px; }
     #gmap .popup-bubble-content .address-details {
       padding: 25px;
       border-top-right-radius: 9px;
@@ -2489,6 +2500,8 @@ select {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
+  .blog-single .author ul li:first-child span {
+    width: 180px; }
   .blog-single .share {
     margin: 0 0 70px; }
     .blog-single .share #st-1 .st-btn {
@@ -2940,6 +2953,12 @@ select {
         border-bottom-right-radius: 0; }
   .blog-page .featured-post-area .featured-post .slick-dots {
     bottom: -6%; }
+  .blog-single {
+    padding-bottom: 10px; }
+    .blog-single .author {
+      margin: 0 0 30px; }
+    .blog-single .share .st-right#st-1 {
+      text-align: center !important; }
   .game-room .booking-form:before {
     left: 0;
     background-size: cover !important;
@@ -3125,13 +3144,26 @@ select {
   .people .team-member .media.pull-left {
     float: none !important; }
   .single-centre .latest-post {
-    padding: 60px 0 0; } }
+    padding: 60px 0 0; }
+  .blog-single .environment ul {
+    margin: 20px 0; }
+    .blog-single .environment ul li {
+      padding: 0;
+      margin: 10px 0;
+      width: 100%; }
+      .blog-single .environment ul li img {
+        width: 100%;
+        border-radius: 0; }
+  .related-post {
+    padding: 70px 0; } }
 
 @media only screen and (max-width: 500px) {
   .contact-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container .gfield_radio li label:before {
     top: 8px; } }
 
 @media only screen and (max-width: 480px) {
+  ul.nav-tabs.nav.visible-xs.sticky {
+    top: 66px; }
   .header .navbar {
     padding: 10px 0; }
     .header .navbar.navbar-default .navbar-header .social {

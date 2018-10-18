@@ -30,6 +30,17 @@
         else {
           $("#sidr-main").removeClass("sidr-sticky");
         }
+
+        // airtasker like sticky tab
+        var tab = $('#sticky_tab');
+        if(tab.length > 0){
+            var tabLocationTop = tab.offset().top - $(window).scrollTop();
+            if(tabLocationTop <= 126 ){
+              tab.find('.nav-tabs').addClass('sticky');
+            } else {
+              tab.find('.nav-tabs').removeClass('sticky');
+            }
+        };
     });
 
 
@@ -106,6 +117,23 @@
         infinite: true,
         dots: false,
         arrows: false,
+
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                dots: true,
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 575,
+              settings: {
+                dots: true,
+                slidesToShow: 1
+              }
+            }
+        ]
     });
 
     $('.header').on('click', '.search-toggle', function(e) {
