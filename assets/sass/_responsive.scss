@@ -607,6 +607,30 @@
 }
 
 
+@media only screen and (max-width: 900px) {
+    .centers-single {
+
+        .centre-wrap {
+
+            .centre-tabs {
+
+                .nav{
+
+                    &.nav-tabs {
+
+                        li {
+
+                            a {
+                                padding-left: 18px;
+                                padding-right: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media only screen and (max-width: 767px) {
     .no-padding-custom {
         padding: 0 !important;

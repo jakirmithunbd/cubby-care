@@ -38,7 +38,7 @@
                        <div id="map">
                            <?php $google_map = get_field('google_map'); ?>
 
-                            <iframe src="http://maps.google.com/maps?q=<?php echo $google_map['lat']; ?>, <?php echo $google_map['lng']; ?>&z=15&output=embed" width="100%" height="236" frameborder="0" style="border:0" marginheight="0" marginwidth="0" allowfullscreen></iframe>
+                            <iframe src="http://maps.google.com/maps?q=<?php echo $google_map['lat']; ?>, <?php echo $google_map['lng']; ?>&z=18&output=embed" width="100%" height="236" frameborder="0" style="border:0" marginheight="0" marginwidth="0" allowfullscreen></iframe>
                        </div>
 						
 						<?php $address = get_field('centre_address'); ?>
@@ -72,7 +72,7 @@
                    </div> 
                 </div>
                 <div class="col-md-9">
-                    <div class="centre-tabs">
+                    <div class="centre-tabs" id="sticky_tab">
                         <ul class="nav nav-tabs hidden-xs">
                             <?php
 							$tabs = [
@@ -233,14 +233,14 @@
                             </div><!-- / team pane -->
 
                         <div class="tab-pane fade people" id="count_3">
-                            <div class="gallery container">
-                                <div class="masonry-container">
+                            <div class="gallery">
+                                <div class="row masonry-container">
                                     <?php $img = get_field('centre_gallery'); ?>
 
                                     <?php 
                                     $items = $img['images'];
                                     if($items): foreach ($items as $item):?>
-                                    <div class="item">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 item">
                                         <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
                                     </div><!-- / Gallery item -->
                                     <?php endforeach; endif; ?>

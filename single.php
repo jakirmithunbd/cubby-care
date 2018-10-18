@@ -92,30 +92,32 @@
 
         <div class="row justify-content-center">
         	<div class="col-md-8 col-sm-12">
-        		<div class="col-sm-8">
-	        		<div class="author">
-	        			<?php
-						    global $post;
-						    $author_id=$post->post_author;
-						?>
-	        			<ul class="list-inline">
-	        				<li>
-	        					<span>
-	        						<?php echo get_the_author_meta('display_name', $author_id); ?>
-	        							
-	        					</span>
-	        				</li>
-							<li>
-								<?php the_tags(' '); ?>
-							</li>
-	        			</ul>
-	        		</div>
-	        	</div>
-	        	<div class="col-sm-4">
-	        		<div class="share">
-	        			<?php echo sharethis_inline_buttons(); ?>
-	        		</div>
-	        	</div>
+        		<div class="row">
+        			<div class="col-sm-8">
+		        		<div class="author">
+		        			<?php
+							    global $post;
+							    $author_id=$post->post_author;
+							?>
+		        			<ul class="list-inline">
+		        				<li>
+		        					<span>
+		        						<?php echo get_the_author_meta('display_name', $author_id); ?>
+		        							
+		        					</span>
+		        				</li>
+								<li>
+									<?php the_tags(' '); ?>
+								</li>
+		        			</ul>
+		        		</div>
+		        	</div>
+		        	<div class="col-sm-4">
+		        		<div class="share">
+		        			<?php echo sharethis_inline_buttons(); ?>
+		        		</div>
+		        	</div>
+        		</div>
         	</div>
         </div>
 	</div>

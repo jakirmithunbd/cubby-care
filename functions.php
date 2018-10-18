@@ -40,7 +40,8 @@ function cubby_assets(){
 
 	//script ===
 	wp_enqueue_script('bootstrap', get_theme_file_uri('/assets/js/bootstrap.min.js'), array('jquery'), '0.0.1', true);
-	wp_enqueue_script('masonary', get_theme_file_uri('/assets/js/masonry.min.js'), array('jquery'), '0.0.2', true);
+	wp_enqueue_script('masonary', get_theme_file_uri('/assets/js/masonry.min.js'), array('jquery'), '0.0.7', true);
+	wp_enqueue_script('imageload', get_theme_file_uri('/assets/js/imageload.js'), array('masonary'), '0.0.5', true);
 	wp_enqueue_script('sidr', get_theme_file_uri('/assets/js/sidr.min.js'), array('jquery'), '0.0.2', true);
 	wp_enqueue_script('slick', get_theme_file_uri('/assets/js/slick.min.js'), array('jquery'), '0.0.3', true);
 
