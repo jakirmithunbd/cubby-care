@@ -698,9 +698,12 @@ ul.nav-tabs.nav.visible-xs.sticky {
 .show .search-box {
   opacity: 1;
   right: 65px;
-  height: 55px;
+  height: 55px !important;
   padding-left: 10px;
   width: 435px !important;
+}
+.search-results .search-box input {
+    height: 55px;
 }
 .show .search-toggle {
     border-radius: 0; 
@@ -719,15 +722,12 @@ ul.nav-tabs.nav.visible-xs.sticky {
     .search-box {
         position: absolute;
         width: 0;
-        right: 0;
-        top: 0;
         transition: all .5s ease;
 
         input {
             padding: 0 !important;
             border-radius: 5px;
             border: 0;
-            height: 40px;
         }
 
         &.show-input {
