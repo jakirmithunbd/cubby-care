@@ -32,33 +32,16 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1" id="search-result">
                 <div class="search-number">
+                    <p class="pull-right">
+                    </p>
                     <h1><?php echo ' Showing results for ' ?><span>'<?php the_search_query(); ?>'</span></h1>
                 </div>
-
-                <?php 
-	                $args = [
-					's' => get_search_query(),
-					'posts_per_page' => 3,
-				];
-				$loop = new WP_Query($args);
-
-				if($loop->have_posts()) :  
-
-				?>
-				<?php
-				while($loop->have_posts()) : $loop->the_post(); ?>
-               <div class="result-item">
-                   <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                   <?php the_excerpt(); ?>
-               </div> 
-           		<?php endwhile; endif; wp_reset_postdata(); ?>
-
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-12">
-                <button type="button" data-keyword="<?php the_search_query(); ?>" class="btn btn-load-more" id="search_load_more"><?php _e('Load More', 'cubby'); ?></button>
+                <button type="button" data-keyword="<?php the_search_query(); ?>" data-perpage="<?php echo get_option( 'posts_per_page' ); ?>" class="btn btn-load-more" id="search_load_more"><?php _e('Load More', 'cubby'); ?></button>
             </div>
         </div>
     </div>

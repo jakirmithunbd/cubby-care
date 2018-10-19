@@ -54,6 +54,7 @@ function cubby_assets(){
 
 	$map_icon = get_field('map_icon', 'options');
 	$map_zoom = get_field('map_zoom', 'options');
+	$location = get_field('google_map');
 
 	$centers = get_posts(
 		array(
@@ -207,6 +208,39 @@ function cubby_populate_centre( $form ) {
  
     return $form;
 }
+
+function cubby_quote_notification($notification, $form, $entry){
+	if( is_singular( 'centre' )){
+		$centre_id = get_the_ID();
+		$address = get_field('centre_address', $centre_id);
+		$notification['to'] .= ', ' . $address['email'];
+	}
+	return $notification;
+}
+add_filter('gform_notification_2', 'cubby_quote_notification', 10, 3);
+
+
+
+// function assign_custom_excerpt(){
+//     $posts = get_posts(array(
+//     	'post_type' => 'post',
+//     	'posts_per_page' => -1
+//     ));
+
+//     $ids = wp_list_pluck( $posts, 'ID' );
+
+//     foreach ($ids as $id) {
+//     	// $excerpt = get_the_excerpt( $id );
+//     	// update_post_meta($id, 'custom_excerpt', $excerpt);
+
+//     	var_dump(get_post_meta( $id, 'custom_excerpt', true ));
+
+//     }
+// }
+
+// add_action( 'wp_footer', 'assign_custom_excerpt');
+
+
 
 
 

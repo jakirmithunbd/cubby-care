@@ -4,25 +4,19 @@ add_action("wp_ajax_load_search", "cubby_load_search");
 add_action("wp_ajax_nopriv_load_search", "cubby_load_search");
 function cubby_load_search(){
     $page = $_POST['page'];
-    $offset = 3;
-    $posts_per_page = 3;
-    if($page > 2){
-        for($i = 3; $i <= $page; $i++) {
-            $offset = $offset + $posts_per_page;
-        }
-    }
+    $posts_per_page = get_option( 'posts_per_page' );
     $args = [
         's' => $_POST['keywords'],
         'posts_per_page' => $posts_per_page,
-        'offset' => $offset,
+        'paged' => $page
     ];
-    
+
     $loop = new WP_Query($args);
     if($loop->have_posts()) : 
         while($loop->have_posts()) : $loop->the_post(); ?>
-            <div class="result-item">
+            <div class="result-item" data-found_posts="<?php echo $loop->found_posts; ?>">
                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-               <?php the_excerpt(); ?>
+               <p><?php echo the_field('custom_excerpt'); ?></p>
            </div>
     <?php
         endwhile;
@@ -83,7 +77,7 @@ function cubby_load_more_post(){
                             </li>
                         </ul>
                         <a data-id="<?php echo $id; ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        <?php echo get_the_excerpt($id); ?>
+                        <?php echo the_field('custom_excerpt'); ?>
                         <a class="read-more" class="text-uppercase" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cubby') ?></a>
                     </div>
                 </div><!-- /  Post -->

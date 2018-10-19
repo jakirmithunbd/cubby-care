@@ -2593,8 +2593,12 @@ select {
     display: none; } }
 
 @media only screen and (max-width: 1299px) {
-  .centers-single .centre-wrap .centre-tabs .nav.nav-tabs li a {
-    padding: 9px 20px; } }
+  .centers-single .centre-wrap .centre-tabs {
+    padding-left: 20px;
+    padding-right: 20px; }
+    .centers-single .centre-wrap .centre-tabs .nav.nav-tabs li a {
+      padding-right: 4px;
+      padding: 9px 14px; } }
 
 @media only screen and (max-width: 1200px) {
   .header .navbar.navbar-default .navbar-nav > li > a {
