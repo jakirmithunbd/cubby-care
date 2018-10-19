@@ -33,7 +33,7 @@
                             'theme_location'     => 'menu-2',
                             'depth'              => 2,
                             'container'          => 'false',
-                            'menu_class'         => 'nav navbar-nav col-md-6 col-xs-6',
+                            'menu_class'         => 'nav navbar-nav col-md-6 col-xs-6 col-480',
                             'menu_id'            => '',
                             'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
                             'walker'             => new wp_bootstrap_navwalker()
@@ -49,7 +49,7 @@
                             'theme_location'     => 'menu-3',
                             'depth'              => 2,
                             'container'          => 'false',
-                            'menu_class'         => 'nav navbar-nav col-md-6 col-xs-6',
+                            'menu_class'         => 'nav navbar-nav col-md-6 col-xs-6 col-480',
                             'menu_id'            => '',
                             'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
                             'walker'             => new wp_bootstrap_navwalker()
@@ -78,7 +78,7 @@
                   </div>
               </div>
 
-              <div class="col-md-3 col-sm-3 col-xs-3 col">
+              <div class="col-md-3 col-sm-3 col-xs-3 col call-us">
                   <div class="quick-contact">
                       <?php $phone = get_field('contacts', 'options'); ?>
                       <p><?php _e('Call us', 'cubby'); ?> <span><?php _e( '1300 day care', 'cubby' ); ?></span> <br> (<a href="tel:<?php echo $phone['phone']; ?>"><?php echo $phone['phone']; ?></a>)</p>

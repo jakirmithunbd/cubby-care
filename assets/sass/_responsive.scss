@@ -630,6 +630,13 @@
             }
         }
     }
+
+    .footer {
+
+        .footer-bottom {
+            margin-left: 0;
+        }
+    }
 }
 
 
@@ -1057,6 +1064,21 @@
 
         .footer-bottom {
             margin-left: 0;
+
+            .col {
+                width: 100% !important;
+            }
+
+            .call-us {
+
+                .quick-contact {
+
+                    p {
+                        width: 100%;
+                        margin: 0;
+                    }
+                }
+            }
         }
     }
 }
@@ -1320,29 +1342,6 @@
     .related-post {
         padding: 70px 0;
     }
-
-    .footer {
-
-        .footer-bottom {
-
-            .footer-menu {
-                display: grid;
-
-                .nav {
-
-                    &.navbar-nav {
-
-                        li {
-
-                            a {
-                                padding-left: 0;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -1378,6 +1377,9 @@
     }
 }
 @media only screen and (max-width: 480px) {
+    .col-480 {
+        width: 100%;
+    }
     ul.nav-tabs.nav.visible-xs.sticky {
         top: 66px;
     }

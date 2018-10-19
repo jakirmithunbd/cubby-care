@@ -781,6 +781,25 @@ ul.nav-tabs.nav.visible-xs.sticky {
       margin: 15px 0 20px; }
 
 /**---- Latest Post ----**/
+.event-post-category {
+  background-color: #eef0f0;
+  position: relative; }
+  .event-post-category:before {
+    content: '';
+    height: 6%;
+    width: 100%;
+    border-radius: 50%;
+    background: -webkit-gradient(linear, left top, right top, from(#eef0f0), to(#eef0f0));
+    background: -webkit-linear-gradient(left, #eef0f0, #eef0f0);
+    background: -o-linear-gradient(left, #eef0f0, #eef0f0);
+    background: linear-gradient(to right, #eef0f0, #eef0f0);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -22px; }
+
 .latest-post {
   background: #E5E5E4;
   padding: 70px 0 50px;
@@ -1032,7 +1051,8 @@ ul.nav-tabs.nav.visible-xs.sticky {
           -o-transition: all .5s ease;
           transition: all .5s ease;
           text-transform: uppercase;
-          letter-spacing: 0.23px; }
+          letter-spacing: 0.23px;
+          margin-left: -15px; }
         .footer .footer-bottom .footer-menu .nav.navbar-nav li:hover a, .footer .footer-bottom .footer-menu .nav.navbar-nav li:focus a {
           background: transparent;
           color: #63c9d7; }
@@ -1072,6 +1092,11 @@ ul.nav-tabs.nav.visible-xs.sticky {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center; }
+    .footer .footer-bottom .call-us {
+      padding-right: 0; }
+      .footer .footer-bottom .call-us .quick-contact p {
+        width: 172px;
+        margin-left: auto; }
 
 /**---- About page ----**/
 .header_gutter {
@@ -2935,7 +2960,9 @@ select {
   .about-us .tab-content {
     padding-left: 30px; }
     .about-us .tab-content:before {
-      left: -25px; } }
+      left: -25px; }
+  .footer .footer-bottom {
+    margin-left: 0; } }
 
 @media only screen and (max-width: 900px) {
   .centers-single .centre-wrap .centre-tabs .nav.nav-tabs li a {
@@ -3090,7 +3117,12 @@ select {
       line-height: 30px;
       margin: 0 0 30px; }
   .footer .footer-bottom {
-    margin-left: 0; } }
+    margin-left: 0; }
+    .footer .footer-bottom .col {
+      width: 100% !important; }
+    .footer .footer-bottom .call-us .quick-contact p {
+      width: 100%;
+      margin: 0; } }
 
 @media only screen and (max-width: 640px) {
   .contact-form .gform_wrapper .gform_body .gform_fields .gfield.gf_left_half {
@@ -3195,17 +3227,15 @@ select {
         width: 100%;
         border-radius: 0; }
   .related-post {
-    padding: 70px 0; }
-  .footer .footer-bottom .footer-menu {
-    display: grid; }
-    .footer .footer-bottom .footer-menu .nav.navbar-nav li a {
-      padding-left: 0; } }
+    padding: 70px 0; } }
 
 @media only screen and (max-width: 500px) {
   .contact-form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container .gfield_radio li label:before {
     top: 8px; } }
 
 @media only screen and (max-width: 480px) {
+  .col-480 {
+    width: 100%; }
   ul.nav-tabs.nav.visible-xs.sticky {
     top: 66px; }
   .header .navbar {

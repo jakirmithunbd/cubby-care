@@ -1021,6 +1021,23 @@ ul.nav-tabs.nav.visible-xs.sticky {
 }
 
 /**---- Latest Post ----**/
+.event-post-category {
+    background-color: #eef0f0;
+    position: relative;
+
+    &:before {
+        content: '';
+        height: 6%;
+        width: 100%;
+        border-radius: 50%;
+        background: linear-gradient(to right, #eef0f0, #eef0f0);
+        transform: translateX(-50%);
+        position: absolute;
+        left: 50%;
+        top: -22px;
+    }
+}
+
 .latest-post {
     background: #E5E5E4;
     padding: 70px 0 50px;
@@ -1348,6 +1365,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
                             transition: all .5s ease;
                             text-transform: uppercase;
                             letter-spacing: 0.23px;
+                            margin-left: -15px;
                         }
 
                         &:hover, &:focus {
@@ -1404,6 +1422,18 @@ ul.nav-tabs.nav.visible-xs.sticky {
                         background: #b4b4da;
                         justify-content: center;
                     }
+                }
+            }
+        }
+
+        .call-us {
+            padding-right: 0;
+
+            .quick-contact {
+                
+                p {
+                    width: 172px;
+                    margin-left: auto; 
                 }
             }
         }
