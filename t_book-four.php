@@ -11,7 +11,7 @@ $page_id = get_queried_object_id();
 <section class="contact">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 col-sm-12">
+			<div class="col-md-12 col-sm-12 hidden-xs">
 				<?php echo beacon_breadcrumb(); ?>
 			</div>
 		</div>

@@ -52,9 +52,8 @@ function cubby_assets(){
 
 	wp_enqueue_script('main_js', get_theme_file_uri('/assets/js/scripts.js'), array('jquery'), null, true);
 
-	$map_icon = get_field('map_pin', 'options');
+	$map_icon = get_field('map_icon', 'options');
 	$map_zoom = get_field('map_zoom', 'options');
-	$location = get_field('google_map_view');
 
 	$centers = get_posts(
 		array(
@@ -77,7 +76,6 @@ function cubby_assets(){
 		$data_to_localize[$id]["centre_address"] = $centre_address;
 		$data_to_localize[$id]["opening_hours"] = $opening_hours;
 	}
-
 
 	// //localize data 
 	$data = array(

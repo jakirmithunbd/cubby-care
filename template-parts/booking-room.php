@@ -6,7 +6,7 @@
             <div class="col-lg-7 col-md-9 col-sm-12">
                 <div class="booking-form">
                     <?php if ($content['title']): ?>
-                    <h4><?php echo $content['title']; ?></h4>
+                    <h4 class="wow fadeInDown"><?php echo $content['title']; ?></h4>
                     <?php endif; ?>
 
                     <div class="form contact-form">

@@ -2378,7 +2378,7 @@ select {
           .blog-page .featured-post-area .featured-post .slick-dots li.slick-active button:before {
             background-color: #323e48; }
   .blog-page .blog-list {
-    padding: 43px 0 30px; }
+    padding: 43px 0 75px; }
     .blog-page .blog-list .breadcrumb {
       margin: 0 0 51px; }
     .blog-page .blog-list .title h1 {
@@ -2435,6 +2435,8 @@ select {
         transform: inherit;
         -webkit-box-shadow: 0px 3px 40px 3px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 3px 40px 3px rgba(0, 0, 0, 0.2); }
+    .blog-page .blog-list .btn {
+      margin-top: 15px; }
 
 .blog-single {
   padding: 52px 0; }
@@ -3059,6 +3061,9 @@ select {
             padding-left: 0; }
   .info-page .tab-content .subsidy .top-text {
     margin: 45px 0 0; }
+  .info-page .tab-content .subsidy.sheets .sheet .btn {
+    float: none;
+    margin: 25px 0 0; }
   .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial {
     width: 100%; }
     .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial + .testimonial {

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7 col-sm-9 col-xs-12">
-                <div class="page-banner-info">
+                <div class="page-banner-info wow fadeInDown">
                 	<?php if ($banner['title']): ?>
                     <h2><?php echo $banner['title']; ?></h2>
                 	<?php endif; ?>

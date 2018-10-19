@@ -110,7 +110,7 @@ Template Name: Home
             <div class="row">
                 <div class="col-md-12">
                     <div class="title">
-                        <h2><?php _e('Latest news', 'cubby'); ?></h2>
+                        <h2  class="wow fadeInDown"><?php _e('Latest news', 'cubby'); ?></h2>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@ Template Name: Home
 
             	<?php $loop = new WP_Query($args); ?>
             	<?php if($loop->have_posts()) : while($loop->have_posts()) : $loop->the_post(); ?>
-                    <div class="post">
+                    <div class="post wow fadeInUp">
                         <a href="<?php the_permalink(); ?>">
                             <div class="media">
                                 <?php if (has_post_thumbnail()): ?>
@@ -159,7 +159,7 @@ Template Name: Home
             <div class="row">
                 <div class="col-md-12">
                     <div class="title">
-                        <h2><?php _e('What our parents say', 'cubby'); ?></h2>
+                        <h2  class="wow fadeInDown"><?php _e('What our parents say', 'cubby'); ?></h2>
                     </div>
                 </div>
             </div>
@@ -184,7 +184,7 @@ Template Name: Home
             	$name = $testi['name'];
             	$quote = $testi['quote'];
             	?>
-                <div class="slick-slider-item">
+                <div class="slick-slider-item wow fadeInUp">
                     <div class="testimonial-box" style="color: <?php echo $color; ?>;">
                         <span class="pull-left"><img src="<?php echo get_theme_file_uri( 'assets/images/svg/quote-left.svg' ); ?>" alt=""></span>
 

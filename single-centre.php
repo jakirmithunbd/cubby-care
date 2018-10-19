@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="title">
-                    <ul class="list-inline">
+                    <ul class="list-inline wow fadeInDown">
                         <li>
                             <h5><?php the_title(); ?></h5>
                         </li>
@@ -139,7 +139,7 @@
                                     		foreach ($testimonials as $testimonial):
                                     	?>
                                         <div class="testimonial">
-                                            <div class="testimonial-box" style="color: <?php echo $testimonial['bg_color'] ?>;">
+                                            <div class="testimonial-box wow fadeInDown" style="color: <?php echo $testimonial['bg_color'] ?>;">
                                                 <span class="pull-left"><img src="<?php echo get_theme_file_uri( 'assets/images/svg/quote-left.svg' ); ?>" alt=""></span>
                                                 <p>
                                                 <?php echo $testimonial['quote']; ?>
@@ -147,7 +147,7 @@
                                                 </p>
                                             </div>
 
-                                            <div class="parents-info">
+                                            <div class="parents-info wow fadeInUp">
                                             	<?php if ($testimonial['image']): ?>
                                                 <div class="parent-image pull-left">
                                                     <img src="<?php echo $testimonial['image']; ?>" class="img-responsive" alt="">
@@ -202,7 +202,7 @@
 		                        <?php if($peoples): 
 		                            foreach ($peoples as $item):
 		                        ?>
-		                        <div class="team-member">
+		                        <div class="team-member wow fadeInUp">
 		                            <?php if ($item['image']): ?>
 		                            <div class="media pull-left">
 		                                <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
@@ -268,7 +268,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title">
-                        <h2><?php _e('Latest news', 'cubby'); ?></h2>
+                        <h2 class="wow fadeInDown"><?php _e('Latest news', 'cubby'); ?></h2>
                     </div>
                 </div>
             </div>
@@ -283,7 +283,7 @@
 
             	<?php $loop = new WP_Query($args); ?>
             	<?php if($loop->have_posts()) : while($loop->have_posts()) : $loop->the_post(); ?>
-                    <div class="post">
+                    <div class="post wow fadeInUp">
                         <a href="<?php the_permalink(); ?>">
                             <div class="media">
                                 <?php if (has_post_thumbnail()): ?>

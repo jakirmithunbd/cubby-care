@@ -14,7 +14,7 @@ Template Name: Info For You
         </div>
         <div class="row">
             <div class="col-md-3 col-sm-4 no-padding-custom">
-                <div class="side-bar">
+                <div class="side-bar" id="sticky_tab">
                     <ul class="nav nav-tabs hidden-xs">
                     	<?php
 						$tabs = [
@@ -54,7 +54,7 @@ Template Name: Info For You
                         <?php
                         $top = $subsidy['top_text'];
                         if ($top): ?>
-                        <div class="top-text">  
+                        <div class="top-text wow fadeInUp">  
                             <?php if ($top['title']): ?>
                             <h2><?php echo $top['title']; ?></h2>
                             <?php endif; ?>
@@ -65,7 +65,7 @@ Template Name: Info For You
                         </div>
                         <?php endif; ?>
 
-                        <div class="subsidy-content">
+                        <div class="subsidy-content  wow fadeInUp">
                         	<?php if ($subsidy['subsidy_content']): ?>
                         		<?php echo $subsidy['subsidy_content']; ?>
                         	<?php endif; ?>
@@ -79,7 +79,7 @@ Template Name: Info For You
                         <?php
                         $top = $sheets['top_text'];
                         if ($top): ?>
-                        <div class="top-text">  
+                        <div class="top-text  wow fadeInUp">  
                             <?php if ($top['title']): ?>
                             <h2><?php echo $top['title']; ?></h2>
                             <?php endif; ?>
@@ -94,7 +94,7 @@ Template Name: Info For You
                         if($items):
                         	foreach ($items as $item) :
                         ?>
-                        <div class="sheet">
+                        <div class="sheet wow fadeInUp">
 
                         <?php if ($item['title']): ?>
                         	<h3><?php echo $item['title']; ?></h3>
@@ -102,12 +102,14 @@ Template Name: Info For You
                         
                         <?php $btn = $item['button']; ?>
                         <?php if ($btn['text'] || $btn['file']): ?>
-                        <a class="btn" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
+                        <a class="btn hidden-xs" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
                         <?php endif; ?>
 
                         <?php if ($item['content']): ?>
                         	<?php echo $item['content']; ?>
                         <?php endif; ?>
+
+                        <a class="btn visible-xs" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
 
 						</div>
 						<?php endforeach; endif; ?>

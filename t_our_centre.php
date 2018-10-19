@@ -20,12 +20,12 @@ $page_id = get_queried_object_id();
             <div class="row">
                 <div class="col-md-12 col-xs-12 no-padding-custom">
                     <ul class="nav nav-tabs">
-                        <li class="active">
+                        <li class="active wow fadeInDown" data-wow-delay=".1s">
                             <a href="#sec_1" data-toggle="tab">
                                 <span><img src="<?php echo get_theme_file_uri('/assets/images/svg/list-green.svg'); ?>" class="img-responsive" alt=""></span>
                             <?php _e('List View', 'cubby'); ?></a>
                         </li>
-                        <li>
+                        <li class="wow fadeInDown" data-wow-delay=".5s">
                             <a href="#sec_2" data-toggle="tab">
                                 <span><img src="<?php echo get_theme_file_uri('/assets/images/svg/map-green.svg'); ?>" class="img-responsive" alt=""></span><?php _e('Map View', 'cubby'); ?></a>
                         </li>
@@ -44,7 +44,7 @@ $page_id = get_queried_object_id();
 
             	<?php $cloop = new WP_Query($args); ?>
             	<?php if($cloop->have_posts()) : while($cloop->have_posts()) : $cloop->the_post(); ?>
-                    <div class="center row">
+                    <div class="center row wow fadeInUp">
                         <div class="col-md-3 col-sm-12 no-padding">
                             <div id="map">
                                 <?php $google_map = get_field('google_map'); ?>

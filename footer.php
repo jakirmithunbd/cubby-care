@@ -1,6 +1,6 @@
   <footer class="footer">
       <div class="container">
-          <div class="row footer-top">
+          <div class="row footer-top  wow fadeInDown">
               <?php $logo = get_field('footer_logo', 'options'); ?>
               <?php if ($logo): ?>
               <div class="col-md-6 col-sm-6 col-xs-6 col">
@@ -22,7 +22,7 @@
               <?php endif; ?>
           </div>
           
-          <div class="row footer-bottom">
+          <div class="row footer-bottom wow fadeInUp">
               <div class="col-md-6 col-sm-6 col-xs-6 col">
                   <div class="row footer-menu">
 

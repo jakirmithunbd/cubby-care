@@ -2,20 +2,20 @@
 (function($){
   "use strict";
 
-	// Toggle menu
-	 $(".navbar-toggle").click(function() {
-	  	$(this).toggleClass('in');
-	});
+    // Toggle menu
+     $(".navbar-toggle").click(function() {
+        $(this).toggleClass('in');
+    });
 
      // banner slider
-	 $('.banner').slick({
-    	arrows: true,
-    	infinite: true,
+     $('.banner').slick({
+        arrows: true,
+        infinite: true,
         dots: true,
-	  });
+      });
 
-	/*** Sticky header */
-	$(window).scroll(function() {
+    /*** Sticky header */
+    $(window).scroll(function() {
 
         if ($(window).scrollTop() > 0) {
           $(".header").addClass("sticky");
