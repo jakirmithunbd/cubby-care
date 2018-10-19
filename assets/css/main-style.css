@@ -2592,6 +2592,10 @@ select {
   #search-box {
     display: none; } }
 
+@media only screen and (max-width: 1299px) {
+  .centers-single .centre-wrap .centre-tabs .nav.nav-tabs li a {
+    padding: 9px 20px; } }
+
 @media only screen and (max-width: 1200px) {
   .header .navbar.navbar-default .navbar-nav > li > a {
     padding-left: 5px !important;

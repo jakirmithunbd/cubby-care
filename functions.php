@@ -168,5 +168,51 @@ function cubby_footer_scripts(){
  ';
 }
 
+// filter the locations select field for contact forms
+add_filter( 'gform_pre_render_2', 'cubby_populate_centre' );
+add_filter( 'gform_pre_validation_2', 'cubby_populate_centre' );
+add_filter( 'gform_pre_submission_filter_2', 'cubby_populate_centre' );
+add_filter( 'gform_admin_pre_render_2', 'cubby_populate_centre' );
+
+function cubby_populate_centre( $form ) {
+ 
+    foreach ( $form['fields'] as &$field ) {
+ 
+        if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-centre' ) === false ) {
+            continue;
+        }
+
+        $centre_args = array(
+        	'post_type' => 'centre',
+        	'posts_per_page' => -1
+        );
+
+        if(is_singular('centre')){
+        	$centre_args['post__in'] = array(get_the_ID());
+        }
+ 
+        $centres = get_posts($centre_args);
+
+        $choices = array();
+ 
+        foreach ( $centres as $key => $centre ) {
+        	$text = ( $key === 0 && is_singular('centre') ) ? 'Enquire at ' . $centre->post_title : $centre->post_title;
+            $choices[] = array( 'text' => $text, 'value' => $centre->post_title );
+        }
+ 
+        // update 'Select a Post' to whatever you'd like the instructive option to be
+        $field->choices = $choices;
+
+    }
+ 
+    return $form;
+}
 
 
+
+// add_filter( 'gform_field_value_populate_centre', 'custom_function' );
+// function custom_function( $value ) {
+// if( is_page('Support') ) {
+// return 'support';
+// }
+// }

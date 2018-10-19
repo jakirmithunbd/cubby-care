@@ -401,6 +401,8 @@
             styles: styles,
         };
 
+        console.log(ajax.map_zoom);
+
         var contentString = ajax.gmap_address;
         // var infowindow = new google.maps.InfoWindow({
         //     content: contentString,

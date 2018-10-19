@@ -60,7 +60,9 @@ function cubby_load_more_post(){
     $loop = new WP_Query($args);
 
     if($loop->have_posts()) : 
-        while($loop->have_posts()) : $loop->the_post(); ?>
+        while($loop->have_posts()) : $loop->the_post(); 
+            $id = get_the_ID();
+            ?>
             <div class="col-md-4 col-sm-6 col-xs-6 col">
                 <div class="post">
                     <a href="<?php the_permalink(); ?>">
@@ -80,8 +82,8 @@ function cubby_load_more_post(){
                                 <span><?php echo get_the_date('d M Y'); ?></span>
                             </li>
                         </ul>
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        <?php the_excerpt(); ?>
+                        <a data-id="<?php echo $id; ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        <?php echo get_the_excerpt($id); ?>
                         <a class="read-more" class="text-uppercase" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cubby') ?></a>
                     </div>
                 </div><!-- /  Post -->
