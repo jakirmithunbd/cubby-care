@@ -2323,6 +2323,17 @@ select {
         margin-right: 5px; }
     .info-page .tab-content .subsidy.sheets .sheet p {
       overflow: hidden; }
+    .info-page .tab-content .subsidy.sheets .sheet .download-btn {
+      text-align: center; }
+      .info-page .tab-content .subsidy.sheets .sheet .download-btn .file-size {
+        display: block;
+        color: #323e48;
+        font-family: "TT Norms";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22.65px;
+        margin: 3px 0 0;
+        letter-spacing: 0.18px; }
   .info-page .tab-content .subsidy .info-for-you .info-item {
     background-color: #846196;
     padding: 35px 25px; }

@@ -19,7 +19,10 @@ Template Name: Info For You
                     	<?php
 						$tabs = [
 							'child_care_subsidy', 
-							'fact_sheets'
+							'fact_sheets',
+                            'info_downloads',
+                            'info_menus',
+                            'info_communication'
 						];
 
 						foreach ($tabs as $key => $tab):
@@ -157,12 +160,17 @@ Template Name: Info For You
                             <?php if ($item['title']): ?>
                             	<h3><?php echo $item['title']; ?></h3>
                             <?php endif; ?>
+
+                            <?php $attachment_id = $item['button']['file']; 
+                            $filesize = filesize( get_attached_file( $attachment_id ) );
+                            $filesize = size_format($filesize, 2);
+                            ?>
                             
-                            <div class="download-btn hidden-xs">
+                            <div class="download-btn hidden-xs pull-right">
                                 <?php $btn = $item['button']; ?>
                                 <?php if ($btn['text'] || $btn['file']): ?>
                                 <a class="btn" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
-                                <span class="float-right"><?php echo  $filesize; ?></span>
+                                <span class="file-size">(Document, <?php echo  $filesize; ?>)</span>
                                 <?php endif; ?>
                             </div>
 
@@ -170,16 +178,11 @@ Template Name: Info For You
                             	<?php echo $item['content']; ?>
                             <?php endif; ?>
 
-                            <?php $attachment_id = $item['button']['file']; 
-                            $filesize = filesize( get_attached_file( $attachment_id ) );
-                            $filesize = size_format($filesize, 2);
-                            ?>
-
-                            <div class="download-btn float-right visible-xs">
+                            <div class="download-btn visible-xs">
                                 <?php $btn = $item['button']; ?>
                                 <?php if ($btn['text'] || $btn['file']): ?>
                                 <a class="btn" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
-                                <span><?php echo  $filesize; ?></span>
+                                <span class="file-size">(Document, <?php echo  $filesize; ?>)</span>
                                 <?php endif; ?>
                             </div>
 						</div>

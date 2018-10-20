@@ -3173,6 +3173,21 @@ select {
                     p {
                         overflow: hidden;
                     }
+
+                    .download-btn {
+                        text-align: center;
+
+                        .file-size {
+                            display: block;
+                            color: #323e48;
+                            font-family: $nor;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 22.65px;
+                            margin: 3px 0 0;
+                            letter-spacing: 0.18px;
+                        }
+                    }
                 }
             }
 
@@ -3191,7 +3206,7 @@ select {
                     }
 
                     .info-bottom {
-
+                    
                     }
                 }
             }
