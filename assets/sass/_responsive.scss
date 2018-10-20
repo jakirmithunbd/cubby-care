@@ -93,7 +93,7 @@
                                 align-items: center;
                                 border-radius: 50px;
                                 justify-content: center;
-                                background-color: #78787e;
+                                background-color: #39696f;
                             }
 
                             &+li {
@@ -664,6 +664,34 @@
         }
     }
 }
+
+@media only screen and (max-width: 800px) {
+    #gmap {
+
+        .popup-bubble-content {
+            top: -200px;
+
+            .opening-hour {
+
+                ul {
+
+                    li {
+                        padding: 0;
+
+                        .btn {
+                            width: 130px;
+                            margin: 5px 0;
+                        }
+
+                        &+li {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media only screen and (max-width: 767px) {
     .no-padding-custom {
         padding: 0 !important;
@@ -689,6 +717,17 @@
 
         .slick-slider {
             background-position: 80% 50% !important;
+            position: relative;
+
+            &:before {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba(0,0,0,.4);
+            }
 
             .banner-info {
                 margin-left: auto;

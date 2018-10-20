@@ -275,6 +275,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
     letter-spacing: 0.23px;
     color: #fff;
     border: 0;
+    border-radius: 0 !important;
     background-color: #767676; }
   .nav-tabs.visible-xs:after {
     pointer-events: none;
@@ -386,7 +387,10 @@ ul.nav-tabs.nav.visible-xs.sticky {
           transition: all .5s ease;
           max-width: 100%; }
     .header .navbar.navbar-default .navbar-nav {
-      margin-right: 50px; }
+      margin-right: 50px;
+      -webkit-transition: all .5s ease;
+      -o-transition: all .5s ease;
+      transition: all .5s ease; }
       .header .navbar.navbar-default .navbar-nav > li {
         padding-left: 7px;
         padding-right: 7px; }
@@ -548,6 +552,9 @@ ul.nav-tabs.nav.visible-xs.sticky {
 /**---- Search and Search Page ----**/
 .navbar-collapse {
   position: relative; }
+  .navbar-collapse.show .nav.navbar-nav {
+    opacity: 0;
+    visibility: hidden; }
 
 .search .search-box {
   position: absolute;
@@ -660,11 +667,11 @@ ul.nav-tabs.nav.visible-xs.sticky {
     width: 146px; }
 
 /**---- Banner Area ----**/
-.banner, .slick-slider, .slick-list, .slick-track {
-  height: 100%; }
-
 .banner {
-  overflow: hidden; }
+  overflow: hidden;
+  height: 700px; }
+  .banner .slick-slider, .banner .slick-list, .banner .slick-track {
+    height: 700px; }
   .banner .slick-slider {
     background-repeat: no-repeat !important;
     background-size: cover !important;
@@ -677,7 +684,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background-position: 50% -38% !important; }
+    background-position: 50% -78% !important; }
     .banner .slick-slider .banner-info {
       margin-top: 50px;
       max-width: 570px; }
@@ -802,7 +809,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
 
 .latest-post {
   background: #E5E5E4;
-  padding: 70px 0 50px;
+  padding: 70px 0 80px;
   position: relative; }
   .latest-post:after {
     content: '';
@@ -829,7 +836,8 @@ ul.nav-tabs.nav.visible-xs.sticky {
       color: #846196;
       font-weight: 700; }
   .latest-post .latest-post-slider .post {
-    padding: 40px 15px;
+    padding: 0 15px;
+    padding-top: 35px;
     -webkit-box-shadow: none;
     box-shadow: none; }
 
@@ -869,9 +877,9 @@ ul.nav-tabs.nav.visible-xs.sticky {
       text-transform: uppercase;
       color: rgba(50, 62, 72, 0.67); }
   .post:hover, .post:focus {
-    -webkit-transform: scaleY(1.1);
-    -ms-transform: scaleY(1.1);
-    transform: scaleY(1.1); }
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px); }
 
 /**---- Testimonials ----**/
 .testimonials {
@@ -1519,6 +1527,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
             background: #fff;
             color: #63c9d7;
             font-weight: 700;
+            font-family: "Melbourne";
             margin: 12px 0;
             margin-left: auto;
             border-radius: 12px;
@@ -1526,6 +1535,9 @@ ul.nav-tabs.nav.visible-xs.sticky {
             line-height: 23px;
             text-transform: uppercase;
             letter-spacing: 1.03px; }
+            .centers .tab-content .center .center-info li.opening-hour .permalink a:first-child {
+              background: #846196;
+              color: #fff; }
             .centers .tab-content .center .center-info li.opening-hour .permalink a:hover, .centers .tab-content .center .center-info li.opening-hour .permalink a:focus {
               background: #846196;
               color: #fff; }
@@ -2612,6 +2624,18 @@ select {
   font-size: 32px;
   font-weight: 700; }
 
+.error-404 {
+  padding: 80px 0; }
+  .error-404 .not-found .hero {
+    font-size: 36px;
+    color: #63c9d7;
+    font-family: "TT Norms";
+    font-weight: 700; }
+  .error-404 .not-found .btn {
+    width: 200px;
+    height: 50px;
+    margin: 20px auto; }
+
 /**---- Responsive CSS ----**/
 @media only screen and (min-width: 1200px) {
   #search-box {
@@ -2669,7 +2693,7 @@ select {
               -webkit-box-pack: center;
               -ms-flex-pack: center;
               justify-content: center;
-              background-color: #78787e; }
+              background-color: #39696f; }
             .header .navbar.navbar-default .navbar-header .social li + li {
               padding-left: 7px !important; }
         .header .navbar.navbar-default .navbar-header .navbar-brand {
@@ -2969,11 +2993,31 @@ select {
     padding-left: 18px;
     padding-right: 18px; } }
 
+@media only screen and (max-width: 800px) {
+  #gmap .popup-bubble-content {
+    top: -200px; }
+    #gmap .popup-bubble-content .opening-hour ul li {
+      padding: 0; }
+      #gmap .popup-bubble-content .opening-hour ul li .btn {
+        width: 130px;
+        margin: 5px 0; }
+      #gmap .popup-bubble-content .opening-hour ul li + li {
+        margin-left: 5px; } }
+
 @media only screen and (max-width: 767px) {
   .no-padding-custom {
     padding: 0 !important; }
   .banner .slick-slider {
-    background-position: 80% 50% !important; }
+    background-position: 80% 50% !important;
+    position: relative; }
+    .banner .slick-slider:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4); }
     .banner .slick-slider .banner-info {
       margin-left: auto;
       margin-right: auto;

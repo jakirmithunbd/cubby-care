@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area error-404">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<section class="error-404 not-found text-center">
+				<section class="not-found text-center">
 					<header class="page-header">
 						<h1 class="hero"><?php _e('404', 'cubby'); ?></h1>
 						<h3 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'cubby' ); ?></h3>

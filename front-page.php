@@ -110,7 +110,7 @@ Template Name: Home
             <div class="row">
                 <div class="col-md-12">
                     <div class="title">
-                        <h2  class="wow fadeInDown"><?php _e('Latest news', 'cubby'); ?></h2>
+                        <h2  class="wow fadeInDown"><?php _e('Latest News', 'cubby'); ?></h2>
                     </div>
                 </div>
             </div>

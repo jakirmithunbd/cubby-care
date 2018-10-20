@@ -93,7 +93,7 @@
               breakpoint: 768,
               settings: {
                 dots: true,
-                slidesToShow: 1
+                slidesToShow: 2
               }
             },
             {
@@ -137,6 +137,7 @@
         ]
     });
 
+    // Search icon show
     $('.header').on('click', '.search-toggle', function(e) {
         e.preventDefault();
         var selector = $(this).data('selector');
@@ -489,12 +490,12 @@
             });
 
         location += `</div>
-            <h5>Opening hours</h5>
             <p>${location_data.opening_hours.opening_hour}</p>
             <ul class="list-inline">`;
 
-            location +=`<li><a class="btn" href="${location_data.opening_hours.enquire_button.url}">${location_data.opening_hours.enquire_button.text}</a></li>`;
             location +=`<li><a class="btn" href="${location_data.permalink}">Read More</a></li>`;
+
+            location +=`<li><a class="btn" href="${location_data.opening_hours.enquire_button.url}">${location_data.opening_hours.enquire_button.text}</a></li>`;
             
             location +=`</ul>
         </div>`;

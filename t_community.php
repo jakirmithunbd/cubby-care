@@ -71,7 +71,7 @@ $page_id = get_queried_object_id();
                         <?php 
                             $args = [
                                 'post_type' => 'post',
-                                'posts_per_page' => $posts_per_page,
+                                'posts_per_page' => 3,
                                 'category_name' => 'news'
                             ];
 
@@ -135,7 +135,7 @@ $page_id = get_queried_object_id();
                     <?php 
                         $args = [
                             'post_type' => 'post',
-                            'posts_per_page' => $posts_per_page,
+                            'posts_per_page' => 3,
                             'category_name' => 'event'
                         ];
 

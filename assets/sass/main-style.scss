@@ -353,6 +353,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
         letter-spacing: 0.23px;
         color: #fff;
         border: 0;
+        border-radius: 0 !important;
         background-color: #767676;
     }
 
@@ -505,6 +506,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
 
             .navbar-nav {
                 margin-right: 50px;
+                transition: all .5s ease;
 
                 >li {
                     padding-left: 7px;
@@ -717,6 +719,14 @@ ul.nav-tabs.nav.visible-xs.sticky {
 /**---- Search and Search Page ----**/
 .navbar-collapse {
     position: relative;
+
+    &.show { 
+
+        .nav.navbar-nav {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
 }
 .search {
 
@@ -867,19 +877,20 @@ ul.nav-tabs.nav.visible-xs.sticky {
 
 
 /**---- Banner Area ----**/
-.banner, .slick-slider, .slick-list, .slick-track {
-    height: 100%;
-}
 .banner {
     overflow: hidden;
-
+    height: 700px;
+    
+    .slick-slider, .slick-list, .slick-track {
+        height: 700px;
+    }
     .slick-slider {
         background-repeat: no-repeat !important;
         background-size: cover !important;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-position: 50% -38% !important;
+        background-position: 50% -78% !important;
         
         .banner-info {
             margin-top: 50px;
@@ -1040,7 +1051,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
 
 .latest-post {
     background: #E5E5E4;
-    padding: 70px 0 50px;
+    padding: 70px 0 80px;
     position: relative;
 
      &:after {
@@ -1071,7 +1082,8 @@ ul.nav-tabs.nav.visible-xs.sticky {
     .latest-post-slider {
 
         .post {
-            padding: 40px 15px;
+            padding: 0 15px;
+            padding-top: 35px;
             box-shadow: none;
         }
     }
@@ -1121,7 +1133,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
     }
 
     &:hover, &:focus {
-        transform: scaleY(1.1);
+        transform: translateY(-30px);
     }
 }
 /**---- Testimonials ----**/
@@ -2009,6 +2021,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
                                 background: $white;
                                 color: $primary;
                                 font-weight: 700;
+                                font-family: $mel;
                                 margin: 12px 0;
                                 margin-left: auto;
                                 border-radius: 12px;
@@ -2016,6 +2029,11 @@ ul.nav-tabs.nav.visible-xs.sticky {
                                 line-height: 23px;
                                 text-transform: uppercase;
                                 letter-spacing: 1.03px;
+
+                                &:first-child {
+                                    background: $base;
+                                    color: $white;
+                                }
 
                                 &:hover, &:focus {
                                     background: $base;
@@ -3621,6 +3639,26 @@ select {
         color: $primary;
         font-size: 32px;
         font-weight: 700;
+    }
+}
+
+.error-404 {
+    padding: 80px 0;
+
+    .not-found {
+
+        .hero {
+            font-size: 36px;
+            color: $primary;
+            font-family: $nor;
+            font-weight: 700;
+        }
+        
+        .btn {
+            width: 200px;
+            height: 50px;
+            margin: 20px auto;
+        }
     }
 }
 /**---- Responsive CSS ----**/
