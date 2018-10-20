@@ -1,7 +1,6 @@
 
-<?php 
-get_header();
-
+<?php get_header(); 
+$page_id = get_queried_object_id();
 ?>  
     <section class="blog-page">
         <div class="featured-post-area">

@@ -14,6 +14,18 @@
         dots: true,
       });
 
+     // enable tabs anywhere
+     // $('.nav-tabs li a').on('click', function(){
+     //    var target = $(this).attr('href');
+     //    console.log($(target).);
+     //    // remove classes
+     //    $('.nav-tabs li a').parent().removeClass('active');
+     //    $('.tab-pane').removeClass('active in');
+     //    // add classes
+     //    $(this).parent().addClass('active');
+     //    $('.tab-pane').addClass('active in');
+     // });
+
     /*** Sticky header */
     $(window).scroll(function() {
 
@@ -210,12 +222,6 @@
 
     /*** Ajax search load more */
     function searchResultAjax(keywords, page){
-        var perpage = $("#search_load_more").data('perpage');
-        var found_posts = $(".result-item").data('found_posts');
-        var rangeStart = page === 1 ? page : page * perpage - perpage;
-        var rangeEnd = page * perpage;
-        var range = rangeStart + ' - ' + rangeEnd;
-
         $.ajax({
             url: ajax.admin_ajax,
             dataType: 'html',
@@ -236,7 +242,29 @@
                 if(hasNoResult) {
                     $('#search_load_more').hide();
                 }
-                $('.search-number .pull-right').text("showing " + range + " of " + found_posts + " results");
+
+                // number of posts showing
+                if(!hasNoResult){
+                    var found_posts = $(".result-item").data('found_posts'),
+                        perpage = $("#search_load_more").data('perpage'),
+                        showing = page === 1 ? perpage : page * perpage,
+                        totalPage = found_posts/perpage,
+                        modulas = found_posts%perpage,
+                        showing = null;
+                    if( page === 1 ){
+                        showing = perpage;
+                    } else if( page === Math.ceil(totalPage) ){
+                        showing = ( page * perpage - perpage ) + modulas;
+                    } else {
+                        showing = page * perpage;
+                    }
+
+                    // var rangeStart = page === 1 ? page : page * perpage - perpage;
+                    // var rangeEnd = page * perpage;
+                    // var range = rangeStart + ' - ' + rangeEnd;
+
+                    $('.search-number .pull-right').text("showing " + showing + " of " + found_posts + " results");
+                }
               }
 
             },

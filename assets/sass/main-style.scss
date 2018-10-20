@@ -3175,6 +3175,26 @@ select {
                     }
                 }
             }
+
+            .info-for-you {
+
+                .info-item {
+                    background-color: #846196;
+                    padding: 35px 25px;
+
+                    .title {
+                        margin: 0 0 21px;
+                        font-size: 24px;
+                        color: $white;
+                        font-weight: 700;
+                        letter-spacing: 0.24px;
+                    }
+
+                    .info-bottom {
+
+                    }
+                }
+            }
         }
     }
 }

@@ -99,4 +99,6 @@ function beacon_breadcrumb() {
     }
     echo '</nav>';
    } 
+
+   
 }

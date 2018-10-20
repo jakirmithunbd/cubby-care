@@ -8,7 +8,7 @@
                 <div class="page-title">
                     <h1><?php _e('Search Result', 'cubby'); ?></h1>
                     <div class="search-area">
-                        <form class="search-input">
+                        <form class="search-input" role="search" method="get" action="<?php esc_url( home_url( '/' ) ); ?>">
                             <input type="search" value="<?php the_search_query(); ?>" name="s" id="s">
 
                             <button type="submit"><span class="fa fa-search"></span></button>

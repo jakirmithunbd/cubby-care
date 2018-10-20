@@ -22,7 +22,7 @@ $page_id = get_queried_object_id();
                     <div class="post">
 
                         <div class="post-meta">
-                            <ul class="list-inline">
+                            <ul class="list-inline visible-xs">
                                 <li>
                                     <?php the_category(); ?>
                                 </li>

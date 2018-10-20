@@ -80,17 +80,7 @@
                 </div>
 
                 <!-- search for mobile -->
-                <form id="search-box">
-                    <div class="input-group">
-                        <span class="input-group-btn">
-                        <button type="submit"><img src="<?php echo get_theme_file_uri('/assets/images/svg/searchcolor.svg'); ?>" class="img-responsive" alt=""></button>
-                        </span>
-                        <input type="search" name="s" class="form-control" placeholder="Search" />
-                        <span class="input-group-btn">
-                        <a id="close" href="#"><img src="<?php echo get_theme_file_uri('/assets/images/svg/close-color.svg'); ?>" class="img-responsive" alt=""></a>
-                        </span>
-                    </div><!-- /input-group -->
-                </form>
+                <?php echo cubby_search_form(); ?>
             
                 <div id="sidr" class="collapse navbar-collapse">
                     <div class="top-bar hidden">
@@ -121,11 +111,7 @@
                     <div class="search-button mobile-search">
                         <a href="#" data-selector="#sidr" class="search-toggle"></a>
                     </div>
-                    <form class="search-box">
-                        <input type="search" name="s" class="text search-input" placeholder="Search">
-
-                        <button type="submit"><span class="fa fa-search"></span></button>
-                    </form>
+                    <?php echo cubby_monile_search(); ?>
                 </div>
             </div>
         </nav>

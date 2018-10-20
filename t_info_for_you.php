@@ -71,6 +71,64 @@ Template Name: Info For You
                         	<?php endif; ?>
                         </div>
 
+                        <div class="info-for-you">
+                            <div class="top-text">  
+                                <h2>Info for you</h2>
+                                <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest</p>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6 col">
+                                    <div class="info-item">
+                                        <div class="icon pull-right">
+                                            <img src="<?php echo get_theme_file_uri('/images/svg/subsidy.svg'); ?>" alt="">
+                                        </div>
+                                        <a class="title" href="#">Child Care Subsidy</a>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                        <div class="info-bottom">
+                                            <a href="#" class="btn">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-6 col">
+                                    <div class="info-item">
+                                        <div class="icon pull-right">
+                                            <img src="<?php echo get_theme_file_uri('/images/svg/subsidy.svg'); ?>" alt="">
+                                        </div>
+                                        <a class="title" href="#">Child Care Subsidy</a>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                        <div class="info-bottom">
+                                            <a href="#" class="btn">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-6 col">
+                                    <div class="info-item">
+                                        <div class="icon pull-right">
+                                            <img src="<?php echo get_theme_file_uri('/images/svg/subsidy.svg'); ?>" alt="">
+                                        </div>
+                                        <a class="title" href="#">Child Care Subsidy</a>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                        <div class="info-bottom">
+                                            <a href="#" class="btn">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-6 col">
+                                    <div class="info-item">
+                                        <div class="icon pull-right">
+                                            <img src="<?php echo get_theme_file_uri('/images/svg/subsidy.svg'); ?>" alt="">
+                                        </div>
+                                        <a class="title" href="#">Child Care Subsidy</a>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                        <div class="info-bottom">
+                                            <a href="#" class="btn">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="tab-pane fade subsidy sheets" id="info_1">
@@ -96,24 +154,34 @@ Template Name: Info For You
                         ?>
                         <div class="sheet wow fadeInUp">
 
-                        <?php if ($item['title']): ?>
-                        	<h3><?php echo $item['title']; ?></h3>
-                        <?php endif; ?>
-                        
-                        <?php $btn = $item['button']; ?>
-                        <?php if ($btn['text'] || $btn['file']): ?>
-                        <a class="btn hidden-xs" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
-                        <span></span>
-                        <?php endif; ?>
+                            <?php if ($item['title']): ?>
+                            	<h3><?php echo $item['title']; ?></h3>
+                            <?php endif; ?>
+                            
+                            <div class="download-btn hidden-xs">
+                                <?php $btn = $item['button']; ?>
+                                <?php if ($btn['text'] || $btn['file']): ?>
+                                <a class="btn" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
+                                <span class="float-right"><?php echo  $filesize; ?></span>
+                                <?php endif; ?>
+                            </div>
 
-                        <?php if ($item['content']): ?>
-                        	<?php echo $item['content']; ?>
-                        <?php endif; ?>
+                            <?php if ($item['content']): ?>
+                            	<?php echo $item['content']; ?>
+                            <?php endif; ?>
 
-                        <a class="btn visible-xs" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text'];
+                            <?php $attachment_id = $item['button']['file']; 
+                            $filesize = filesize( get_attached_file( $attachment_id ) );
+                            $filesize = size_format($filesize, 2);
+                            ?>
 
-                        ?></a>
-
+                            <div class="download-btn float-right visible-xs">
+                                <?php $btn = $item['button']; ?>
+                                <?php if ($btn['text'] || $btn['file']): ?>
+                                <a class="btn" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
+                                <span><?php echo  $filesize; ?></span>
+                                <?php endif; ?>
+                            </div>
 						</div>
 						<?php endforeach; endif; ?>                        
                     </div>
