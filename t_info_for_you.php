@@ -103,18 +103,20 @@ Template Name: Info For You
                         <?php $btn = $item['button']; ?>
                         <?php if ($btn['text'] || $btn['file']): ?>
                         <a class="btn hidden-xs" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
+                        <span></span>
                         <?php endif; ?>
 
                         <?php if ($item['content']): ?>
                         	<?php echo $item['content']; ?>
                         <?php endif; ?>
 
-                        <a class="btn visible-xs" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
+                        <a class="btn visible-xs" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text'];
+
+                        ?></a>
 
 						</div>
-						<?php endforeach; endif; ?>
+						<?php endforeach; endif; ?>                        
                     </div>
-
                 </div><!-- / col -->
             </div>
         </div>

@@ -221,32 +221,26 @@ add_filter('gform_notification_2', 'cubby_quote_notification', 10, 3);
 
 
 
-// function assign_custom_excerpt(){
-//     $posts = get_posts(array(
-//     	'post_type' => 'post',
-//     	'posts_per_page' => -1
-//     ));
+function get_acf_file( $key = 'file', $post_id = '' ) {
+	if($post_id == ''):
+		global $post;
+		$post_id = $post->ID;
+	endif;
 
-//     $ids = wp_list_pluck( $posts, 'ID' );
+	$file = get_field($key, $post_id);
 
-//     foreach ($ids as $id) {
-//     	// $excerpt = get_the_excerpt( $id );
-//     	// update_post_meta($id, 'custom_excerpt', $excerpt);
+	if( !empty($file) ):
+		$file_url = $file['url'];
+		$file_type = get_file_type($file['mime_type']);
 
-//     	var_dump(get_post_meta( $id, 'custom_excerpt', true ));
+		$file_size = get_file_size($file_url);
+	endif;
 
-//     }
-// }
+	$file_details = array(
+		'url'  => $file_url,
+		'type' => $file_type,
+		'size' => $file_size
+	);
 
-// add_action( 'wp_footer', 'assign_custom_excerpt');
-
-
-
-
-
-// add_filter( 'gform_field_value_populate_centre', 'custom_function' );
-// function custom_function( $value ) {
-// if( is_page('Support') ) {
-// return 'support';
-// }
-// }
+	return $file_details;
+}
