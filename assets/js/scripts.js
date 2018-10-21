@@ -36,9 +36,9 @@
         var target = $(this).attr('href');
         loadHashTab(target);
 
-        // $('html, body').stop().animate({
-        //     scrollTop: $($(this).attr('href')).offset().top
-        // }, 500, 'linear');   
+        $('html, body').stop().animate({
+            scrollTop: $($(this).attr('href')).offset().top - 250
+        }, 500, 'linear');   
 
     });
 
