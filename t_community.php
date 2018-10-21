@@ -6,6 +6,7 @@ Template Name: Kindness Community
 */ 
 $page_id = get_queried_object_id();
 ?>
+
     <section class="blog-page">
         <div class="featured-post-area">
             <div class="container">
@@ -44,7 +45,7 @@ $page_id = get_queried_object_id();
                         </a>
                         
                     </div><!-- /  Post -->
-                    <?php endwhile; endif; ?>
+                    <?php endwhile; endif; wp_reset_postdata(); ?>
 
                 </div>
             </div>
@@ -55,8 +56,7 @@ $page_id = get_queried_object_id();
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-left">
-                            <?php echo beacon_breadcrumb();
-                            ?>
+                            <?php echo beacon_breadcrumb(); ?>
                         </div>
                     </div>
                 </div>
