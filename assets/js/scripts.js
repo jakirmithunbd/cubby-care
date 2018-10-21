@@ -3,28 +3,27 @@
   "use strict";
 
     // Toggle menu
-     $(".navbar-toggle").click(function() {
+    $(".navbar-toggle").click(function() {
         $(this).toggleClass('in');
     });
 
      // banner slider
-     $('.banner').slick({
+    $('.banner').slick({
         arrows: true,
         infinite: true,
         dots: true,
-      });
+    });
 
-     // enable tabs anywhere
-     // $('.nav-tabs li a').on('click', function(){
-     //    var target = $(this).attr('href');
-     //    console.log($(target).);
-     //    // remove classes
-     //    $('.nav-tabs li a').parent().removeClass('active');
-     //    $('.tab-pane').removeClass('active in');
-     //    // add classes
-     //    $(this).parent().addClass('active');
-     //    $('.tab-pane').addClass('active in');
-     // });
+    $('.load_tab').on('click', function(){
+        var target = $(this).attr('data-info');
+        var push_info = document.querySelector('.info-tab li a');
+        var getAttr = push_info.getAttribute('href');
+        for (var i = 0; i < getAttr.length; i++) {
+            i;
+            console.log(i);
+        }
+        console.log(getAttr);
+    });
 
     /*** Sticky header */
     $(window).scroll(function() {

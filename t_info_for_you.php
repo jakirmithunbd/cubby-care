@@ -15,7 +15,7 @@ Template Name: Info For You
         <div class="row">
             <div class="col-md-3 col-sm-4 no-padding-custom">
                 <div class="side-bar" id="sticky_tab">
-                    <ul class="nav nav-tabs hidden-xs">
+                    <ul class="nav nav-tabs hidden-xs info-tab">
                     	<?php
 						$tabs = [
 							'child_care_subsidy', 
@@ -26,9 +26,9 @@ Template Name: Info For You
 						];
 
 						foreach ($tabs as $key => $tab):
-						$active = $key === 0 ? 'active' : '';
+						// $active = $key === 0 ? 'active' : '';
 						$text = get_field($tab);
-							printf('<li class="%s"><a href="#info_%s" data-toggle="tab">%s</a></li>', $active, $key, $text['tab_menu']);
+							printf('<li><a href="#info_%s" data-toggle="tab">%s</a></li>', $key, $text['tab_menu']);
 
 						endforeach; 
 
@@ -50,8 +50,39 @@ Template Name: Info For You
 
             <div class="col-md-9 col-sm-8">
                 <div class="tab-content">
+
+                     <div class="info-for-you">
+                        <div class="row">
+                            <?php $counter = 0; ?>
+                            <?php foreach ($tabs as $key => $tab): 
+                                $text = get_field($tab);
+                                $icon = $text['info_icon'];
+                                $top_text = $text['top_text']['description'];
+                            ?>
+                            <div class="col-md-6 col-xs-6 col">
+                                <?php if ($icon): ?>
+                                <div class="icon pull-right">
+                                    <img src="<?php echo $icon; ?>" class="img-responsive" alt="">
+                                </div>
+                                <?php endif; ?>
+                                <div class="info-item">
+                                    <?php if ($text['tab_menu']): ?>
+                                    <a class="title" href="#"><?php echo $text['tab_menu']; ?></a>
+                                    <?php endif; ?>
+                                    <?php if ($top_text): ?>
+                                        <?php echo $top_text; ?>
+                                    <?php endif; ?>
+                                    <div class="info-bottom">
+                                        <button data-info="<?php echo 'info_'.$counter; ?>" class="btn load_tab"><?php _e('Learn More', 'cubby'); ?> <span class="fa fa-angle-right"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php $counter++; endforeach;?>
+
+                        </div>
+                    </div><!-- / info for you -->
                 	
-                    <div class="tab-pane fade in subsidy active" id="info_0">
+                    <div class="tab-pane fade subsidy" id="info_0">
                         <?php $subsidy = get_field('child_care_subsidy'); ?>
 
                         <?php
@@ -73,65 +104,6 @@ Template Name: Info For You
                         		<?php echo $subsidy['subsidy_content']; ?>
                         	<?php endif; ?>
                         </div>
-
-                        <div class="info-for-you">
-                            <div class="top-text">  
-                                <h2>Info for you</h2>
-                                <p>Harum voloreh endandento dent quiandi into vendita tionect uriatassi iditati umquam nihilla borerio blatendae re volor molorum inciis magnimolorat harum digendest doluptati consequi conet laut dolor serum sitas aut laboreria atenis et a delest</p>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 col-xs-6 col">
-                                    <div class="info-item">
-                                        <div class="icon pull-right">
-                                            <img src="<?php echo get_theme_file_uri('/images/svg/subsidy.svg'); ?>" alt="">
-                                        </div>
-                                        <a class="title" href="#">Child Care Subsidy</a>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                                        <div class="info-bottom">
-                                            <a href="#" class="btn">Learn More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-xs-6 col">
-                                    <div class="info-item">
-                                        <div class="icon pull-right">
-                                            <img src="<?php echo get_theme_file_uri('/images/svg/subsidy.svg'); ?>" alt="">
-                                        </div>
-                                        <a class="title" href="#">Child Care Subsidy</a>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                                        <div class="info-bottom">
-                                            <a href="#" class="btn">Learn More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-xs-6 col">
-                                    <div class="info-item">
-                                        <div class="icon pull-right">
-                                            <img src="<?php echo get_theme_file_uri('/images/svg/subsidy.svg'); ?>" alt="">
-                                        </div>
-                                        <a class="title" href="#">Child Care Subsidy</a>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                                        <div class="info-bottom">
-                                            <a href="#" class="btn">Learn More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-xs-6 col">
-                                    <div class="info-item">
-                                        <div class="icon pull-right">
-                                            <img src="<?php echo get_theme_file_uri('/images/svg/subsidy.svg'); ?>" alt="">
-                                        </div>
-                                        <a class="title" href="#">Child Care Subsidy</a>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                                        <div class="info-bottom">
-                                            <a href="#" class="btn">Learn More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
                     <div class="tab-pane fade subsidy sheets" id="info_1">
@@ -153,12 +125,12 @@ Template Name: Info For You
 
                         <?php $items = $sheets['sheets']; 
                         if($items):
-                        	foreach ($items as $item) :
+                            foreach ($items as $item) :
                         ?>
                         <div class="sheet wow fadeInUp">
 
                             <?php if ($item['title']): ?>
-                            	<h3><?php echo $item['title']; ?></h3>
+                                <h3><?php echo $item['title']; ?></h3>
                             <?php endif; ?>
 
                             <?php $attachment_id = $item['button']['file']; 
@@ -175,7 +147,7 @@ Template Name: Info For You
                             </div>
 
                             <?php if ($item['content']): ?>
-                            	<?php echo $item['content']; ?>
+                                <?php echo $item['content']; ?>
                             <?php endif; ?>
 
                             <div class="download-btn visible-xs">
@@ -185,8 +157,59 @@ Template Name: Info For You
                                 <span class="file-size">(Document, <?php echo  $filesize; ?>)</span>
                                 <?php endif; ?>
                             </div>
-						</div>
-						<?php endforeach; endif; ?>                        
+                        </div>
+                        <?php endforeach; endif; ?>                        
+                    </div>
+
+                    <div class="tab-pane fade subsidy" id="info_2">
+                    <?php
+                        $info_downloads = get_field('info_downloads');
+                        $top = $info_downloads['top_text'];
+                        if ($top): ?>
+                        <div class="top-text wow fadeInUp">  
+                            <?php if ($top['title']): ?>
+                            <h2><?php echo $top['title']; ?></h2>
+                            <?php endif; ?>
+
+                            <?php if ($top['description']): ?>
+                                <?php echo $top['description']; ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="tab-pane fade subsidy" id="info_3">
+                    <?php
+                        $info_downloads = get_field('info_menus');
+                        $top = $info_downloads['top_text'];
+                        if ($top): ?>
+                        <div class="top-text wow fadeInUp">  
+                            <?php if ($top['title']): ?>
+                            <h2><?php echo $top['title']; ?></h2>
+                            <?php endif; ?>
+
+                            <?php if ($top['description']): ?>
+                                <?php echo $top['description']; ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="tab-pane fade subsidy" id="info_4">
+                    <?php
+                        $info_downloads = get_field('info_communication');
+                        $top = $info_downloads['top_text'];
+                        if ($top): ?>
+                        <div class="top-text wow fadeInUp">  
+                            <?php if ($top['title']): ?>
+                            <h2><?php echo $top['title']; ?></h2>
+                            <?php endif; ?>
+
+                            <?php if ($top['description']): ?>
+                                <?php echo $top['description']; ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </div><!-- / col -->
             </div>
