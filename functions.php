@@ -27,6 +27,7 @@ function cubby_setup_theme(){
 	if(function_exists('register_nav_menus')){
 		register_nav_menus(array(
 			'menu-1'	=>	__('Main Menu', 'cubby'),
+			'menu-4'	=>	__('Mobile Menu', 'cubby'),
 			'menu-2'	=>	__('Footer Menu', 'cubby'),
 			'menu-3'	=>	__('Footer Right Menu', 'cubby'),
 		));
@@ -44,7 +45,7 @@ function cubby_assets(){
 	wp_enqueue_script('imageload', get_theme_file_uri('/assets/js/imageload.js'), array('masonary'), '0.0.5', true);
 	wp_enqueue_script('sidr', get_theme_file_uri('/assets/js/sidr.min.js'), array('jquery'), '0.0.2', true);
 	wp_enqueue_script('slick', get_theme_file_uri('/assets/js/slick.min.js'), array('jquery'), '0.0.3', true);
-	wp_enqueue_script('wowjs', get_theme_file_uri('/assets/js/wow.min.js'), array('jquery'), '0.0.5', true);
+	// wp_enqueue_script('wowjs', get_theme_file_uri('/assets/js/wow.min.js'), array('jquery'), '0.0.5', true);
 
 	$gmap_api = get_field('google_map_api_key', 'options');
 	$googleapi = "//maps.googleapis.com/maps/api/js?key=$gmap_api";
@@ -177,7 +178,7 @@ function cubby_monile_search() {
 
 
 // Wow scripts
-add_action('wp_footer', 'cubby_footer_scripts', 40);
+// add_action('wp_footer', 'cubby_footer_scripts', 40);
 function cubby_footer_scripts(){
  echo '
  <script>

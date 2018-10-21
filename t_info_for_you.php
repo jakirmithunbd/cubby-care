@@ -26,9 +26,9 @@ Template Name: Info For You
 						];
 
 						foreach ($tabs as $key => $tab):
-						// $active = $key === 0 ? 'active' : '';
+						$active = $key === 0 ? 'active' : '';
 						$text = get_field($tab);
-							printf('<li><a href="#info_%s" data-toggle="tab">%s</a></li>', $key, $text['tab_menu']);
+							printf('<li class="%s"><a href="#info_%s" data-toggle="tab">%s</a></li>', $active, $key, $text['tab_menu']);
 
 						endforeach; 
 
@@ -67,13 +67,13 @@ Template Name: Info For You
                                 <?php endif; ?>
                                 <div class="info-item">
                                     <?php if ($text['tab_menu']): ?>
-                                    <a class="title" href="#"><?php echo $text['tab_menu']; ?></a>
+                                    <h4 class="title" href="#"><?php echo $text['tab_menu']; ?></h4>
                                     <?php endif; ?>
                                     <?php if ($top_text): ?>
                                         <?php echo $top_text; ?>
                                     <?php endif; ?>
                                     <div class="info-bottom">
-                                        <button data-info="<?php echo 'info_'.$counter; ?>" class="btn load_tab"><?php _e('Learn More', 'cubby'); ?> <span class="fa fa-angle-right"></span></button>
+                                        <a class="btn" href="#<?php echo 'info_'.$counter; ?>" data-toggle="tab"> <?php _e('Learn More', 'cubby'); ?> <span class="fa fa-angle-right"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@ Template Name: Info For You
                         <?php
                         $top = $subsidy['top_text'];
                         if ($top): ?>
-                        <div class="top-text wow fadeInUp">  
+                        <div class="top-text fadeInUp">  
                             <?php if ($top['title']): ?>
                             <h2><?php echo $top['title']; ?></h2>
                             <?php endif; ?>
@@ -99,7 +99,7 @@ Template Name: Info For You
                         </div>
                         <?php endif; ?>
 
-                        <div class="subsidy-content  wow fadeInUp">
+                        <div class="subsidy-content fadeInUp">
                         	<?php if ($subsidy['subsidy_content']): ?>
                         		<?php echo $subsidy['subsidy_content']; ?>
                         	<?php endif; ?>
@@ -112,7 +112,7 @@ Template Name: Info For You
                         <?php
                         $top = $sheets['top_text'];
                         if ($top): ?>
-                        <div class="top-text  wow fadeInUp">  
+                        <div class="top-text fadeInUp">  
                             <?php if ($top['title']): ?>
                             <h2><?php echo $top['title']; ?></h2>
                             <?php endif; ?>
@@ -127,7 +127,7 @@ Template Name: Info For You
                         if($items):
                             foreach ($items as $item) :
                         ?>
-                        <div class="sheet wow fadeInUp">
+                        <div class="sheet fadeInUp">
 
                             <?php if ($item['title']): ?>
                                 <h3><?php echo $item['title']; ?></h3>
@@ -166,7 +166,7 @@ Template Name: Info For You
                         $info_downloads = get_field('info_downloads');
                         $top = $info_downloads['top_text'];
                         if ($top): ?>
-                        <div class="top-text wow fadeInUp">  
+                        <div class="top-text fadeInUp">  
                             <?php if ($top['title']): ?>
                             <h2><?php echo $top['title']; ?></h2>
                             <?php endif; ?>
@@ -183,7 +183,7 @@ Template Name: Info For You
                         $info_downloads = get_field('info_menus');
                         $top = $info_downloads['top_text'];
                         if ($top): ?>
-                        <div class="top-text wow fadeInUp">  
+                        <div class="top-text fadeInUp">  
                             <?php if ($top['title']): ?>
                             <h2><?php echo $top['title']; ?></h2>
                             <?php endif; ?>
@@ -200,7 +200,7 @@ Template Name: Info For You
                         $info_downloads = get_field('info_communication');
                         $top = $info_downloads['top_text'];
                         if ($top): ?>
-                        <div class="top-text wow fadeInUp">  
+                        <div class="top-text fadeInUp">  
                             <?php if ($top['title']): ?>
                             <h2><?php echo $top['title']; ?></h2>
                             <?php endif; ?>

@@ -2,7 +2,7 @@
 <?php 
 get_header();
 /*
-Template Name: Community
+Template Name: Kindness Community
 */ 
 $page_id = get_queried_object_id();
 ?>
@@ -55,7 +55,8 @@ $page_id = get_queried_object_id();
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-left">
-                            <?php echo beacon_breadcrumb(); ?>
+                            <?php echo beacon_breadcrumb();
+                            ?>
                         </div>
                     </div>
                 </div>

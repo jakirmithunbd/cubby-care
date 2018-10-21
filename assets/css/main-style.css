@@ -2686,7 +2686,10 @@ select {
 /**---- Responsive CSS ----**/
 @media only screen and (min-width: 1200px) {
   #search-box {
-    display: none; } }
+    display: none; }
+  .header .navbar.navbar-default .navbar-nav > li > a {
+    padding-left: 5px !important;
+    padding-right: 5px !important; } }
 
 @media only screen and (max-width: 1299px) {
   .centers-single .centre-wrap .centre-tabs {
@@ -2696,12 +2699,11 @@ select {
       padding-right: 4px;
       padding: 9px 14px; } }
 
-@media only screen and (max-width: 1200px) {
-  .header .navbar.navbar-default .navbar-nav > li > a {
-    padding-left: 5px !important;
-    padding-right: 5px !important; } }
-
 @media only screen and (max-width: 1199px) {
+  .desktop-menu {
+    display: none !important; }
+  .mobile-menu {
+    display: block !important; }
   .header_gutter {
     height: 110px; }
   .search-button.mobile-search {
@@ -2895,7 +2897,7 @@ select {
         #sidr-main .sidr-inner .top-bar ul li a:hover, #sidr-main .sidr-inner .top-bar ul li a:focus {
           color: #63c9d7; }
   #sidr-main .sidr-inner .nav.navbar-nav {
-    margin-right: 35px; }
+    margin-right: 15px; }
     #sidr-main .sidr-inner .nav.navbar-nav.navbar-right {
       float: none !important; }
     #sidr-main .sidr-inner .nav.navbar-nav > li {
@@ -2915,24 +2917,40 @@ select {
         text-transform: uppercase;
         letter-spacing: 1.13px; }
         #sidr-main .sidr-inner .nav.navbar-nav > li > a:after {
-          position: absolute;
-          content: "";
           width: 0;
-          height: 4px;
-          background: #3a696f;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          margin: 0 auto;
-          -webkit-transition: all .5s ease;
-          -o-transition: all .5s ease;
-          transition: all .5s ease; }
+          height: 0; }
       #sidr-main .sidr-inner .nav.navbar-nav > li.active a, #sidr-main .sidr-inner .nav.navbar-nav > li:hover a, #sidr-main .sidr-inner .nav.navbar-nav > li:focus a {
         background: transparent; }
         #sidr-main .sidr-inner .nav.navbar-nav > li.active a:after, #sidr-main .sidr-inner .nav.navbar-nav > li:hover a:after, #sidr-main .sidr-inner .nav.navbar-nav > li:focus a:after {
           width: 0; }
       #sidr-main .sidr-inner .nav.navbar-nav > li:last-child a {
         padding-right: 3px; }
+      #sidr-main .sidr-inner .nav.navbar-nav > li .dropdown-menu > li a {
+        color: #47474c;
+        font-family: "Melbourne";
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 37px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-left: 25px; }
+      #sidr-main .sidr-inner .nav.navbar-nav > li.dropdown a.dropdown-toggle {
+        position: relative; }
+        #sidr-main .sidr-inner .nav.navbar-nav > li.dropdown a.dropdown-toggle:before {
+          -webkit-transition: all .5s ease;
+          -o-transition: all .5s ease;
+          transition: all .5s ease;
+          position: absolute;
+          content: "";
+          top: calc(50% - 4px);
+          right: 0;
+          height: 8px;
+          width: 12px;
+          background: url("../images/svg/menu-arrow-down.svg"); }
+      #sidr-main .sidr-inner .nav.navbar-nav > li.dropdown.open a.dropdown-toggle:before {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg); }
   .header.sticky #search-box {
     top: 90px; }
   #search-box {
