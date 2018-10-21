@@ -53,6 +53,19 @@ Template Name: Info For You
 
                      <div class="info-for-you">
                         <div class="row">
+                            <div class="col-sm-12">
+                                <?php $title = get_field('info_title_text'); ?>
+                                <div class="title-text">
+                                    <?php if ($title['title']): ?>
+                                    <h3><?php echo $title['title'] ?></h3>
+                                    <?php endif; ?>
+
+                                    <?php if ($title['description']): ?>
+                                        <?php echo $title['description']; ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            
                             <?php $counter = 0; ?>
                             <?php foreach ($tabs as $key => $tab): 
                                 $text = get_field($tab);

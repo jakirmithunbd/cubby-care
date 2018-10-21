@@ -17,7 +17,7 @@ $page_id = get_queried_object_id();
         <div class="row">
             <div class="col-md-3 col-sm-4 no-padding-custom">
                 <div class="side-bar" id="sticky_tab">
-                    <ul class="nav nav-tabs hidden-xs">
+                    <ul class="nav nav-tabs hidden-xs info-tab">
                     	<?php
 						$tabs = [
 							'what_to_expect', 

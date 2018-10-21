@@ -17,7 +17,7 @@ Template Name: Who We Are
         <div class="row">
             <div class="col-md-3 col-sm-4 no-padding-custom">
                 <div class="side-bar" id="sticky_tab">
-                    <ul class="nav nav-tabs hidden-xs">
+                    <ul class="nav nav-tabs hidden-xs info-tab">
                     	<?php
 						$tabs = [
 							'cubby_care_family', 

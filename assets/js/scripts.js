@@ -14,8 +14,8 @@
         dots: true,
       });
 
-     // enable tabs anywhere
-     function loadHashTab(hash = null){
+    // enable tabs anywhere
+    function loadHashTab(hash = null){
         var hash = hash ? hash : window.location.hash;
         if( hash ) {
             $('.info-for-you').hide();
