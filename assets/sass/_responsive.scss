@@ -1064,8 +1064,19 @@
                             float: none;
                             margin: 25px 0 0;
                         }
+
+                        .download-btn {
+
+                            .file-size {
+                                text-align: left;
+                            }
+                        }
                     }
                 }
+            }
+
+            .info-for-you {
+                margin: 30px 0 0;
             }
         }
     }

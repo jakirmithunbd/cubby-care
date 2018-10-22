@@ -3224,6 +3224,10 @@ select {
   .info-page .tab-content .subsidy.sheets .sheet .btn {
     float: none;
     margin: 25px 0 0; }
+  .info-page .tab-content .subsidy.sheets .sheet .download-btn .file-size {
+    text-align: left; }
+  .info-page .tab-content .info-for-you {
+    margin: 30px 0 0; }
   .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial {
     width: 100%; }
     .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial + .testimonial {
