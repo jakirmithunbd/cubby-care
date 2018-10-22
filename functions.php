@@ -165,7 +165,7 @@ function cubby_search_form(){
     return $form;
 }
 
-function cubby_monile_search() {
+function cubby_mobile_search() {
 	$form = '
 	<form class="search-box" role="search" method="get" action="'. esc_url( home_url( '/' ) ) . '">
         <input type="search" name="s" class="text search-input" placeholder="Search">

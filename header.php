@@ -132,7 +132,7 @@
                     <div class="search-button mobile-search">
                         <a href="#" data-selector="#sidr" class="search-toggle"></a>
                     </div>
-                    <?php echo cubby_monile_search(); ?>
+                    <?php echo cubby_mobile_search(); ?>
                 </div>
             </div>
         </nav>

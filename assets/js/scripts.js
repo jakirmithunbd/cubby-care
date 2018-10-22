@@ -296,15 +296,19 @@
 
     // on page load 
     var page = 1;
-    var keywords = $(this).attr('data-keyword');
+    var keywords = $('#search_load_more').attr('data-keyword');
     searchResultAjax(keywords, page);
 
     // on load more button click
     $('#search_load_more').on('click', function(e){
+        var keywords = $(this).attr('data-keyword');
         e.preventDefault();
         page++;
         searchResultAjax(keywords, page);
     });
+
+
+
 
     /*** Ajax post load more */
     function ajaxLoadMore( page = null ){

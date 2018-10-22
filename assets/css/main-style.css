@@ -389,7 +389,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
           transition: all .5s ease;
           max-width: 100%; }
     .header .navbar.navbar-default .navbar-nav {
-      margin-right: 50px;
+      margin-right: 35px;
       -webkit-transition: all .5s ease;
       -o-transition: all .5s ease;
       transition: all .5s ease; }
@@ -648,6 +648,8 @@ ul.nav-tabs.nav.visible-xs.sticky {
   .search-results .search-number {
     border-bottom: 2px dashed #63c9d7;
     padding: 0 0 44px; }
+    .search-results .search-number p {
+      line-height: 45px; }
     .search-results .search-number h1 {
       color: #63c9d7;
       font-size: 40px;

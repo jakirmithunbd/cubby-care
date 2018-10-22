@@ -506,7 +506,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
             }
 
             .navbar-nav {
-                margin-right: 50px;
+                margin-right: 35px;
                 transition: all .5s ease;
 
                 >li {
@@ -846,6 +846,10 @@ ul.nav-tabs.nav.visible-xs.sticky {
     .search-number {
         border-bottom: 2px dashed #63c9d7;
         padding: 0 0 44px;
+
+        p {
+            line-height: 45px;
+        }
 
         h1 {
             color: #63c9d7;
