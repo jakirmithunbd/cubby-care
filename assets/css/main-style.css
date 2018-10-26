@@ -968,7 +968,8 @@ ul.nav-tabs.nav.visible-xs.sticky {
 .game-room {
   overflow: hidden;
   background-size: cover !important;
-  background-repeat: no-repeat !important; }
+  background-repeat: no-repeat !important;
+  padding-bottom: 50px; }
   .game-room .booking-form {
     padding: 65px 0 25px;
     position: relative; }
@@ -1001,6 +1002,8 @@ ul.nav-tabs.nav.visible-xs.sticky {
       .game-room .booking-form .form .gform_wrapper {
         width: 495px;
         margin: 0 0 10%; }
+        .game-room .booking-form .form .gform_wrapper .gform_body .gform_fields .gfield.footer_booking_text_area textarea {
+          height: 122px; }
         .game-room .booking-form .form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container {
           margin-top: 6px; }
           .game-room .booking-form .form .gform_wrapper .gform_body .gform_fields .gfield .ginput_container input {

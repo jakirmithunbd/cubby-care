@@ -1248,6 +1248,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
     overflow: hidden;
     background-size: cover !important;
     background-repeat: no-repeat !important;
+    padding-bottom: 50px;
 
     .booking-form {
         padding: 65px 0 25px;
@@ -1291,6 +1292,13 @@ ul.nav-tabs.nav.visible-xs.sticky {
                     .gform_fields {
 
                         .gfield {
+
+                            &.footer_booking_text_area {
+                               
+                                textarea {
+                                    height: 122px;
+                                }
+                            }
 
                             .ginput_container {
                                 margin-top: 6px;
