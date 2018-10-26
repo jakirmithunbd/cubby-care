@@ -238,7 +238,7 @@ $page_id = get_queried_object_id();
             </div>
         </div>
     </div><!-- / About Us -->
-
+</div>
 
 <?php echo cubby_get_booking_room(); ?>
 
