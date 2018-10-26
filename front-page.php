@@ -11,7 +11,7 @@ Template Name: Home
     		if ($banner): 
     			foreach ($banner as $item):
     	?>
-        <div class="slick-slider" style="background: url(<?php echo $item['banner_image']; ?>);">
+        <div class="slider-item" style="background: url(<?php echo $item['banner_image']; ?>);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-8 col-xs-12">

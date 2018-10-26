@@ -1,6 +1,6 @@
 <?php get_header(); 
+$page_id = get_queried_object_id();
 ?>
-
 <section class="page-banner search-page" style="background: url(<?php echo get_theme_file_uri('assets/images/page-banner.jpg'); ?>);">
     <div class="container">
         <div class="row">

@@ -80,7 +80,7 @@ function beacon_breadcrumb() {
        echo $before . get_the_title() . $after;
      
     } elseif ( is_search() ) {
-      echo $before . ' ' . $blogTitle . ' ' . $after;
+      echo ' Search Result';;
       //echo $before . 'Search Results for: "' . get_search_query() . '"' . $after;
     } elseif ( is_tag() ) {
       echo '<a href="' . $blogLink . '">'.$blogTitle.'</a> ' . $delimiter . ' ';

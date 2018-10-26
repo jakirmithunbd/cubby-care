@@ -5,9 +5,8 @@ add_action("wp_ajax_nopriv_load_search", "cubby_load_search");
 function cubby_load_search(){
     $page = $_POST['page'];
     $posts_per_page = 8;
-    $keywords = $_POST['keywords'];
     $args = [
-        's' => $keywords,
+        's' => $_POST['keywords'],
         'posts_per_page' => $posts_per_page,
         'paged' => $page
     ];

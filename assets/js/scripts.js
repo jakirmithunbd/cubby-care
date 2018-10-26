@@ -24,7 +24,7 @@
     }
 
     $(window).on('load', function(){
-        $('.info-tab li').removeClass('active');
+        $('.info-page .info-tab li').removeClass('active');
         loadHashTab();
     });
 

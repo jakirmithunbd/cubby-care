@@ -673,10 +673,10 @@ ul.nav-tabs.nav.visible-xs.sticky {
 /**---- Banner Area ----**/
 .banner {
   overflow: hidden;
-  height: 700px; }
+  height: 730px; }
   .banner .slick-slider, .banner .slick-list, .banner .slick-track {
-    height: 700px; }
-  .banner .slick-slider {
+    height: 100%; }
+  .banner .slider-item {
     background-repeat: no-repeat !important;
     background-size: cover !important;
     display: -webkit-box;
@@ -688,22 +688,22 @@ ul.nav-tabs.nav.visible-xs.sticky {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background-position: 50% -78% !important; }
-    .banner .slick-slider .banner-info {
+    background-position: 50% 0% !important; }
+    .banner .slider-item .banner-info {
       margin-top: 50px;
       max-width: 570px; }
-      .banner .slick-slider .banner-info h2 {
+      .banner .slider-item .banner-info h2 {
         color: #63c9d7;
         font-size: 50px;
         line-height: 52px;
         font-weight: 700;
         margin: 0 0 40px;
         letter-spacing: 0.62px; }
-        .banner .slick-slider .banner-info h2 span {
+        .banner .slider-item .banner-info h2 span {
           color: #846196; }
-      .banner .slick-slider .banner-info ul li + li {
+      .banner .slider-item .banner-info ul li + li {
         padding-left: 12px; }
-      .banner .slick-slider .banner-info ul li .btn {
+      .banner .slider-item .banner-info ul li .btn {
         width: 170px;
         height: 50px; }
   .banner .slick-dots {
@@ -3088,10 +3088,10 @@ select {
 @media only screen and (max-width: 767px) {
   .no-padding-custom {
     padding: 0 !important; }
-  .banner .slick-slider {
+  .banner .slider-item {
     background-position: 80% 50% !important;
     position: relative; }
-    .banner .slick-slider:before {
+    .banner .slider-item:before {
       position: absolute;
       content: "";
       top: 0;
@@ -3099,11 +3099,11 @@ select {
       height: 100%;
       width: 100%;
       background: rgba(0, 0, 0, 0.4); }
-    .banner .slick-slider .banner-info {
+    .banner .slider-item .banner-info {
       margin-left: auto;
       margin-right: auto;
       text-align: center; }
-      .banner .slick-slider .banner-info h2 {
+      .banner .slider-item .banner-info h2 {
         font-size: 38px;
         line-height: 47px;
         letter-spacing: 0.28px; }
@@ -3260,9 +3260,9 @@ select {
 @media only screen and (max-width: 575px) {
   .col {
     width: 100% !important; }
-  .banner .slick-slider {
+  .banner .slider-item {
     background-position: 75% 50% !important; }
-    .banner .slick-slider .banner-info .btn {
+    .banner .slider-item .banner-info .btn {
       margin-bottom: 10px; }
   .page-banner {
     height: 265px; }

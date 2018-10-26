@@ -884,18 +884,18 @@ ul.nav-tabs.nav.visible-xs.sticky {
 /**---- Banner Area ----**/
 .banner {
     overflow: hidden;
-    height: 700px;
+    height: 730px;
     
     .slick-slider, .slick-list, .slick-track {
-        height: 700px;
+        height: 100%;
     }
-    .slick-slider {
+    .slider-item {
         background-repeat: no-repeat !important;
         background-size: cover !important;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-position: 50% -78% !important;
+        background-position: 50% 0% !important;
         
         .banner-info {
             margin-top: 50px;
