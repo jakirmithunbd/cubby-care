@@ -1334,6 +1334,37 @@
                 }
             }
         }
+
+        .centre-wrap {
+            
+            .centre-tabs {
+
+                .tab-content {
+
+                    .overview {
+
+                        .testimonials-wrapper {
+                            
+                            .title {
+                                margin-bottom: 0;
+
+                                h3 {
+                                    text-align: center;
+                                }
+                            }
+                            .testimonials {
+
+                                .slick-dots {
+                                    right: 0;
+                                    top: 0;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }  
     }
 
     // who we are

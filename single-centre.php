@@ -158,7 +158,9 @@
                                                 	<?php if ($testimonial['name']): ?>
                                                     <h5><?php echo $testimonial['name'] ?></h5>
                                                 	<?php endif; ?>
-                                                    <p><?php echo get_the_date("F Y"); ?></p>
+                                                    <?php if ($testimonial['testimonial_data']): ?>
+                                                    <p><?php echo $testimonial['testimonial_data']; ?></p>
+                                                    <?php endif; ?>
                                                 </div>
                                             </div>
                                         </div><!-- / testimonial -->
@@ -175,9 +177,11 @@
                                     <h3><?php echo $offer['title']; ?></h3>
                                 	<?php endif; ?>
 									
-									<?php if ($offer['offer_description']): ?>
-										<?php echo $offer['offer_description']; ?>
-									<?php endif; ?>
+									<div class="offer-details">
+                                    <?php if ($offer['offer_description']): ?>
+                                        <?php echo $offer['offer_description']; ?>
+                                    <?php endif; ?>                           
+                                    </div>
                                 </div>
                             </div><!-- / offer -->
 
@@ -241,7 +245,9 @@
                                     $items = $img['images'];
                                     if($items): foreach ($items as $item):?>
                                     <div class="col-md-6 col-sm-6 col-xs-12 item">
-                                        <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
+                                        <a id="jkald" class="gallery-popup" href="<?php echo $item['image']; ?>">
+                                        <img id="jkald" src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
+                                        </a>
                                     </div><!-- / Gallery item -->
                                     <?php endforeach; endif; ?>
                                 </div><!-- / Gallery container -->

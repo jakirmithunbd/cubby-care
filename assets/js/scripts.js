@@ -131,6 +131,11 @@
           ]
     });
 
+    /***  Play Video */
+    $(".gallery-popup").colorbox({
+        close: '<i class="fa fa-close"></i>',
+    });
+
     $('.latest-post-slider').slick({
         slidesToShow: 3,
         infinite: true,

@@ -182,7 +182,8 @@ Template Name: Home
             	$color = $testi['bg_color'];
             	$img = $testi['image'];
             	$name = $testi['name'];
-            	$quote = $testi['quote'];
+                $quote = $testi['quote'];
+            	$date = $testi['testi_data'];
             	?>
                 <div class="slick-slider-item wow fadeInUp">
                     <div class="testimonial-box" style="color: <?php echo $color; ?>;">
@@ -202,12 +203,14 @@ Template Name: Home
                         </div>
                     	<?php endif; ?>
 
-                    		
                         <div class="description">
                     		<?php if ($name): ?>
                             <h5><?php echo $name; ?></h5>
                     		<?php endif; ?>
-                            <p><?php echo get_the_date("F Y"); ?></p>
+
+                            <?php if ($date): ?>
+                                <p><?php echo $date; ?></p>
+                            <?php endif ?>
                         </div>
                     </div>
                 </div><!-- / slider item -->
