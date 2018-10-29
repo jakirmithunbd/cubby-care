@@ -119,17 +119,11 @@
         slidesToShow: 2,
         infinite: true,
         dots: true,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         arrows: false,
           responsive: [
             {
               breakpoint: 768,
-              settings: {
-                slidesToShow: 2
-              }
-            },
-            {
-              breakpoint: 575,
               settings: {
                 slidesToShow: 1
               }
