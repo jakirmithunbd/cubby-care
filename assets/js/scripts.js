@@ -115,7 +115,7 @@
           ]
     });
 
-    $('#centre-testimonials').slick({
+    $('#centre-testimonial').slick({
         slidesToShow: 2,
         infinite: true,
         dots: true,

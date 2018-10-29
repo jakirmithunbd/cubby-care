@@ -2218,6 +2218,12 @@ ul.nav-tabs.nav.visible-xs.sticky {
 
                             p {
                                 color: #323e48;
+                                font-size: 16px;
+                                line-height: 23px;
+
+                                strong {
+                                    font-size: 18px;
+                                }
                             }
                             
                             ul {
@@ -2316,10 +2322,9 @@ ul.nav-tabs.nav.visible-xs.sticky {
                                 text-align: right;
                             }
                             .testimonial {
-                                width: 47%;
 
                                 &+.testimonial {
-                                    margin-left: 36px;
+                                    padding-left: 36px;
                                 }
 
                                 .testimonial-box {  

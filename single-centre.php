@@ -133,7 +133,7 @@
                                         <h3><?php echo _e( 'What our parents say', 'cubby' ); ?></h3>
                                     </div>
 
-                                    <div class="testimonials" id="centre-testimonials">
+                                    <div class="testimonials" id="centre-testimonial">
                                     	<?php $testimonials = $over['centre_testimonals']; 
                                     	if($testimonials):
                                     		foreach ($testimonials as $testimonial):
