@@ -133,7 +133,7 @@
                                         <h3><?php echo _e( 'What our parents say', 'cubby' ); ?></h3>
                                     </div>
 
-                                    <div class="testimonials">
+                                    <div class="testimonials" id="centre-testimonials">
                                     	<?php $testimonials = $over['centre_testimonals']; 
                                     	if($testimonials):
                                     		foreach ($testimonials as $testimonial):
@@ -166,7 +166,7 @@
                                     </div><!-- / testimonials -->
                                 </div><!-- / testimonials wrapper -->
                             </div><!-- / overview -->
-                            <div class="tab-pane fade overview" id="count_1">
+                            <div class="tab-pane fade overview centre-offering" id="count_1">
                             	<?php 
                             	$offer = get_field('centre_offering');
                             	?>

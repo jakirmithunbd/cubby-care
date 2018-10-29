@@ -115,6 +115,28 @@
           ]
     });
 
+    $('#centre-testimonials').slick({
+        slidesToShow: 2,
+        infinite: true,
+        dots: true,
+        slidesToScroll: 2,
+        arrows: false,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 575,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+    });
+
     $('.latest-post-slider').slick({
         slidesToShow: 3,
         infinite: true,

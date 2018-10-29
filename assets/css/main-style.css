@@ -1670,6 +1670,9 @@ ul.nav-tabs.nav.visible-xs.sticky {
         border-color: #846196;
         background: #846196;
         color: #fff; }
+    .centers-single .centre-wrap .centre-tabs .tab-content .overview.centre-offering ul li {
+      list-style: disc;
+      margin-left: 30px; }
     .centers-single .centre-wrap .centre-tabs .tab-content .overview .top-text {
       margin: 0 0 30px; }
       .centers-single .centre-wrap .centre-tabs .tab-content .overview .top-text h3 {
@@ -1711,7 +1714,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
     .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper {
       margin: 45px 0 0; }
       .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .title {
-        margin-bottom: 12px; }
+        margin-bottom: 25px; }
         .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .title h3 {
           line-height: 28px;
           color: #846196;
@@ -1725,7 +1728,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
         display: flex;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        padding: 0; }
+        padding: 30px 0 0; }
         .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial {
           width: 47%; }
           .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial + .testimonial {

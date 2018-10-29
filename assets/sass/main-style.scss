@@ -2212,6 +2212,17 @@ ul.nav-tabs.nav.visible-xs.sticky {
 
                 .overview {
 
+                    &.centre-offering {
+
+                        ul {
+
+                            li {
+                                list-style: disc;
+                                margin-left: 30px;
+                            }
+                        }
+                    }
+
                     .top-text {
                         margin: 0 0 30px;
 
@@ -2273,7 +2284,7 @@ ul.nav-tabs.nav.visible-xs.sticky {
                         margin: 45px 0 0;
 
                         .title {
-                            margin-bottom: 12px;
+                            margin-bottom: 25px;
 
                             h3 {
                                 line-height: 28px;
@@ -2289,7 +2300,8 @@ ul.nav-tabs.nav.visible-xs.sticky {
                         .testimonials {
                             display: flex;
                             flex-wrap: wrap;
-                            padding: 0;
+                            padding: 30px 0 0;
+
 
                             .testimonial {
                                 width: 47%;
