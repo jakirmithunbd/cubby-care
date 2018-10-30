@@ -1740,64 +1740,65 @@ ul.nav-tabs.nav.visible-xs.sticky {
           top: -70px;
           right: 35px;
           text-align: right; }
-        .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial + .testimonial {
-          padding-left: 36px; }
-        .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box {
-          padding: 50px 30px;
-          color: #fff;
-          -webkit-transition: all .5s ease;
-          -o-transition: all .5s ease;
-          transition: all .5s ease;
-          position: relative;
-          border-radius: 15px;
-          background: currentColor; }
-          .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box:after {
-            content: "";
-            right: 20%;
-            z-index: -1;
-            width: 158px;
-            height: 122px;
-            bottom: -70px;
-            position: absolute;
-            border-radius: 500px;
-            -webkit-transform: rotate(-115deg);
-            -ms-transform: rotate(-115deg);
-            transform: rotate(-138deg);
-            -webkit-box-shadow: 0px 25px 0 0 currentColor;
-            box-shadow: 0px 40px 0 0 currentColor; }
-          .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box span {
+        .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial {
+          padding-left: 18px;
+          padding-right: 18px; }
+          .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box {
+            padding: 50px 30px;
             color: #fff;
-            font-size: 20px;
-            margin-right: 10px; }
-            .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box span img {
-              display: inherit; }
-          .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box p {
-            color: #fff;
-            overflow: hidden;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 22px;
-            letter-spacing: 0.2px; }
-        .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info {
-          margin: 35px 0 0;
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          align-items: center; }
-          .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info h5 {
-            font-weight: 700;
-            color: #323e48;
-            font-size: 15.219pt;
-            line-height: 16.803pt; }
-          .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info .parent-image {
-            width: 85px;
-            height: 85px;
-            overflow: hidden;
-            margin-right: 15px; }
-            .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info .parent-image img {
-              border-radius: 500px; }
+            -webkit-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            transition: all .5s ease;
+            position: relative;
+            border-radius: 15px;
+            background: currentColor; }
+            .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box:after {
+              content: "";
+              right: 20%;
+              z-index: -1;
+              width: 158px;
+              height: 122px;
+              bottom: -70px;
+              position: absolute;
+              border-radius: 500px;
+              -webkit-transform: rotate(-115deg);
+              -ms-transform: rotate(-115deg);
+              transform: rotate(-138deg);
+              -webkit-box-shadow: 0px 25px 0 0 currentColor;
+              box-shadow: 0px 40px 0 0 currentColor; }
+            .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box span {
+              color: #fff;
+              font-size: 20px;
+              margin-right: 10px; }
+              .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box span img {
+                display: inherit; }
+            .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .testimonial-box p {
+              color: #fff;
+              overflow: hidden;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 22px;
+              letter-spacing: 0.2px; }
+          .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info {
+            margin: 35px 0 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center; }
+            .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info h5 {
+              font-weight: 700;
+              color: #323e48;
+              font-size: 15.219pt;
+              line-height: 16.803pt; }
+            .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info .parent-image {
+              width: 85px;
+              height: 85px;
+              overflow: hidden;
+              margin-right: 15px; }
+              .centers-single .centre-wrap .centre-tabs .tab-content .overview .testimonials-wrapper .testimonials .testimonial .parents-info .parent-image img {
+                border-radius: 500px; }
     .centers-single .centre-wrap .centre-tabs .tab-content .people .title {
       margin: 0; }
     .centers-single .centre-wrap .centre-tabs .tab-content .people .top-text {

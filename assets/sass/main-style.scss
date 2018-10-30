@@ -2322,10 +2322,12 @@ ul.nav-tabs.nav.visible-xs.sticky {
                                 text-align: right;
                             }
                             .testimonial {
+                                padding-left: 18px;
+                                padding-right: 18px;
 
-                                &+.testimonial {
-                                    padding-left: 36px;
-                                }
+                                // &+.testimonial {
+                                //     padding-left: 36px;
+                                // }
 
                                 .testimonial-box {  
                                     padding: 50px 30px;
