@@ -22,6 +22,8 @@ $page_id = get_queried_object_id();
                         $children = new WP_Query(array(
                             'post_type'      => 'page',
                             'posts_per_page' => -1,
+                            'order'             => 'ASC',
+                            'orderby'           => 'menu_order',
                             'post_parent'    => '142'
                         ));
                         ?>
@@ -42,6 +44,8 @@ $page_id = get_queried_object_id();
                         $children = new WP_Query(array(
                             'post_type'      => 'page',
                             'posts_per_page' => -1,
+                            'order'             => 'ASC',
+                            'orderby'           => 'menu_order',
                             'post_parent'    => '142'
                         ));
                         ?>

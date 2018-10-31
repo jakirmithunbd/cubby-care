@@ -21,6 +21,8 @@ Template Name: Education & care
                         $children = new WP_Query(array(
                             'post_type'      => 'page',
                             'posts_per_page' => -1,
+                            'order'             => 'ASC',
+                            'orderby'           => 'menu_order',
                             'post_parent'    => '142'
                         ));
                         ?>
@@ -41,6 +43,8 @@ Template Name: Education & care
                         $children = new WP_Query(array(
                             'post_type'      => 'page',
                             'posts_per_page' => -1,
+                            'order'             => 'ASC',
+                            'orderby'           => 'menu_order',
                             'post_parent'    => '142'
                         ));
                         ?>

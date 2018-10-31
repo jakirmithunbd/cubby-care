@@ -15,11 +15,13 @@ Template Name: Info for you
         <div class="row">
             <div class="col-md-3 col-sm-4 no-padding-custom">
                 <div class="side-bar" id="sticky_tab">
-                    <ul class="nav nav-tabs hidden-xs info-tab">
+                    <ul class="nav nav-tabs hidden-xs">
                     	<?php
     					$parent = new WP_Query(array(
                             'post_type'      => 'page',
                             'posts_per_page' => -1,
+                            'order'             => 'ASC',
+                            'orderby'           => 'menu_order',
                             'post_parent'    => '152'
                         ));
                         ?>
@@ -42,6 +44,8 @@ Template Name: Info for you
                         $parent = new WP_Query(array(
                             'post_type'      => 'page',
                             'posts_per_page' => -1,
+                            'order'             => 'ASC',
+                            'orderby'           => 'menu_order',
                             'post_parent'    => '152'
                         ));
                         ?>
