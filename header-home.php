@@ -93,23 +93,6 @@
                         </li>
                     </ul>
                 </div>
-                <div class="mobile-menu hidden">
-                        <?php if (function_exists('wp_nav_menu')): ?>
-                            <?php wp_nav_menu( 
-                                  array(
-                                  'menu'               => 'Mobile Menu',
-                                  'theme_location'     => 'menu-4',
-                                  'depth'              => 2,
-                                  'container'          => 'false',
-                                  'menu_class'         => 'nav navbar-nav navbar-right',
-                                  'menu_id'            => '',
-                                  'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
-                                  'walker'             => new wp_bootstrap_navwalker()
-                                  ) 
-                                ); 
-                            ?>
-                        <?php endif; ?>
-                    </div>
 
                     <div class="desktop-menu">
                         <?php if (function_exists('wp_nav_menu')): ?>

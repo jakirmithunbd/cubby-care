@@ -21,11 +21,11 @@ $page_id = get_queried_object_id();
 					<ul>
 						<?php $cont = get_field('contacts', 'options'); ?>
 						<li>
+							<?php if ($cont['phone']): ?>
 							<div class="icon pull-left">
 								<span><img src="<?php echo get_theme_file_uri('assets/images/svg/call.svg'); ?>" alt=""></span>
 							</div>
 							
-							<?php if ($cont['phone']): ?>
 							<div class="text">
 								<label><?php _e('Phone', 'cubby'); ?></label>
 								<p><span><?php _e( '1300 DAY CARE', 'cubby' ); ?></span><a href="tel:1300 329 227">( <?php echo $cont['phone']; ?> )</a></p>
@@ -34,11 +34,11 @@ $page_id = get_queried_object_id();
 						</li>
 
 						<li>
+							<?php if ($cont['fax']): ?>
 							<div class="icon pull-left">
 								<span><img src="<?php echo get_theme_file_uri('assets/images/svg/fax.svg'); ?>" alt=""></span>
 							</div>
 							
-							<?php if ($cont['fax']): ?>
 							<div class="text">
 								<label><?php _e( 'Fax', 'cubby' ); ?></label>
 								<p><?php echo $cont['fax']; ?></p>
@@ -47,11 +47,11 @@ $page_id = get_queried_object_id();
 						</li>
 
 						<li>
+							<?php if ($cont['email']): ?>
 							<div class="icon pull-left">
 								<span><img src="<?php echo get_theme_file_uri('assets/images/svg/email.svg'); ?>" alt=""></span>
 							</div>
 							
-							<?php if ($cont['email']): ?>
 							<div class="text">
 								<label><?php _e( 'email', 'cubby' ); ?></label>
 								<a href="mailto:<?php echo $cont['email']; ?>"><?php echo $cont['email']; ?></a>

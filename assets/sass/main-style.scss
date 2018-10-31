@@ -374,6 +374,12 @@ ul.nav-tabs.nav.visible-xs.sticky {
         background: url(../images/svg/arrow-down-white.svg);
     }
 }
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background: transparent !important;
+}
+.navbar-default .navbar-nav>.open>a,{
+    background: transparent !important;
+}
 /* =========== Import Mixin =============*/
 
 @import "mixin";
@@ -2999,6 +3005,13 @@ select {
                             height: 55px;
                             padding: 10px 20px;
                             margin-left: 0;
+
+                            option {
+                                text-rendering: optimizeLegibility;
+                                -webkit-font-smoothing: antialiased;
+                                -moz-osx-font-smoothing: grayscale;
+                                font-variant-ligatures: none;
+                            }
                         }
 
                         textarea, select {

@@ -54,13 +54,6 @@
     
 }
 @media only screen and (max-width: 1199px) {
-    .desktop-menu {
-        display: none !important;
-    }
-
-    .mobile-menu {
-        display: block !important;
-    }
     .header_gutter {
         height: 110px;
     }
@@ -410,7 +403,7 @@
 
                         &.dropdown {
 
-                            a {
+                            >a {
 
                                 &.dropdown-toggle {
                                     position: relative;

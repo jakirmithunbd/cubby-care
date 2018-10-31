@@ -242,6 +242,42 @@ function cubby_populate_centre( $form ) {
     return $form;
 }
 
+// filter the locations select field for contact forms
+add_filter( 'gform_pre_render_3', 'cubby_populate_centre_contact' );
+add_filter( 'gform_pre_validation_3', 'cubby_populate_centre_contact' );
+add_filter( 'gform_pre_submission_filter_3', 'cubby_populate_centre_contact' );
+add_filter( 'gform_admin_pre_render_3', 'cubby_populate_centre_contact' );
+
+function cubby_populate_centre_contact( $form ) {
+ 
+    foreach ( $form['fields'] as &$field ) {
+ 
+        if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-centre-contact' ) === false ) {
+            continue;
+        }
+
+        $centre_args = array(
+        	'post_type' => 'centre',
+        	'posts_per_page' => -1
+        );
+ 
+        $centres = get_posts($centre_args);
+
+        $choices = array();
+ 
+        foreach ( $centres as $key => $centre ) {
+        	$text = ( $key === 0 && is_singular('centre') ) ? 'Enquire at ' . $centre->post_title : $centre->post_title;
+            $choices[] = array( 'text' => $text, 'value' => $centre->post_title );
+        }
+ 
+        // update 'Select a Post' to whatever you'd like the instructive option to be
+        $field->choices = $choices;
+
+    }
+ 
+    return $form;
+}
+
 function cubby_quote_notification($notification, $form, $entry){
 	if( is_singular( 'centre' )){
 		$centre_id = get_the_ID();
