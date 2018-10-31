@@ -1,12 +1,10 @@
 <?php 
 get_header();
 /*
-Template Name: Who We Are
+Template Name: Out People
 */ 
-?>   
-
+?> 
 <?php echo cubby_page_banner(); ?>
-
 <div class="about-us">
     <div class="container">
         <div class="row">
@@ -61,51 +59,56 @@ Template Name: Who We Are
 
             <div class="col-md-9 col-sm-8">
                 <div class="tab-content">
-                    <div class="mission">
-                        <?php $mission = get_field('our_mission_to_kindness'); ?>
-
+                    <div class="people">
                         <?php
-                        $top = $mission['top_text'];
-                        if ($top): ?>
+                        $people = get_field('our_people');
+                        $ptop = $people['top_text'];
+                        if ($ptop): ?>
                         <div class="top-text">  
-                            <?php if ($top['title']): ?>
-                            <h2><?php echo $top['title']; ?></h2>
+                            <?php if ($ptop['title']): ?>
+                            <h2><?php echo $ptop['title']; ?></h2>
                             <?php endif; ?>
 
-                            <?php if ($top['description']): ?>
-                                <?php echo $top['description']; ?>
+                            <?php if ($ptop['description']): ?>
+                                <?php echo $ptop['description']; ?>
                             <?php endif; ?>
                         </div>
                         <?php endif; ?>
-
-                        <ul class="list-inline">
-                            <?php $items = $mission['images']; ?>
-                            <?php if ($items): 
-                                foreach ($items as $item):
-                            ?>
-                            <li>
-                                <?php if ($item['image']): ?>
-                                <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
-                                <?php endif; ?>
-                            </li>
-                            <?php endforeach; endif ?>
-
-                        </ul>
                         
-                        <?php $citems = $mission['commitment']; ?>
-                        <?php if ($citems) :
-                            foreach ( $citems as $citem):
+                        <?php $peoples = $people['team_members']; 
                         ?>
+                        <?php if($peoples): 
+                            foreach ($peoples as $item):
+                        ?>
+                        <div class="team-member">
+                            <?php if ($item['image']): ?>
+                            <div class="media pull-left">
+                                <img src="<?php echo $item['image']; ?>" class="img-responsive" alt="">
+                            </div>
+                            <?php endif; ?>
 
-                        <?php if ($citem['title']): ?>
-                        <h3><?php echo $citem['title']; ?></h3>
-                        <?php endif; ?>
+                            <div class="team-meta">
+                                <?php if ($item['name'] || $item['title'] || $item['position']): ?>
+                                <div class="title">
+                                    <?php if ($item['name'] || $item['title']): ?>
+                                    <h4><?php echo $item['name']; ?> <span><?php echo $item['title']; ?></span></h4>
+                                    <?php endif; ?>
+                                    
+                                    <?php if ($item['position']): ?>
+                                    <p><?php echo $item['position']; ?></p>
+                                    <?php endif; ?>
 
-                        <?php if ($citem['description']): ?>
-                            <?php echo $citem['description']; ?>
-                        <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
+                                
+                                <?php if ($item['description']): ?>
+                                    <?php echo $item['description']; ?>
+                                
+                                <?php endif; ?>
+                            </div>
+                        </div><!-- / team -->
                         <?php endforeach; endif; ?>
-                    </div>
+                    </div><!-- / team -->
                 </div><!-- / col -->
             </div>
         </div>

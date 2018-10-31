@@ -7,44 +7,13 @@
         $(this).toggleClass('in');
     });
 
-     // banner slider
-     $('.banner').slick({
+    // banner slider
+    $('.banner').slick({
         arrows: true,
         infinite: true,
         dots: true,
-      });
-
-    // enable tabs anywhere
-    function loadHashTab(hash = null){
-        var hash = hash ? hash : window.location.hash;
-        if( hash ) {
-            $('.info-for-you').hide();
-            $('.info-tab li a[href='+ hash +']').trigger('click');       
-        }
-    }
-
-    $(window).on('load', function(){
-        $('.info-page .info-tab li').removeClass('active');
-        loadHashTab();
     });
 
-    $(window).on('hashchange',function(){
-        loadHashTab();
-    });
-
-    $('.info-bottom a').on('click', function(){
-        var target = $(this).attr('href');
-        loadHashTab(target);
-
-        $('html, body').stop().animate({
-            scrollTop: $($(this).attr('href')).offset().top - 250
-        }, 500, 'linear');   
-
-    });
-
-    $('.info-tab li a').on('click', function(){
-        $('.info-for-you').hide();
-    });
 
     /*** Sticky header */
     $(window).scroll(function() {
@@ -225,7 +194,8 @@
     // sticky menu select style
     $('#sticky_tab_select').change(function(e) {
         var value = $(this).val();
-        $('a[href="' +'#' + value + '"]').tab('show');
+        $('a[href="' + value + '"]');
+        console.log(value);
     });
 
     /*** Enable Masonry */

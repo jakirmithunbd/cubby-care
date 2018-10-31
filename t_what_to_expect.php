@@ -1,9 +1,8 @@
 <?php 
 get_header();
 /*
-Template Name: Experience
+Template Name: What to Expect
 */ 
-$page_id = get_queried_object_id();
 ?> 
 <?php echo cubby_page_banner(); ?>
 
@@ -17,7 +16,7 @@ $page_id = get_queried_object_id();
         <div class="row">
             <div class="col-md-3 col-sm-4 no-padding-custom">
                 <div class="side-bar" id="sticky_tab">
-                    <ul class="nav nav-tabs hidden-xs info-tab">
+                    <ul class="nav nav-tabs hidden-xs">
                         <?php
                         $children = new WP_Query(array(
                             'post_type'      => 'page',
@@ -74,12 +73,12 @@ $page_id = get_queried_object_id();
                             <?php if ($top['description']): ?>
                                 <?php echo $top['description']; ?>
                             <?php endif; ?>
-                            
-                            <?php if ($top['image']): ?>
+							
+							<?php if ($top['image']): ?>
                             <div class="media">
-                                <img src="<?php echo $top['image']; ?>" class="img-responsive" alt="">
+                            	<img src="<?php echo $top['image']; ?>" class="img-responsive" alt="">
                             </div>
-                            <?php endif; ?>
+							<?php endif; ?>
                         </div>
                         <?php endif; ?>
 
@@ -99,11 +98,11 @@ $page_id = get_queried_object_id();
 
                         <?php if ($citem['image']): ?>
                         <div class="media">
-                            <img src="<?php echo $citem['image']; ?>" class="img-responsive" alt="">
+                        	<img src="<?php echo $citem['image']; ?>" class="img-responsive" alt="">
                         </div>
-                        <?php endif; ?>
-                        <?php endforeach; endif; ?>
-                        </div>
+						<?php endif; ?>
+						<?php endforeach; endif; ?>
+						</div>
                     </div>
                 </div><!-- / col -->
             </div>

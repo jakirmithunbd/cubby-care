@@ -116,7 +116,7 @@
                                   array(
                                   'menu'               => 'Main Menu',
                                   'theme_location'     => 'menu-1',
-                                  'depth'              => 2,
+                                  'depth'              => 1,
                                   'container'          => 'false',
                                   'menu_class'         => 'nav navbar-nav navbar-right',
                                   'menu_id'            => '',

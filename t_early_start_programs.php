@@ -1,9 +1,8 @@
 <?php 
 get_header();
 /*
-Template Name: Experience
+Template Name: Early Start Programs
 */ 
-$page_id = get_queried_object_id();
 ?> 
 <?php echo cubby_page_banner(); ?>
 
@@ -17,7 +16,7 @@ $page_id = get_queried_object_id();
         <div class="row">
             <div class="col-md-3 col-sm-4 no-padding-custom">
                 <div class="side-bar" id="sticky_tab">
-                    <ul class="nav nav-tabs hidden-xs info-tab">
+                    <ul class="nav nav-tabs hidden-xs">
                         <?php
                         $children = new WP_Query(array(
                             'post_type'      => 'page',
@@ -61,10 +60,10 @@ $page_id = get_queried_object_id();
             <div class="col-md-9 col-sm-8">
                 <div class="tab-content">
                     <div class="">
-                        <?php $expect = get_field('what_to_expect'); ?>
+                        <?php $early = get_field('early_start_programs'); ?>
 
                         <?php
-                        $top = $expect['top_text'];
+                        $top = $early['top_text'];
                         if ($top): ?>
                         <div class="top-text">  
                             <?php if ($top['title']): ?>
@@ -74,36 +73,36 @@ $page_id = get_queried_object_id();
                             <?php if ($top['description']): ?>
                                 <?php echo $top['description']; ?>
                             <?php endif; ?>
-                            
-                            <?php if ($top['image']): ?>
+							
+							<?php if ($top['image']): ?>
                             <div class="media">
-                                <img src="<?php echo $top['image']; ?>" class="img-responsive" alt="">
+                            	<img src="<?php echo $top['image']; ?>" class="img-responsive" alt="">
                             </div>
-                            <?php endif; ?>
+							<?php endif; ?>
                         </div>
                         <?php endif; ?>
 
                         <div class="repeating-items">
-                        <?php $citems = $expect['experience_content']; ?>
-                        <?php if ($citems) :
-                            foreach ( $citems as $citem):
-                        ?>
+	                        <?php $items = $early['experience_content']; ?>
+	                        <?php if ($items) :
+	                            foreach ( $items as $item):
+	                        ?>
 
-                        <?php if ($citem['title']): ?>
-                        <h3><?php echo $citem['title']; ?></h3>
-                        <?php endif; ?>
+	                        <?php if ($item['title']): ?>
+	                        <h3><?php echo $item['title']; ?></h3>
+	                        <?php endif; ?>
 
-                        <?php if ($citem['description']): ?>
-                            <?php echo $citem['description']; ?>
-                        <?php endif; ?>
+	                        <?php if ($item['description']): ?>
+	                            <?php echo $item['description']; ?>
+	                        <?php endif; ?>
 
-                        <?php if ($citem['image']): ?>
-                        <div class="media">
-                            <img src="<?php echo $citem['image']; ?>" class="img-responsive" alt="">
-                        </div>
-                        <?php endif; ?>
-                        <?php endforeach; endif; ?>
-                        </div>
+	                        <?php if ($item['edu_image']): ?>
+	                        <div class="media">
+	                        	<img src="<?php echo $item['edu_image']; ?>" class="img-responsive" alt="">
+	                        </div>
+							<?php endif; ?>
+							<?php endforeach; endif; ?>
+						</div>
                     </div>
                 </div><!-- / col -->
             </div>

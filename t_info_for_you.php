@@ -1,7 +1,7 @@
 <?php 
 get_header();
 /*
-Template Name: Info For You
+Template Name: Info for you
 */ 
 ?> 
 <?php echo cubby_page_banner(); ?>
@@ -17,32 +17,42 @@ Template Name: Info For You
                 <div class="side-bar" id="sticky_tab">
                     <ul class="nav nav-tabs hidden-xs info-tab">
                     	<?php
-						$tabs = [
-							'child_care_subsidy', 
-							'fact_sheets',
-                            'info_downloads',
-                            'info_menus',
-                            'info_communication'
-						];
+    					$parent = new WP_Query(array(
+                            'post_type'      => 'page',
+                            'posts_per_page' => -1,
+                            'post_parent'    => '152'
+                        ));
+                        ?>
 
-						foreach ($tabs as $key => $tab):
-						$active = $key === 0 ? 'active' : '';
-						$text = get_field($tab);
-							printf('<li class="%s"><a href="#info_%s" data-toggle="tab">%s</a></li>', $active, $key, $text['tab_menu']);
+                        <?php while ($parent->have_posts()) : $parent->the_post(); ?>
+                            <li>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </li>
+                        <?php endwhile; ?>
 
-						endforeach; 
+                    <?php wp_reset_postdata(); ?>
 
-						?>
+						
                     </ul>
 
                     <ul class="nav-tabs nav visible-xs">
+
                         <select id="sticky_tab_select">
-                        <?php 
-                            foreach ($tabs as $key => $tab):
-                                $text = get_field($tab);
-                                printf('<option value="info_%s" data-toggle="tab">%s</option>',$key, $text['tab_menu']);
-                            endforeach; 
+                        <?php
+                        $parent = new WP_Query(array(
+                            'post_type'      => 'page',
+                            'posts_per_page' => -1,
+                            'post_parent'    => '152'
+                        ));
                         ?>
+                         <?php while ($parent->have_posts()) : $parent->the_post(); 
+                                $permalink = get_the_permalink();
+                                $title = get_the_title();
+                                printf('<option value="%s">%s</option>',$permalink, $title);
+                            endwhile;
+                            
+                            ?>
+                            <?php wp_reset_postdata(); ?>
                         </select>
                     </ul>
                 </div><!-- / Side bar -->
@@ -50,179 +60,47 @@ Template Name: Info For You
 
             <div class="col-md-9 col-sm-8">
                 <div class="tab-content">
+                    <div class="info-for-you">
+                        <?php $title = get_field('info_title_text'); ?>
+                        <div class="title-text">
+                            <?php if ($title['title']): ?>
+                            <h3><?php echo $title['title'] ?></h3>
+                            <?php endif; ?>
 
-                     <div class="info-for-you">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <?php $title = get_field('info_title_text'); ?>
-                                <div class="title-text">
-                                    <?php if ($title['title']): ?>
-                                    <h3><?php echo $title['title'] ?></h3>
-                                    <?php endif; ?>
+                            <?php if ($title['description']): ?>
+                                <?php echo $title['description']; ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
 
-                                    <?php if ($title['description']): ?>
-                                        <?php echo $title['description']; ?>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                            
-                            <?php $counter = 0; ?>
-                            <?php foreach ($tabs as $key => $tab): 
-                                $text = get_field($tab);
-                                $icon = $text['info_icon'];
-                                $top_text = $text['top_text']['description'];
-                            ?>
-                            <div class="col-md-6 col-xs-6 col">
-                                <?php if ($icon): ?>
+                    <div class="row">
+                        <?php $items = get_field('info_list'); if($items): 
+                            foreach ($items as $item):
+                         ?>
+                        <div class="col-md-6 col-xs-6 col">
+                            <div class="info-for-you">
+                                <?php if ($item['icon']): ?>
                                 <div class="icon pull-right">
-                                    <img src="<?php echo $icon; ?>" class="img-responsive" alt="">
+                                    <img src="<?php echo $item['icon']; ?>" class="img-responsive" alt="">
                                 </div>
                                 <?php endif; ?>
                                 <div class="info-item">
-                                    <?php if ($text['tab_menu']): ?>
-                                    <h4 class="title" href="#"><?php echo $text['tab_menu']; ?></h4>
+                                    <?php if ($item['title']): ?>
+                                    <h4 class="title" href="#"><?php echo $item['title']; ?></h4>
                                     <?php endif; ?>
-                                    <?php if ($top_text): ?>
-                                        <?php echo $top_text; ?>
+                                    <?php if ($item['content']): ?>
+                                        <?php echo $item['content']; ?>
                                     <?php endif; ?>
+                                    <?php $btn = $item['button'] ?>
                                     <div class="info-bottom">
-                                        <a class="btn" href="#<?php echo 'info_'.$counter; ?>" data-toggle="tab"> <?php _e('Learn More', 'cubby'); ?> <span class="fa fa-angle-right"></span></a>
+                                        <?php if ($btn['text'] || $btn['link']): ?>
+                                        <a class="btn" href="<?php echo $btn['link']; ?>"><?php echo $btn['text']; ?><span class="fa fa-angle-right"></span></a>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
-                            <?php $counter++; endforeach;?>
-
                         </div>
-                    </div><!-- / info for you -->
-                	
-                    <div class="tab-pane fade subsidy" id="info_0">
-                        <?php $subsidy = get_field('child_care_subsidy'); ?>
-
-                        <?php
-                        $top = $subsidy['top_text'];
-                        if ($top): ?>
-                        <div class="top-text fadeInUp">  
-                            <?php if ($top['title']): ?>
-                            <h2><?php echo $top['title']; ?></h2>
-                            <?php endif; ?>
-
-                            <?php if ($top['description']): ?>
-                                <?php echo $top['description']; ?>
-                            <?php endif; ?>
-                        </div>
-                        <?php endif; ?>
-
-                        <div class="subsidy-content fadeInUp">
-                        	<?php if ($subsidy['subsidy_content']): ?>
-                        		<?php echo $subsidy['subsidy_content']; ?>
-                        	<?php endif; ?>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade subsidy sheets" id="info_1">
-                        <?php $sheets = get_field('fact_sheets'); ?>
-
-                        <?php
-                        $top = $sheets['top_text'];
-                        if ($top): ?>
-                        <div class="top-text fadeInUp">  
-                            <?php if ($top['title']): ?>
-                            <h2><?php echo $top['title']; ?></h2>
-                            <?php endif; ?>
-
-                            <?php if ($top['description']): ?>
-                                <?php echo $top['description']; ?>
-                            <?php endif; ?>
-                        </div>
-                        <?php endif; ?>
-
-                        <?php $items = $sheets['sheets']; 
-                        if($items):
-                            foreach ($items as $item) :
-                        ?>
-                        <div class="sheet fadeInUp">
-
-                            <?php if ($item['title']): ?>
-                                <h3><?php echo $item['title']; ?></h3>
-                            <?php endif; ?>
-
-                            <?php $attachment_id = $item['button']['file']; 
-                            $filesize = filesize( get_attached_file( $attachment_id ) );
-                            $filesize = size_format($filesize, 2);
-                            ?>
-                            
-                            <div class="download-btn hidden-xs pull-right">
-                                <?php $btn = $item['button']; ?>
-                                <?php if ($btn['text'] || $btn['file']): ?>
-                                <a class="btn" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
-                                <span class="file-size">(Document, <?php echo  $filesize; ?>)</span>
-                                <?php endif; ?>
-                            </div>
-
-                            <?php if ($item['content']): ?>
-                                <?php echo $item['content']; ?>
-                            <?php endif; ?>
-
-                            <div class="download-btn visible-xs">
-                                <?php $btn = $item['button']; ?>
-                                <?php if ($btn['text'] || $btn['file']): ?>
-                                <a class="btn" href="<?php echo $btn['file']; ?>"><span><img src="<?php echo get_theme_file_uri('assets/images/svg/download.svg');?>" alt=""></span><?php echo $btn['text']; ?></a>
-                                <span class="file-size">(Document, <?php echo  $filesize; ?>)</span>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                        <?php endforeach; endif; ?>                        
-                    </div>
-
-                    <div class="tab-pane fade subsidy" id="info_2">
-                    <?php
-                        $info_downloads = get_field('info_downloads');
-                        $top = $info_downloads['top_text'];
-                        if ($top): ?>
-                        <div class="top-text fadeInUp">  
-                            <?php if ($top['title']): ?>
-                            <h2><?php echo $top['title']; ?></h2>
-                            <?php endif; ?>
-
-                            <?php if ($top['description']): ?>
-                                <?php echo $top['description']; ?>
-                            <?php endif; ?>
-                        </div>
-                        <?php endif; ?>
-                    </div>
-
-                    <div class="tab-pane fade subsidy" id="info_3">
-                    <?php
-                        $info_downloads = get_field('info_menus');
-                        $top = $info_downloads['top_text'];
-                        if ($top): ?>
-                        <div class="top-text fadeInUp">  
-                            <?php if ($top['title']): ?>
-                            <h2><?php echo $top['title']; ?></h2>
-                            <?php endif; ?>
-
-                            <?php if ($top['description']): ?>
-                                <?php echo $top['description']; ?>
-                            <?php endif; ?>
-                        </div>
-                        <?php endif; ?>
-                    </div>
-
-                    <div class="tab-pane fade subsidy" id="info_4">
-                    <?php
-                        $info_downloads = get_field('info_communication');
-                        $top = $info_downloads['top_text'];
-                        if ($top): ?>
-                        <div class="top-text fadeInUp">  
-                            <?php if ($top['title']): ?>
-                            <h2><?php echo $top['title']; ?></h2>
-                            <?php endif; ?>
-
-                            <?php if ($top['description']): ?>
-                                <?php echo $top['description']; ?>
-                            <?php endif; ?>
-                        </div>
-                        <?php endif; ?>
+                        <?php endforeach; endif; ?>
                     </div>
                 </div><!-- / col -->
             </div>
