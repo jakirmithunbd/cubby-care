@@ -48,9 +48,8 @@ $page_id = get_queried_object_id();
                         <div class="col-md-3 col-sm-12 no-padding">
                             <div id="map">
                                 <?php $google_map = get_field('google_map'); ?>
-                                <?php $map_zoom = get_field('center_zoom_lavel'); ?>
 
-                                <iframe src="http://maps.google.com/maps?q=<?php echo $google_map['lat']; ?>, <?php echo $google_map['lng']; ?>&z=<?php echo $map_zoom; ?>&output=embed" width="100%" height="236" frameborder="0" style="border:0" marginheight="0" marginwidth="0" allowfullscreen></iframe>
+                                <iframe src="http://maps.google.com/maps?q=<?php echo $google_map['lat']; ?>, <?php echo $google_map['lng']; ?>&z=16&output=embed" width="100%" height="236" frameborder="0" style="border:0" marginheight="0" marginwidth="0" allowfullscreen></iframe>
                             </div>
                         </div>
 
@@ -105,7 +104,7 @@ $page_id = get_queried_object_id();
                         </div>
                     </div><!-- / list -->
 				<?php endwhile; endif; wp_reset_postdata(); ?>
-
+       
                 </div><!-- / list center -->
 
                 <div class="tab-pane fade" id="sec_2">

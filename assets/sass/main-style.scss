@@ -179,6 +179,10 @@ textarea {
   }
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 .container {
     width: 1290px;
     max-width: 100%;
@@ -1604,6 +1608,14 @@ ul.nav-tabs.nav.visible-xs.sticky {
             width: 2px;
             border: 1px dashed #63c9d7;
             height: 100%;
+        }
+
+        ul {
+            padding-left: 18px;
+
+            li {
+                list-style-type: disc !important;
+            }
         }
 
         .mission {
@@ -3169,8 +3181,6 @@ select {
 
                 ul {
                     margin: 45px 0;
-                    display: flex;
-                    flex-wrap: wrap;
 
                     li {
                         width: 50%;
@@ -3181,11 +3191,6 @@ select {
                             width: 100%;
                             border-radius: 24px;
                             height: auto;
-                        }
-
-                        &+li {
-                            padding-left: 12px;
-                            padding-right: 0;
                         }
                     }
                 }

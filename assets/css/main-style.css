@@ -132,6 +132,10 @@ textarea {
   textarea:focus {
     outline: 0; }
 
+img {
+  max-width: 100%;
+  height: auto; }
+
 .container {
   width: 1290px;
   max-width: 100%;
@@ -1217,6 +1221,10 @@ ul.nav-tabs.nav.visible-xs.sticky {
       width: 2px;
       border: 1px dashed #63c9d7;
       height: 100%; }
+    .about-us .tab-content ul {
+      padding-left: 18px; }
+      .about-us .tab-content ul li {
+        list-style-type: disc !important; }
     .about-us .tab-content .mission .top-text h2 {
       font-size: 40px;
       line-height: 45px;
@@ -2305,12 +2313,7 @@ select {
     line-height: 68px;
     letter-spacing: 0.4px; }
   .info-page .tab-content .subsidy .subsidy-content ul {
-    margin: 45px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
+    margin: 45px 0; }
     .info-page .tab-content .subsidy .subsidy-content ul li {
       width: 50%;
       padding-right: 12px; }
@@ -2319,9 +2322,6 @@ select {
         width: 100%;
         border-radius: 24px;
         height: auto; }
-      .info-page .tab-content .subsidy .subsidy-content ul li + li {
-        padding-left: 12px;
-        padding-right: 0; }
   .info-page .tab-content .subsidy .subsidy-content p {
     margin: 0 0 22px; }
   .info-page .tab-content .subsidy.sheets .top-text {

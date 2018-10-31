@@ -480,11 +480,9 @@
             disableDefaultUI: true,
             draggable: true,
             scrollwheel: false,
-            zoom: 12,
+            zoom: 14,
             styles: styles,
         };
-
-        console.log( google.maps.ControlPosition );
 
         var map = new google.maps.Map(mapElement, mapOptions);
         var bounds = new google.maps.LatLngBounds();
@@ -525,7 +523,7 @@
         map.fitBounds(bounds);
 
         google.maps.event.addDomListener(window, 'resize', function() {
-            map.setCenter(center);
+            map.setCenter(centre);
         });
 
     }
