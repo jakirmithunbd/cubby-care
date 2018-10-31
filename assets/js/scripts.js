@@ -450,7 +450,7 @@
             disableDefaultUI: true,
             draggable: true,
             scrollwheel: false,
-            zoom: 14,
+            zoom: 16,
             styles: styles,
         };
 
