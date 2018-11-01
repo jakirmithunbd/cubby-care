@@ -1,5 +1,5 @@
 <?php  
-show_admin_bar(false);
+//show_admin_bar(false);
 
 require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 require get_template_directory() . '/inc/custom-post-type.php';
@@ -290,26 +290,26 @@ add_filter('gform_notification_2', 'cubby_quote_notification', 10, 3);
 
 
 
-function get_acf_file( $key = 'file', $post_id = '' ) {
-	if($post_id == ''):
-		global $post;
-		$post_id = $post->ID;
-	endif;
+// function get_acf_file( $key = 'file', $post_id = '' ) {
+// 	if($post_id == ''):
+// 		global $post;
+// 		$post_id = $post->ID;
+// 	endif;
 
-	$file = get_field($key, $post_id);
+// 	$file = get_field($key, $post_id);
 
-	if( !empty($file) ):
-		$file_url = $file['url'];
-		$file_type = get_file_type($file['mime_type']);
+// 	if( !empty($file) ):
+// 		$file_url = $file['url'];
+// 		$file_type = get_file_type($file['mime_type']);
 
-		$file_size = get_file_size($file_url);
-	endif;
+// 		$file_size = get_file_size($file_url);
+// 	endif;
 
-	$file_details = array(
-		'url'  => $file_url,
-		'type' => $file_type,
-		'size' => $file_size
-	);
+// 	$file_details = array(
+// 		'url'  => $file_url,
+// 		'type' => $file_type,
+// 		'size' => $file_size
+// 	);
 
-	return $file_details;
-}
+// 	return $file_details;
+// }

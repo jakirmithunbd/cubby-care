@@ -193,9 +193,14 @@
 
     // sticky menu select style
     $('#sticky_tab_select').change(function(e) {
+        e.preventDefault();
         var value = $(this).val();
-        $('a[href="' + value + '"]');
-        console.log(value);
+        var selected = $(this).attr('selected');
+        if (value) {
+            window.location = value;
+        }
+        console.log(selected);
+        return false;
     });
 
     /*** Enable Masonry */

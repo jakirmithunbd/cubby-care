@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Downloads
+Template Name: Who We Are
 */ 
 get_header();
 
@@ -25,7 +25,7 @@ get_header();
                             'posts_per_page' => -1,
                             'order'             => 'ASC',
                             'orderby'           => 'menu_order',
-                            'post_parent'    => '152'
+                            'post_parent'    => '5'
                         ));
                         ?>
 
@@ -47,7 +47,7 @@ get_header();
                             'posts_per_page' => -1,
                             'order'             => 'ASC',
                             'orderby'           => 'menu_order',
-                            'post_parent'    => '152'
+                            'post_parent'    => '5'
                         ));
                         ?>
                          <?php while ($parent->have_posts()) : $parent->the_post(); 
@@ -64,30 +64,11 @@ get_header();
             </div><!-- / col -->
 
             <div class="col-md-9 col-sm-8">
-                <div class="tab-content">
-					<div class="subsidy">
-						<?php 
-						$info_downloads = get_field('info_downloads');
-                        $top = $info_downloads['top_text'];
-                        if ($top): ?>
-                        <div class="top-text fadeInUp">  
-                            <?php if ($top['title']): ?>
-                            <h2><?php echo $top['title']; ?></h2>
-                            <?php endif; ?>
+                <?php 
+                $about_template = get_field('who_we_are_page_for');
+                get_template_part('template-parts/who-we-are/' . $about_template);
 
-                            <?php if ($top['description']): ?>
-                                <?php echo $top['description']; ?>
-                            <?php endif; ?>
-                        </div>
-                        <?php endif; ?>
-
-                        <div class="subsidy-content fadeInUp">
-                        	<?php if ($info_downloads['description']): ?>
-                        		<?php echo $info_downloads['description']; ?>
-                        	<?php endif; ?>
-                        </div>
-					</div>
-                </div><!-- / col -->
+                ?>
             </div>
         </div>
 	</div>

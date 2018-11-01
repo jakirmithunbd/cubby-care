@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Menus
+Template Name: Left Menu Template
 */ 
 get_header();
 
@@ -64,30 +64,11 @@ get_header();
             </div><!-- / col -->
 
             <div class="col-md-9 col-sm-8">
-                <div class="tab-content">
-					<div class="subsidy">
-						<?php 
-						$info_downloads = get_field('info_menus');
-                        $top = $info_downloads['top_text'];
-                        if ($top): ?>
-                        <div class="top-text fadeInUp">  
-                            <?php if ($top['title']): ?>
-                            <h2><?php echo $top['title']; ?></h2>
-                            <?php endif; ?>
+                <?php 
+                $template = get_field('page_for');
+                get_template_part('template-parts/' . $template);
 
-                            <?php if ($top['description']): ?>
-                                <?php echo $top['description']; ?>
-                            <?php endif; ?>
-                        </div>
-                        <?php endif; ?>
-
-                        <div class="subsidy-content fadeInUp">
-                        	<?php if ($info_menus['description']): ?>
-                        		<?php echo $info_menus['description']; ?>
-                        	<?php endif; ?>
-                        </div>
-					</div>
-                </div><!-- / col -->
+                ?>
             </div>
         </div>
 	</div>
