@@ -2,7 +2,6 @@
 	<div class="subsidy">
 		<?php 
 		$info_menus = get_field('info_menu_item');
-        var_dump($info_menus);
         $top = $info_menus['top_text'];
         ?>
 

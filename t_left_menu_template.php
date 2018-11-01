@@ -4,6 +4,9 @@ Template Name: Left Menu Template
 */ 
 get_header();
 
+global $post;
+$page_id = get_queried_object_id();
+
 ?>   
 <?php echo cubby_page_banner(); ?>
 	<div class="about-us info-page">
@@ -27,10 +30,11 @@ get_header();
                             'orderby'           => 'menu_order',
                             'post_parent'    => '152'
                         ));
+
                         ?>
 
                         <?php while ($parent->have_posts()) : $parent->the_post(); ?>
-                              <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                              <li<?php if($page_id === get_the_ID()) echo ' class="active"'; ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                         <?php endwhile; ?>
 
                     <?php wp_reset_postdata(); ?>
@@ -53,9 +57,10 @@ get_header();
                          <?php while ($parent->have_posts()) : $parent->the_post(); 
                                 $permalink = get_the_permalink();
                                 $title = get_the_title();
-                                printf('<option value="%s">%s</option>',$permalink, $title);
+                                $selected = $page_id === get_the_ID() ? 'selected' : ' ';
+
+                                printf('<option value="%s" %s>%s</option>',$permalink, $selected, $title);
                             endwhile;
-                            
                             ?>
                             <?php wp_reset_postdata(); ?>
                         </select>

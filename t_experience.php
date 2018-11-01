@@ -3,6 +3,8 @@ get_header();
 /*
 Template Name: Cubby Care Experience
 */ 
+
+global $post;
 $page_id = get_queried_object_id();
 ?> 
 <?php echo cubby_page_banner(); ?>
@@ -29,7 +31,7 @@ $page_id = get_queried_object_id();
                         ?>
 
                         <?php while ($children->have_posts()) : $children->the_post(); ?>
-                            <li>
+                            <li<?php if($page_id === get_the_ID()) echo ' class="active"'; ?>>
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </li>
                         <?php endwhile; ?>
@@ -52,7 +54,8 @@ $page_id = get_queried_object_id();
                          <?php while ($children->have_posts()) : $children->the_post(); 
                                 $permalink = get_the_permalink();
                                 $title = get_the_title();
-                                printf('<option value="%s">%s</option>',$permalink, $title);
+                                $selected = $page_id === get_the_ID() ? 'selected' : ' ';
+                                printf('<option value="%s" %s>%s</option>',$permalink, $selected, $title);
                             endwhile;
                             
                             ?>

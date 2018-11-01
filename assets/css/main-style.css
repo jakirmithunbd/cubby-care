@@ -2929,6 +2929,8 @@ select {
 
 /**---- Responsive CSS ----**/
 @media only screen and (min-width: 1200px) {
+  .mobile-menu {
+    display: none; }
   #search-box {
     display: none; }
   .header .navbar.navbar-default .navbar-nav > li > a {
@@ -2944,6 +2946,8 @@ select {
       padding: 9px 14px; } }
 
 @media only screen and (max-width: 1199px) {
+  .desktop-menu {
+    display: none; }
   .header_gutter {
     height: 110px; }
   .search-button.mobile-search {

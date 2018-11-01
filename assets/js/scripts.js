@@ -195,12 +195,9 @@
     $('#sticky_tab_select').change(function(e) {
         e.preventDefault();
         var value = $(this).val();
-        var selected = $(this).attr('selected');
         if (value) {
             window.location = value;
         }
-        console.log(selected);
-        return false;
     });
 
     /*** Enable Masonry */

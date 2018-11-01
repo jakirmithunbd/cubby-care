@@ -111,6 +111,24 @@
                         <?php endif; ?>
                     </div>
 
+                    <div class="mobile-menu">
+                        <?php if (function_exists('wp_nav_menu')): ?>
+                            <?php wp_nav_menu( 
+                                  array(
+                                  'menu'               => 'Main Menu mobile',
+                                  'theme_location'     => 'menu-1',
+                                  'depth'              => 0,
+                                  'container'          => 'false',
+                                  'menu_class'         => 'nav navbar-nav navbar-right',
+                                  'menu_id'            => '',
+                                  'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                                  'walker'             => new wp_bootstrap_navwalker()
+                                  ) 
+                                ); 
+                            ?>
+                        <?php endif; ?>
+                    </div>
+
                     <!-- Mobile Search -->
                     <div class="search-button mobile-search">
                         <a href="#" data-selector="#sidr" class="search-toggle"></a>
