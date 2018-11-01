@@ -100,7 +100,25 @@
                                   array(
                                   'menu'               => 'Main Menu',
                                   'theme_location'     => 'menu-1',
-                                  'depth'              => 0,
+                                  'depth'              => 2,
+                                  'container'          => 'false',
+                                  'menu_class'         => 'nav navbar-nav navbar-right',
+                                  'menu_id'            => '',
+                                  'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                                  'walker'             => new wp_bootstrap_navwalker()
+                                  ) 
+                                ); 
+                            ?>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="mobile-menu">
+                        <?php if (function_exists('wp_nav_menu')): ?>
+                            <?php wp_nav_menu( 
+                                  array(
+                                  'menu'               => 'Main Menu mobile',
+                                  'theme_location'     => 'menu-4',
+                                  'depth'              => 2,
                                   'container'          => 'false',
                                   'menu_class'         => 'nav navbar-nav navbar-right',
                                   'menu_id'            => '',

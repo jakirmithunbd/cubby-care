@@ -116,8 +116,8 @@
                             <?php wp_nav_menu( 
                                   array(
                                   'menu'               => 'Main Menu mobile',
-                                  'theme_location'     => 'menu-1',
-                                  'depth'              => 0,
+                                  'theme_location'     => 'menu-4',
+                                  'depth'              => 2,
                                   'container'          => 'false',
                                   'menu_class'         => 'nav navbar-nav navbar-right',
                                   'menu_id'            => '',
