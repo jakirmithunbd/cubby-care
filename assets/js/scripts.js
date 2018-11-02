@@ -42,6 +42,26 @@
               tab.find('.nav-tabs').removeClass('sticky');
             }
         };
+
+        // airtasker like centre sticky tab
+        var tab = $('#centre_sticky_tab');
+        if(tab.length > 0){
+            var tabLocationTop = tab.offset().top - $(window).scrollTop();
+            if(tabLocationTop <= 126 ){
+              tab.find('.nav-tabs').addClass('sticky');
+            } else {
+              tab.find('.nav-tabs').removeClass('sticky');
+            }
+        };
+    });
+
+     // sticky menu select style
+    $('#centre_sticky_tab_select').change(function(e) {
+        e.preventDefault();
+        var value = $(this).val();
+      $('a[href="' + value + '"]').tab('show'); 
+        console.log(value);
+        
     });
 
 
@@ -66,6 +86,14 @@
         slidesToScroll: 3,
         arrows: false,
           responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                centerMode: false,
+                centerPadding: '0px',
+                slidesToShow: 2
+              }
+            },
             {
               breakpoint: 768,
               settings: {
@@ -111,6 +139,12 @@
         slidesToScroll: 1,
         arrows: false,
           responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2
+              }
+            },
             {
               breakpoint: 768,
               settings: {

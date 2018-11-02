@@ -296,7 +296,7 @@ button {
     }
 }
 
-ul.nav-tabs.nav.visible-xs.sticky {
+ul.nav-tabs.nav.sticky {
     position: fixed;
     top: 90px;
     z-index: 99;
@@ -343,10 +343,10 @@ ul.nav-tabs.nav.visible-xs.sticky {
 }
 
 // nav tabs 
-.nav-tabs.visible-xs {
+.nav-tabs {
     position: relative;
 
-    #sticky_tab_select {
+    #sticky_tab_select, #centre_sticky_tab_select {
         height: 48px;
         width: 100%;
         padding: 0 20px;
@@ -1861,6 +1861,10 @@ ul.nav-tabs.nav.visible-xs.sticky {
             justify-content: center;
             border-color: transparent;
 
+            &:after {
+                background: unset;
+            }
+
             li {
                 margin: 0 10px;
                 border-color: transparent;
@@ -2193,11 +2197,15 @@ ul.nav-tabs.nav.visible-xs.sticky {
 
             .nav {
 
-                &.nav-tabs{
+                &.nav-tabs {
                     border-color: transparent;
-                    margin: 0 0 45px;
+
+                    &:after {
+                        top: calc(50% - 28px);
+                    }
 
                     li {
+                        margin: 0 0 45px;
 
                         a {
                             transition: all .5s ease;
@@ -2222,6 +2230,10 @@ ul.nav-tabs.nav.visible-xs.sticky {
                                 color: $white;
                             }
                         }
+                    }
+
+                    #centre_sticky_tab_select {
+                        margin: 0 0 45px;
                     }
                 }
             }

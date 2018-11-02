@@ -16,7 +16,7 @@ $page_id = get_queried_object_id();
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-4 col-sm-4">
+			<div class="col-md-4 col-sm-12">
 				<div class="quick-contact">
 					<ul>
 						<?php $cont = get_field('contacts', 'options'); ?>
@@ -77,7 +77,7 @@ $page_id = get_queried_object_id();
 				</div>
 			</div>
 
-			<div class="col-md-8 col-sm-8">
+			<div class="col-md-8 col-sm-12">
 				<div class="contact-form">
 					<?php $con = get_field('contact_info'); ?>
 					<div class="tour-info">

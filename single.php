@@ -3,7 +3,7 @@
 <section class="blog-single">
 	<div class="container">
 		<div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 hidden-xs">
                 <div class="text-left">
                     <?php echo beacon_breadcrumb(); ?>
                 </div>

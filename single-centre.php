@@ -5,7 +5,7 @@
 <div class="centers-single">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 hidden-xs">
                 <?php echo beacon_breadcrumb(); ?>
             </div>
         </div>
@@ -33,7 +33,7 @@
         
         <div class="centre-wrap">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 custom-hidden">
                    <div class="contre-sidebar">
                        <div id="map">
                            <?php $google_map = get_field('google_map'); ?>
@@ -72,8 +72,8 @@
                    </div> 
                 </div>
                 <div class="col-md-9">
-                    <div class="centre-tabs" id="sticky_tab">
-                        <ul class="nav nav-tabs hidden-xs">
+                    <div class="centre-tabs" id="centre_sticky_tab">
+                        <ul class="nav nav-tabs custom-hidden">
                             <?php
 							$tabs = [
 								'centre_overview', 
@@ -94,12 +94,12 @@
 
                         <div class="row">
                             <div class="col-sm-12 no-padding-custom">
-                                <ul class="nav-tabs nav visible-xs">
-                                    <select id="sticky_tab_select">
+                                <ul class="nav-tabs nav hidden custom-visible">
+                                    <select id="centre_sticky_tab_select">
                                     <?php 
                                         foreach ($tabs as $key => $tab):
                                             $text = get_field($tab);
-                                            printf('<option value="count_%s" data-toggle="tab">%s</option>',$key, $text['tab_menu']);
+                                            printf('<option data-toggle="tab" value="#count_%s">%s</option>',$key, $text['tab_menu']);
                                         endforeach; 
                                     ?>
                                     </select>
@@ -263,6 +263,44 @@
                         </div>             
                     </div><!-- / Centre Tabs -->
                 </div><!-- / col -->
+                <div class="col-md-3 hidden custom-visible">
+                   <div class="contre-sidebar">
+                       <div id="map">
+                           <?php $google_map = get_field('google_map'); ?>
+
+                            <iframe src="http://maps.google.com/maps?q=<?php echo $google_map['lat']; ?>, <?php echo $google_map['lng']; ?>&z=18&output=embed" width="100%" height="236" frameborder="0" style="border:0" marginheight="0" marginwidth="0" allowfullscreen></iframe>
+                       </div>
+                        
+                        <?php $address = get_field('centre_address'); ?>
+
+                       <div class="address-details">
+                           <h3><?php _e( 'Centre Details', 'cubby' ); ?></h3>
+
+                           <?php $address = get_field('centre_address'); ?>
+                            <?php if ($address['address']): ?>
+                            <address><?php echo $address['address']; ?></address>
+                            <?php endif; ?>
+
+                            <?php if ($address['phone']): ?>
+                            <p>p <a class="phone" href="tel:<?php echo $address['phone']; ?>"><?php echo $address['phone']; ?></a></p>
+                            <?php endif; ?>
+
+                            <?php if ($address['email']): ?>
+                            <p>e <a href="mailto:<?php echo $address['email']; ?>"><?php echo $address['email']; ?></a></p>
+                            <?php endif; ?>
+                       </div>
+
+                       <div class="opening-hour">
+                           <h6><?php _e('Opening hours', 'cubby'); ?></h6>
+                           <?php if ($open['opening_hour']): ?>
+                            <p><?php echo $open['opening_hour']; ?></p>
+                            <?php endif; ?>
+                       </div>
+
+                        <?php $btn = $open['enquire_button']; ?>
+                       <a class="btn" href="<?php echo $btn['url']; ?>"><?php echo $btn['text']; ?></a>
+                   </div> 
+                </div>
             </div>
         </div>
     </div>

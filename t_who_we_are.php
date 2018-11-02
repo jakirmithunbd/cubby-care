@@ -10,14 +10,14 @@ $page_id = get_queried_object_id();
 	<div class="about-us info-page">
 	    <div class="container">
 	        <div class="row">
-	            <div class="col-md-12 hidden-xs">
+	            <div class="col-md-12 hidden-xs hidden-sm">
 	                <?php echo beacon_breadcrumb(); ?>
 	            </div>
 	        </div>
 		<div class="row">
-            <div class="col-md-3 col-sm-4 no-padding-custom">
+            <div class="col-md-3 col-sm-12 no-padding-custom">
                 <div class="side-bar" id="sticky_tab">
-                    <ul class="nav nav-tabs hidden-xs info-tab">
+                    <ul class="nav nav-tabs custom-hidden info-tab">
                     	<?php
 
 
@@ -39,7 +39,7 @@ $page_id = get_queried_object_id();
 						
                     </ul>
 
-                    <ul class="nav-tabs nav visible-xs">
+                    <ul class="nav-tabs nav hidden custom-visible">
 
                         <select id="sticky_tab_select">
                         <?php
@@ -66,7 +66,7 @@ $page_id = get_queried_object_id();
                 </div><!-- / Side bar -->
             </div><!-- / col -->
 
-            <div class="col-md-9 col-sm-8">
+            <div class="col-md-9 col-sm-12">
                 <?php 
                 $about_template = get_field('who_we_are_page_for');
                 get_template_part('template-parts/who-we-are/' . $about_template);
